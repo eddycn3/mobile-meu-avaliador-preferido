@@ -9,6 +9,7 @@ class App extends StatelessWidget {
       title: 'Meu Avaliador Preferido',
       theme: ThemeData(
         // heme of your application.
+        scaffoldBackgroundColor: Color(0XFFD9E7E2),
         primarySwatch: Colors.green,
       ),
       home: LoginPage(),
