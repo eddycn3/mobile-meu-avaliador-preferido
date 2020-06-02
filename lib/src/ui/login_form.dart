@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/login/login_bloc.dart';
-import 'package:my_personal_avaliator/src/models/avaliador.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
 
 class LoginForm extends StatefulWidget {
@@ -14,7 +13,9 @@ class _LoginFormState extends State<LoginForm> {
   final _passWordController = TextEditingController();
 
   _onLoginButtonPressed() {
-    var usr = new Usuario<Avaliador>(
+    if (_userNameController.text.isEmpty || _userNameController.text.isEmpty)
+      return;
+    var usr = new Usuario(
         userName: _userNameController.text,
         passWord: _passWordController.text,
         userType: 1);
@@ -28,7 +29,7 @@ class _LoginFormState extends State<LoginForm> {
         if (state is LoginFailure) {
           Scaffold.of(context).showSnackBar(
             SnackBar(
-              content: Text('${state.error}'),
+              content: Text('Desculpe, algo ocorreu de errado :('),
               backgroundColor: Colors.red,
             ),
           );
@@ -98,17 +99,33 @@ class _LoginFormState extends State<LoginForm> {
                   height: 20.0,
                 ),
                 FlatButton(
-                  color: Colors.green[300],
-                  onPressed:
-                      state is! LoginInProgress ? _onLoginButtonPressed : null,
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 20.0),
-                  ),
-                ),
+                    color: Colors.green[300],
+                    onPressed: state is! LoginInProgress
+                        ? _onLoginButtonPressed
+                        : null,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        state is LoginInProgress
+                            ? Container(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                    backgroundColor: Colors.white),
+                              )
+                            : Text(""),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20.0),
+                        )
+                      ],
+                    )),
                 SizedBox(
                   height: 8.0,
                 ),
@@ -146,3 +163,25 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
+
+// ? Row(
+//     mainAxisAlignment: MainAxisAlignment.center,
+//     children: <Widget>[
+//       Container(
+//         height: 20,
+//         width: 20,
+//         child: CircularProgressIndicator(
+//             backgroundColor: Colors.white),
+//       ),
+//       SizedBox(
+//         width: 10,
+//       ),
+//       Text(
+//         "Login",
+//         style: TextStyle(
+//             color: Colors.white,
+//             fontWeight: FontWeight.w800,
+//             fontSize: 20.0),
+//       )
+//     ],
+//   )

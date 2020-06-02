@@ -4,10 +4,10 @@ abstract class LoginEvent extends Equatable {
   const LoginEvent();
 }
 
-class LoginButtonPressed<T> extends LoginEvent {
-  final Usuario<T> usuario;
+class LoginButtonPressed extends LoginEvent {
+  final Usuario usuario;
 
-  const LoginButtonPressed({this.usuario});
+  const LoginButtonPressed({@required this.usuario});
 
   @override
   List<Object> get props => [usuario];

@@ -1,9 +1,13 @@
-class Usuario<T> {
+import 'package:my_personal_avaliator/src/models/avaliador.dart';
+
+enum UserType { avaliador, aluno }
+
+class Usuario {
   final String userName;
   final String passWord;
   final int userType;
-  final T userInfo;
   final String token;
+  dynamic userInfo;
   Usuario({
     this.userName,
     this.passWord,
@@ -12,12 +16,19 @@ class Usuario<T> {
     this.token,
   });
 
-  factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
-      userName: json["user_name"],
-      passWord: json["password"],
-      userType: json["user_type"],
-      userInfo: json["user_info"],
-      token: json["token"]);
+  factory Usuario.fromJson(Map<String, dynamic> json) {
+    var user = Usuario(
+        userName: json["user_name"],
+        passWord: json["password"],
+        userType: json["user_type"],
+        token: json["token"]);
+    if (json["user_type"] == UserType.avaliador) {
+      user.userInfo = Avaliador.fromJson(json["user_type"]);
+    } else {
+      //HANDLE ANOTHER TYPES
+    }
+    return user;
+  }
 
   Map<String, dynamic> toJson() => {
         "user_name": userName,

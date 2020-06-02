@@ -18,9 +18,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> mapEventToState(AuthEvent event) async* {
     if (event is AuthStarted) {
       final bool hasToken = await userRepo.hasToken();
-
-      if (!hasToken) yield AuthFailure();
-      yield AuthSucess();
+      if (hasToken) {
+        yield AuthSucess();
+      } else {
+        yield AuthFailure();
+      }
     }
 
     if (event is AuthLoggedIn) {

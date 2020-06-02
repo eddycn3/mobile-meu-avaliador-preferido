@@ -6,17 +6,11 @@ import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/ui/login_form.dart';
 
 class LoginPage extends StatelessWidget {
-  UserRepo userRepo;
+  final UserRepo userRepo;
 
   LoginPage({Key key, @required this.userRepo})
       : assert(userRepo != null),
         super(key: key);
-
-  // Api.post({
-  //   "user_name": "eduardo.olibera@maxavaliators.com",
-  //   "password": "123456",
-  //   "user_type": 1
-  // }, userAuthSufix);
 
   @override
   Widget build(BuildContext context) {
