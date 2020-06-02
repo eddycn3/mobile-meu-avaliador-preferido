@@ -4,13 +4,11 @@ import 'package:my_personal_avaliator/src/utils/constants.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage() {
-    Api.post({
-      "user_name": "eduardo.olibera@maxavaliators.com",
-      "password": "123456",
-      "user_type": 1
-    }, userAuthSufix);
-  }
+  // Api.post({
+  //   "user_name": "eduardo.olibera@maxavaliators.com",
+  //   "password": "123456",
+  //   "user_type": 1
+  // }, userAuthSufix);
 
   @override
   Widget build(BuildContext context) {

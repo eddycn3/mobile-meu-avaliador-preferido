@@ -1,20 +1,21 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:my_personal_avaliator/src/utils/constants.dart';
 
 class Api {
-  static Future<dynamic> post(
-      Map<String, dynamic> reqBody, String urlSufix) async {
+  static final String _baseUrl =
+      "https://app-my-favorite-avaliator.herokuapp.com/";
+
+  static Future<dynamic> post(String reqBody, String urlSufix) async {
     var client = http.Client();
     try {
-      print(baseUrl + urlSufix);
+      print(_baseUrl + urlSufix);
       var encodedBody = json.encode(reqBody);
       print(encodedBody);
 
       Map<String, String> headers = {'Content-Type': 'application/json'};
 
       var resp = await client.post(
-        Uri.encodeFull(baseUrl + urlSufix),
+        Uri.encodeFull(_baseUrl + urlSufix),
         headers: headers,
         body: encodedBody,
       );
