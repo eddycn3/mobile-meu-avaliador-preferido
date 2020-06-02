@@ -1,16 +1,16 @@
 part of "login_bloc.dart";
 
-abstract class LogionState extends Equatable {
-  const LogionState();
+abstract class LoginState extends Equatable {
+  const LoginState();
   @override
   List<Object> get props => [];
 }
 
-class LoginInitial extends LogionState {}
+class LoginInitial extends LoginState {}
 
-class LoginInProgress extends LogionState {}
+class LoginInProgress extends LoginState {}
 
-class LoginFailure extends LogionState {
+class LoginFailure extends LoginState {
   final String error;
 
   const LoginFailure({@required this.error});
