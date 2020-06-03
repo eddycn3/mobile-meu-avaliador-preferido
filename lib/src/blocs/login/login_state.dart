@@ -12,12 +12,11 @@ class LoginInProgress extends LoginState {}
 
 class LoginFailure extends LoginState {
   final String error;
-
-  const LoginFailure({@required this.error});
+  const LoginFailure({this.error});
 
   @override
   List<Object> get props => [error];
 
   @override
-  String toString() => "LoginFailure {error $error}";
+  String toString() => "LoginFailure {error: $error}";
 }

@@ -13,14 +13,16 @@ class UserRepo {
     try {
       var objR =
           await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
-      if (objR.obj != null) {
+
+      if (objR.statuCode == 200) {
         var usuario = Usuario.fromJson(objR.obj);
         retObj = RetObj(obj: usuario.token, statuCode: objR.statuCode);
       } else {
-        retObj = RetObj(obj: null, statuCode: objR.statuCode);
+        retObj = RetObj(obj: objR.obj, statuCode: objR.statuCode);
       }
+      print(retObj);
     } catch (ex) {
-      print("UserRepo.authenticate $ex");
+      print("UserRepo.authenticate:ret($retObj) , error: $ex ");
     }
     return retObj;
   }

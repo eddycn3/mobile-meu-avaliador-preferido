@@ -7,6 +7,11 @@ class RetObj {
   final dynamic obj;
 
   RetObj({this.statuCode, this.obj});
+
+  @override
+  String toString() {
+    return "statuCode: $statuCode, obj: $obj";
+  }
 }
 
 class Api {
@@ -28,11 +33,8 @@ class Api {
         headers: headers,
         body: reqBody,
       );
-
-      if (resp.statusCode == 200) {
-        var objDecoded = jsonDecode(resp.body);
-        retObj = RetObj(obj: objDecoded, statuCode: resp.statusCode);
-      }
+      var objDecoded = jsonDecode(resp.body);
+      retObj = RetObj(obj: objDecoded, statuCode: resp.statusCode);
     } finally {
       client.close();
     }

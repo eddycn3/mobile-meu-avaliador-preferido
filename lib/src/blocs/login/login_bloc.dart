@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:my_personal_avaliator/src/api.dart';
 import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
@@ -24,23 +25,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
     if (event is LoginButtonPressed) {
       yield LoginInProgress();
-
+      RetObj ret;
       try {
-        final toKen = await userRepo.authenticate(
+        ret = await userRepo.authenticate(
             user: Usuario(
                 userName: event.username,
                 passWord: event.password,
                 userType: 1));
 
-        if (toKen == null) {
-          authBloc.add(AuthLoggedOut());
-          yield LoginFailure(error: "token is null");
-        } else {
-          authBloc.add(AuthLoggedIn(token: toKen));
+        if (ret.statuCode == 200) {
+          authBloc.add(AuthLoggedIn(token: ret.obj));
           yield LoginInitial();
+        } else {
+          authBloc.add(AuthLoggedOut());
+          yield LoginFailure(error: ret.obj["msg"].toString());
         }
       } catch (err) {
-        yield LoginFailure(error: err.toString());
+        yield LoginFailure(error: ret.obj["msg"].toString());
       }
     }
   }
