@@ -12,6 +12,13 @@ class _LoginFormState extends State<LoginForm> {
   final _passWordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  @override
+  void dispose() {
+    _userNameController.dispose();
+    _passWordController.dispose();
+    super.dispose();
+  }
+
   _onLoginButtonPressed() {
     if (_formKey.currentState.validate()) {
       BlocProvider.of<LoginBloc>(context).add(
@@ -181,25 +188,3 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
-
-// ? Row(
-//     mainAxisAlignment: MainAxisAlignment.center,
-//     children: <Widget>[
-//       Container(
-//         height: 20,
-//         width: 20,
-//         child: CircularProgressIndicator(
-//             backgroundColor: Colors.white),
-//       ),
-//       SizedBox(
-//         width: 10,
-//       ),
-//       Text(
-//         "Login",
-//         style: TextStyle(
-//             color: Colors.white,
-//             fontWeight: FontWeight.w800,
-//             fontSize: 20.0),
-//       )
-//     ],
-//   )

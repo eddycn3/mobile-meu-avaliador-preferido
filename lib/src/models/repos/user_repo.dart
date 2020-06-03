@@ -27,6 +27,26 @@ class UserRepo {
     return retObj;
   }
 
+  Future<RetObj> register({Usuario user}) async {
+    //String token;
+    RetObj retObj;
+    try {
+      var objR =
+          await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
+
+      if (objR.statuCode == 200) {
+        var usuario = Usuario.fromJson(objR.obj);
+        retObj = RetObj(obj: usuario.token, statuCode: objR.statuCode);
+      } else {
+        retObj = RetObj(obj: objR.obj, statuCode: objR.statuCode);
+      }
+      print(retObj);
+    } catch (ex) {
+      print("UserRepo.register:($retObj) , error: $ex ");
+    }
+    return retObj;
+  }
+
   Future<void> deleteToken() async {
     try {
       await storage.delete(key: "token");
