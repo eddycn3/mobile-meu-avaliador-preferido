@@ -1,5 +1,4 @@
 import 'dart:convert';
-//import 'package:meta/meta.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
 import "package:my_personal_avaliator/src/api.dart";
@@ -8,18 +7,22 @@ import 'package:my_personal_avaliator/src/utils/constants.dart';
 class UserRepo {
   final storage = new FlutterSecureStorage();
 
-  Future<String> authenticate(Usuario user) async {
-    String token;
+  Future<RetObj> authenticate({Usuario user}) async {
+    //String token;
+    RetObj retObj;
     try {
-      var obj = await Api.post(jsonEncode(user), userAuthSufix);
-      //print("UserRepo.authenticate = $obj");
-      var usuario = Usuario.fromJson(obj);
-      print("UserRepo.authenticate = $usuario");
-      token = usuario.token;
+      var objR =
+          await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
+      if (objR.obj != null) {
+        var usuario = Usuario.fromJson(objR.obj);
+        retObj = RetObj(obj: usuario.token, statuCode: objR.statuCode);
+      } else {
+        retObj = RetObj(obj: null, statuCode: objR.statuCode);
+      }
     } catch (ex) {
-      print(ex.toString());
+      print("UserRepo.authenticate $ex");
     }
-    return token;
+    return retObj;
   }
 
   Future<void> deleteToken() async {

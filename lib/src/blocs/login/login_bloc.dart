@@ -26,9 +26,19 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       yield LoginInProgress();
 
       try {
-        final toKen = await userRepo.authenticate(event.usuario);
-        authBloc.add(AuthLoggedIn(token: toKen));
-        yield LoginInitial();
+        final toKen = await userRepo.authenticate(
+            user: Usuario(
+                userName: event.username,
+                passWord: event.password,
+                userType: 1));
+
+        if (toKen == null) {
+          authBloc.add(AuthLoggedOut());
+          yield LoginFailure(error: "token is null");
+        } else {
+          authBloc.add(AuthLoggedIn(token: toKen));
+          yield LoginInitial();
+        }
       } catch (err) {
         yield LoginFailure(error: err.toString());
       }

@@ -1,11 +1,21 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
+
+class RetObj {
+  final int statuCode;
+  final dynamic obj;
+
+  RetObj({this.statuCode, this.obj});
+}
 
 class Api {
   static final String _baseUrl =
       "https://app-my-favorite-avaliator.herokuapp.com/";
 
-  static Future post(String reqBody, String urlSufix) async {
+  static Future<RetObj> post(
+      {@required String reqBody, @required String urlSufix}) async {
+    RetObj retObj;
     var client = http.Client();
     try {
       print(_baseUrl + urlSufix);
@@ -18,14 +28,14 @@ class Api {
         headers: headers,
         body: reqBody,
       );
-      print(resp.statusCode);
+
       if (resp.statusCode == 200) {
         var objDecoded = jsonDecode(resp.body);
-        print(objDecoded);
-        return objDecoded;
+        retObj = RetObj(obj: objDecoded, statuCode: resp.statusCode);
       }
     } finally {
       client.close();
     }
+    return retObj;
   }
 }
