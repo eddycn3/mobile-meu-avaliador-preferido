@@ -1,3 +1,4 @@
+import 'package:my_personal_avaliator/src/api.dart';
 import 'package:my_personal_avaliator/src/blocs/register/register_state.dart';
 import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
@@ -13,8 +14,10 @@ class RegisterBloc {
 
   RegisterBloc(UserRepo userRepo) {
     outState = registerController.stream
-        .switchMap<RegisterState>(
-            (Usuario usuario) => _register(usuario, userRepo))
+        .switchMap<RegisterState>((
+          Usuario usuario,
+        ) =>
+            _register(usuario, userRepo))
         .startWith(RegisterInitial());
   }
 
@@ -24,8 +27,21 @@ class RegisterBloc {
 
   static Stream<RegisterState> _register(
       Usuario usr, UserRepo userRepo) async* {
-    if (usr != null) {
-      print(usr.userName);
+    yield RegisterInProgress();
+    RetObj ret;
+    try {
+      ret = await userRepo.register(user: usr);
+
+      if (ret.statuCode == 200) {
+        yield RegisterInitial();
+      }
+
+      if (usr.userName.isEmpty) {
+        yield RegisterError(error: ret.obj["msg"].toString());
+      }
+    } catch (ex) {
+      print("_register");
+      yield RegisterError(error: ret.obj["msg"].toString());
     }
   }
 }

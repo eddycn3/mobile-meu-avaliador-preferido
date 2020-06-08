@@ -30,13 +30,15 @@ class UserRepo {
   Future<RetObj> register({Usuario user}) async {
     //String token;
     RetObj retObj;
+
     try {
+      var u = Usuario.createUserRequest(user);
       var objR =
-          await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
+          await Api.post(reqBody: jsonEncode(u), urlSufix: userCreateSufix);
 
       if (objR.statuCode == 200) {
         var usuario = Usuario.fromJson(objR.obj);
-        retObj = RetObj(obj: usuario.token, statuCode: objR.statuCode);
+        retObj = RetObj(obj: usuario, statuCode: objR.statuCode);
       } else {
         retObj = RetObj(obj: objR.obj, statuCode: objR.statuCode);
       }

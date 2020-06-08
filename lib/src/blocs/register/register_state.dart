@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:meta/meta.dart';
 
 class RegisterState extends Equatable {
   const RegisterState();
@@ -13,7 +14,7 @@ class RegisterInProgress extends RegisterState {}
 class RegisterError extends RegisterState {
   final String error;
 
-  RegisterError({this.error});
+  RegisterError({@required this.error});
 
   @override
   List<Object> get props => [error];

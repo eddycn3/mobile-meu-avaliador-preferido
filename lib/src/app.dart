@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: Color(0XFFD9E7E2),
         primarySwatch: Colors.green,
       ),
-      home: RegisterForm(),
+      home: RegisterForm(userRepo: userRepo),
       // home: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
       //   if (state is AuthSucess) {
       //     return HomePage();

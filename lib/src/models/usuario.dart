@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:my_personal_avaliator/src/models/avaliador.dart';
 
 enum UserType { avaliador, aluno }
@@ -23,7 +25,7 @@ class Usuario {
         userType: json["user_type"],
         token: json["token"]);
     if (json["user_type"] == UserType.avaliador) {
-      user.userInfo = Avaliador.fromJson(json["user_type"]);
+      user.userInfo = Avaliador.fromJson(json["user_info"]);
     } else {
       //HANDLE ANOTHER TYPES
     }
@@ -34,5 +36,12 @@ class Usuario {
         "user_name": userName,
         "password": passWord,
         "user_type": userType,
+      };
+
+  static Map<String, dynamic> createUserRequest(Usuario user) => {
+        "user_name": user.userName,
+        "password": user.passWord,
+        "user_type": user.userType,
+        "user_info": user.userInfo
       };
 }
