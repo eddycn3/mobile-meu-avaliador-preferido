@@ -8,7 +8,6 @@ class UserRepo {
   final storage = new FlutterSecureStorage();
 
   Future<RetObj> authenticate({Usuario user}) async {
-    //String token;
     RetObj retObj;
     try {
       var objR =
@@ -28,9 +27,7 @@ class UserRepo {
   }
 
   Future<RetObj> register({Usuario user}) async {
-    //String token;
     RetObj retObj;
-
     try {
       var u = Usuario.createUserRequest(user);
       var objR =

@@ -5,6 +5,7 @@ import 'package:my_personal_avaliator/src/ui/tab_pages/menu_page.dart';
 import 'package:my_personal_avaliator/src/ui/tab_pages/profile_page.dart';
 
 class HomePage extends StatelessWidget {
+  static const id = "/home";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

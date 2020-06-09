@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/register/register_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/register/register_state.dart';
 import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
@@ -8,8 +10,8 @@ import 'package:my_personal_avaliator/src/ui/widgets/app_icon_button.dart';
 import 'package:my_personal_avaliator/src/utils/regex_utils.dart';
 
 class RegisterForm extends StatefulWidget {
+  static const id = "/register";
   final UserRepo userRepo;
-
   const RegisterForm({Key key, this.userRepo}) : super(key: key);
 
   @override
@@ -58,10 +60,27 @@ class _RegisterFormState extends State<RegisterForm> {
     }
   }
 
+  Widget _buildAppIconButtom(RegisterState state) {
+    if (state is RegisterInitial) {
+      return AppIconButtom(
+          icon: currentFormIndex == 1 ? Icons.skip_next : null,
+          label: currentFormIndex == 1 ? "Próximo" : "Salvar",
+          onIconButtonPressed: _saveUser);
+    } else if (state is RegisterInProgress) {
+      return Container(
+        alignment: FractionalOffset.center,
+        child: CircularProgressIndicator(),
+      );
+    }
+    return SizedBox();
+  }
+
   @override
   void initState() {
     super.initState();
-    bloc = RegisterBloc(widget.userRepo);
+    bloc = RegisterBloc(
+        userRepo: widget.userRepo,
+        authBloc: BlocProvider.of<AuthBloc>(context));
   }
 
   @override
@@ -83,9 +102,9 @@ class _RegisterFormState extends State<RegisterForm> {
       initialData: RegisterInitial(),
       builder: (BuildContext context, AsyncSnapshot<RegisterState> snapshot) {
         final state = snapshot.data;
+
         print(state);
         return Scaffold(
-          backgroundColor: Colors.white,
           body: SafeArea(
             child: Form(
               key: _formKey,
@@ -181,7 +200,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         ),
                       ),
 
-                      buildAppIconButtom(state),
+                      _buildAppIconButtom(state),
 
                       SizedBox(height: 60),
                       Text(
@@ -200,21 +219,6 @@ class _RegisterFormState extends State<RegisterForm> {
         );
       },
     );
-  }
-
-  Widget buildAppIconButtom(RegisterState state) {
-    if (state is RegisterInitial) {
-      return AppIconButtom(
-          icon: currentFormIndex == 1 ? Icons.skip_next : null,
-          label: currentFormIndex == 1 ? "Próximo" : "Salvar",
-          onIconButtonPressed: _saveUser);
-    } else if (state is RegisterInProgress) {
-      return Container(
-        alignment: FractionalOffset.center,
-        child: CircularProgressIndicator(),
-      );
-    }
-    return SizedBox();
   }
 }
 

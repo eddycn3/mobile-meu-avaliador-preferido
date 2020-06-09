@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:my_personal_avaliator/src/models/avaliador.dart';
 
 enum UserType { avaliador, aluno }

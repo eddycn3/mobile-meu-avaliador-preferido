@@ -11,6 +11,8 @@ class RegisterInitial extends RegisterState {}
 
 class RegisterInProgress extends RegisterState {}
 
+class RegisterSucess extends RegisterState {}
+
 class RegisterError extends RegisterState {
   final String error;
 
