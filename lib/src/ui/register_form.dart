@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
+import 'package:my_personal_avaliator/src/blocs/navigation_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/register/register_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/register/register_state.dart';
 import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
@@ -19,6 +20,8 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  RegisterBloc _bloc;
+  CarouselController _carouselController = CarouselController();
   int currentFormIndex = 1;
   bool isBackButtonVisible = false;
   final _userNameController = TextEditingController();
@@ -28,9 +31,6 @@ class _RegisterFormState extends State<RegisterForm> {
   final _siteController = TextEditingController();
   final _telefoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
-  CarouselController _carouselController = CarouselController();
-  RegisterBloc bloc;
 
   _saveUser() {
     if (_formKey.currentState.validate()) {
@@ -56,7 +56,7 @@ class _RegisterFormState extends State<RegisterForm> {
             "telefone": _telefoneController.text
           });
 
-      bloc.registerController.add(u);
+      _bloc.registerController.add(u);
     }
   }
 
@@ -68,7 +68,7 @@ class _RegisterFormState extends State<RegisterForm> {
           onIconButtonPressed: _saveUser);
     } else if (state is RegisterInProgress) {
       return Container(
-        alignment: FractionalOffset.center,
+        alignment: Alignment.center,
         child: CircularProgressIndicator(),
       );
     }
@@ -78,14 +78,15 @@ class _RegisterFormState extends State<RegisterForm> {
   @override
   void initState() {
     super.initState();
-    bloc = RegisterBloc(
+    _bloc = RegisterBloc(
         userRepo: widget.userRepo,
-        authBloc: BlocProvider.of<AuthBloc>(context));
+        authBloc: BlocProvider.of<AuthBloc>(context),
+        navigatorBloc: BlocProvider.of<NavigatorBloc>(context));
   }
 
   @override
   void dispose() {
-    bloc.dispose();
+    _bloc.dispose();
     _userNameController.dispose();
     _passWordController.dispose();
     _nomeController.dispose();
@@ -98,12 +99,11 @@ class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<RegisterState>(
-      stream: bloc.outState,
+      stream: _bloc.outState,
       initialData: RegisterInitial(),
       builder: (BuildContext context, AsyncSnapshot<RegisterState> snapshot) {
         final state = snapshot.data;
 
-        print(state);
         return Scaffold(
           body: SafeArea(
             child: Form(
@@ -168,7 +168,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         ],
                       ),
 
-                      //MAIN FORM------------------------------------------------
+                      //--------MAIN FORM--------
                       SizedBox(height: 40),
                       CarouselSlider(
                         carouselController: _carouselController,

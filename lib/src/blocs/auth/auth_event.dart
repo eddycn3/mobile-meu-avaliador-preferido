@@ -11,7 +11,6 @@ class AuthStarted extends AuthEvent {}
 
 class AuthLoggedIn extends AuthEvent {
   final String token;
-
   const AuthLoggedIn({@required this.token});
 
   @override

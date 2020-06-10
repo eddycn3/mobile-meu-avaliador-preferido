@@ -11,12 +11,14 @@ import 'package:my_personal_avaliator/src/ui/splash_page.dart';
 
 class App extends StatelessWidget {
   final UserRepo userRepo;
-
-  App({Key key, @required this.userRepo}) : super(key: key);
+  final GlobalKey<NavigatorState> navigatorKey;
+  App({Key key, @required this.userRepo, @required this.navigatorKey})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       title: 'Meu Avaliador Preferido',
       theme: ThemeData(
         // heme of your application.
