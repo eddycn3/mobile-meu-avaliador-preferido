@@ -58,18 +58,15 @@ class RegisterBloc {
         yield RegisterSucess();
       } else if (ret.statuCode == 500) {
         yield RegisterError(error: "Desculpe. Algo ocorreu de errado :(");
-        await Future.delayed(Duration(seconds: 3));
       } else {
         yield RegisterError(error: ret.obj["msg"].toString());
-        await Future.delayed(Duration(seconds: 3));
       }
-      yield RegisterInitial();
     } catch (ex) {
       yield RegisterError(error: ex.toString());
     }
   }
 
-  static Stream<RegisterState> _checkTermo(bool isChecked) async* {
+  Stream<RegisterState> _checkTermo(bool isChecked) async* {
     if (isChecked) {
       yield RegisterIsChecked();
     } else {

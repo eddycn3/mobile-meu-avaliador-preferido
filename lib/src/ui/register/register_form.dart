@@ -9,7 +9,7 @@ import 'package:my_personal_avaliator/src/blocs/register/register_state.dart';
 import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
 import 'package:my_personal_avaliator/src/ui/widgets/app_icon_button.dart';
-import 'package:my_personal_avaliator/src/ui/widgets/error_msg.dart';
+import 'package:my_personal_avaliator/src/ui/widgets/error_container.dart';
 import 'package:my_personal_avaliator/src/utils/regex_utils.dart';
 
 part 'first_form_step.dart';
@@ -73,26 +73,16 @@ class _RegisterFormState extends State<RegisterForm> {
   }
 
   Widget _buildAppIconButtom(RegisterState state) {
-    if (state is RegisterInitial) {
+    if (state is RegisterInitial || state is RegisterError) {
       return AppIconButtom(
           icon: _currentFormIndex == 1 ? Icons.skip_next : null,
           label: _currentFormIndex == 1 ? "Próximo" : "Salvar",
-          onIconButtonPressed: _saveUser);
+          onIconButtonPressed: state is RegisterInitial ? _saveUser : null);
     }
     if (state is RegisterInProgress) {
-      return Container(
-        alignment: Alignment.center,
-        child: CircularProgressIndicator(),
-      );
+      return CircularProgressIndicator();
     }
-
-    if (state is RegisterError) {
-      return ErrorMsg(
-        error: state.error,
-      );
-    }
-
-    return SizedBox();
+    return Container();
   }
 
   @override
@@ -123,14 +113,23 @@ class _RegisterFormState extends State<RegisterForm> {
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  //HEADER
-                  Column(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+//---------------------------------------------------------------//HEADER
+                StreamBuilder<RegisterState>(
+                  stream: _bloc.outRegisterState,
+                  initialData: RegisterInitial(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<RegisterState> snapshot) {
+                    return ErrorContainer(state: snapshot.data);
+                  },
+                ),
+
+                Container(
+                  padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
+                  child: Column(
                     children: <Widget>[
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,50 +180,60 @@ class _RegisterFormState extends State<RegisterForm> {
                       ),
                     ],
                   ),
+                ),
 
 //---------------------------------------------------------------// MAIN FORM
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0, top: 20.0),
-                    child: CarouselSlider(
-                      carouselController: _carouselController,
-                      items: <Widget>[
-                        FirstFormStep(
-                            userC: _userNameController,
-                            passC: _passWordController),
-                        SecondFormStep(
-                          nomeC: _nomeController,
-                          empresaC: _empresaController,
-                          siteC: _siteController,
-                          telefoneC: _telefoneController,
-                        ),
-                      ],
-                      options: CarouselOptions(
-                        onPageChanged: (value, reason) {
-                          setState(() {
-                            _currentFormIndex = value + 1;
-                            _isBackButtonVisible =
-                                _currentFormIndex == 1 ? false : true;
-                          });
-                        },
-                        height: 300,
-                        viewportFraction: 1,
-                        initialPage: 0,
-                        reverse: false,
-                        enlargeCenterPage: true,
-                        scrollDirection: Axis.horizontal,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+                  child: CarouselSlider(
+                    carouselController: _carouselController,
+                    items: <Widget>[
+                      FirstFormStep(
+                          userC: _userNameController,
+                          passC: _passWordController),
+                      SecondFormStep(
+                        nomeC: _nomeController,
+                        empresaC: _empresaController,
+                        siteC: _siteController,
+                        telefoneC: _telefoneController,
                       ),
+                    ],
+                    options: CarouselOptions(
+                      onPageChanged: (value, reason) {
+                        setState(() {
+                          _currentFormIndex = value + 1;
+                          _isBackButtonVisible =
+                              _currentFormIndex == 1 ? false : true;
+                        });
+                      },
+                      height: 300,
+                      viewportFraction: 1,
+                      initialPage: 0,
+                      reverse: false,
+                      enlargeCenterPage: true,
+                      scrollDirection: Axis.horizontal,
                     ),
                   ),
-                  StreamBuilder<RegisterState>(
-                      stream: _bloc.outRegisterState,
-                      initialData: RegisterInitial(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<RegisterState> snapshot) {
-                        final state = snapshot.data;
-                        return _buildAppIconButtom(state);
-                      }),
-                  SizedBox(height: 60),
-                  Row(
+                ),
+
+                StreamBuilder<RegisterState>(
+                  stream: _bloc.outRegisterState,
+                  initialData: RegisterInitial(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<RegisterState> snapshot) {
+                    final state = snapshot.data;
+
+                    return Container(
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.only(left: 30, right: 30),
+                        child: _buildAppIconButtom(state));
+                  },
+                ),
+//---------------------------------------------------------------//FOOTER
+                SizedBox(height: 60),
+                Container(
+                  padding: const EdgeInsets.only(left: 30, right: 30),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Flex(
@@ -275,8 +284,8 @@ class _RegisterFormState extends State<RegisterForm> {
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -291,12 +300,12 @@ class _RegisterFormState extends State<RegisterForm> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            'Atenção',
+            'Antes de continuar ;)',
             style: TextStyle(color: Colors.green),
           ),
           content: SingleChildScrollView(
               child: Text(
-                  "Por favor leia e aceite os termos de política de privacidade para conntinuar")),
+                  "Por favor, leia e aceite o nossos termos de política de privacidade.")),
           actions: <Widget>[
             FlatButton(
               child: Text('Ok'),
