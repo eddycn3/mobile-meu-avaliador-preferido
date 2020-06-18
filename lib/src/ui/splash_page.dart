@@ -6,14 +6,17 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Opacity(opacity: 0.5, child: Image.asset("images/login_main.png")),
           SizedBox(
             height: 50.0,
           ),
           Text(
-            "Carregando...",
-            style: TextStyle(fontSize: 40, color: Colors.green[500]),
+            "Medindo Extremidades... ;)",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20, color: Colors.grey, fontWeight: FontWeight.bold),
           )
         ],
       ),

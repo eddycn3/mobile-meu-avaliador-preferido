@@ -11,8 +11,9 @@ import 'dart:async';
 
 class RegisterBloc {
   final PublishSubject<Usuario> registerController = PublishSubject<Usuario>();
-
-  Stream<RegisterState> outState;
+  final PublishSubject<bool> termController = PublishSubject<bool>();
+  Stream<RegisterState> outRegisterState;
+  Stream<RegisterState> outTermState;
 
   final UserRepo userRepo;
   final AuthBloc authBloc;
@@ -23,14 +24,19 @@ class RegisterBloc {
       @required this.authBloc,
       @required this.navigatorBloc})
       : assert(userRepo != null, authBloc != null) {
-    outState = registerController.stream
+    outRegisterState = registerController.stream
         .switchMap<RegisterState>((Usuario usuario) =>
             _register(usuario, userRepo, authBloc, navigatorBloc))
         .startWith(RegisterInitial());
+
+    outTermState = termController.stream
+        .switchMap<RegisterState>((bool ischeckd) => _checkTermo(ischeckd))
+        .startWith(RegisterIsNotChecked());
   }
 
   void dispose() {
     registerController.close();
+    termController.close();
   }
 
   static Stream<RegisterState> _register(
@@ -50,10 +56,24 @@ class RegisterBloc {
         authBloc.add(AuthLoggedIn(token: usu.token));
         navigatorBloc.add(NavigatorActionPop());
         yield RegisterSucess();
+      } else if (ret.statuCode == 500) {
+        yield RegisterError(error: "Desculpe. Algo ocorreu de errado :(");
+        await Future.delayed(Duration(seconds: 3));
+      } else {
+        yield RegisterError(error: ret.obj["msg"].toString());
+        await Future.delayed(Duration(seconds: 3));
       }
+      yield RegisterInitial();
     } catch (ex) {
-      print("_register");
       yield RegisterError(error: ex.toString());
+    }
+  }
+
+  static Stream<RegisterState> _checkTermo(bool isChecked) async* {
+    if (isChecked) {
+      yield RegisterIsChecked();
+    } else {
+      yield RegisterIsNotChecked();
     }
   }
 }

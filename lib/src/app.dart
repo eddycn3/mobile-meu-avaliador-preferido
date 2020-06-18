@@ -5,8 +5,7 @@ import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/rotas.dart';
 import 'package:my_personal_avaliator/src/ui/common/loading_indicator.dart';
 import 'package:my_personal_avaliator/src/ui/home_page.dart';
-import 'package:my_personal_avaliator/src/ui/login_page.dart';
-
+import 'package:my_personal_avaliator/src/ui/login/login_page.dart';
 import 'package:my_personal_avaliator/src/ui/splash_page.dart';
 
 class App extends StatelessWidget {

@@ -13,6 +13,10 @@ class RegisterInProgress extends RegisterState {}
 
 class RegisterSucess extends RegisterState {}
 
+class RegisterIsChecked extends RegisterState {}
+
+class RegisterIsNotChecked extends RegisterState {}
+
 class RegisterError extends RegisterState {
   final String error;
 
