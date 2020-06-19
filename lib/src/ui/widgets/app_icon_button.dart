@@ -28,6 +28,9 @@ class AppIconButtom extends StatelessWidget {
                 letterSpacing: 3,
                 fontFamily: "SourceSansPro",
                 fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            width: 10,
           )
         ],
       ),

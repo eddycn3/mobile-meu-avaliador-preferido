@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/src/blocs/navigation_bloc.dart';
@@ -10,6 +11,8 @@ import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
 import 'package:my_personal_avaliator/src/models/usuario.dart';
 import 'package:my_personal_avaliator/src/ui/widgets/app_icon_button.dart';
 import 'package:my_personal_avaliator/src/ui/widgets/error_container.dart';
+import 'package:my_personal_avaliator/src/utils/constants.dart';
+import 'package:my_personal_avaliator/src/utils/funcs_utils.dart';
 import 'package:my_personal_avaliator/src/utils/regex_utils.dart';
 
 part 'first_form_step.dart';
@@ -39,9 +42,16 @@ class _RegisterFormState extends State<RegisterForm> {
   final _telefoneController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  _saveUser() async {
+  void _saveUser() async {
     if (_checkBoxState is RegisterIsNotChecked && _currentFormIndex == 2) {
-      await _showMyDialog();
+      await showAppDialog(
+          context: context,
+          title: "Antes de continuar ;)",
+          child: Text(
+              "Por favor, leia e aceite o nossos termos de política de privacidade."),
+          onActionPressed: () {
+            Navigator.of(context).pop();
+          });
       return;
     }
 
@@ -170,7 +180,7 @@ class _RegisterFormState extends State<RegisterForm> {
                               ? "Suas informações de login"
                               : "Agora seus dados para terminar :)",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             color: Colors.black54,
                             fontFamily: "SourceSansPro",
                             letterSpacing: 2,
@@ -258,6 +268,22 @@ class _RegisterFormState extends State<RegisterForm> {
                             width: 10,
                           ),
                           GestureDetector(
+                            onTap: () {
+                              showAppDialog(
+                                  onActionPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  context: context,
+                                  child: Container(
+                                    height: 350,
+                                    width: 400,
+                                    child: Markdown(
+                                      selectable: true,
+                                      data: privacy_policy,
+                                    ),
+                                  ),
+                                  title: "Política de Privacidade");
+                            },
                             child: Text.rich(
                               TextSpan(
                                 text: "Você aceita os termos da",
@@ -293,29 +319,5 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  Future<void> _showMyDialog() async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(
-            'Antes de continuar ;)',
-            style: TextStyle(color: Colors.green),
-          ),
-          content: SingleChildScrollView(
-              child: Text(
-                  "Por favor, leia e aceite o nossos termos de política de privacidade.")),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('Ok'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+//Text("Por favor, leia e aceite o nossos termos de política de privacidade.")
 }
