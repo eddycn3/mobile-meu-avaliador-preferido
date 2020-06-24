@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_personal_avaliator/src/ui/tab_pages/alunos_page.dart';
-import 'package:my_personal_avaliator/src/ui/tab_pages/backup_page.dart';
-import 'package:my_personal_avaliator/src/ui/tab_pages/menu_page.dart';
-import 'package:my_personal_avaliator/src/ui/tab_pages/profile_page.dart';
+import 'package:my_personal_avaliator/presentation/tab_pages/alunos_page.dart';
+import 'package:my_personal_avaliator/presentation/tab_pages/backup_page.dart';
+import 'package:my_personal_avaliator/presentation/tab_pages/menu_page.dart';
+import 'package:my_personal_avaliator/presentation/tab_pages/profile_page.dart';
 
 class HomePage extends StatelessWidget {
   static const id = "/home";

@@ -1,4 +1,5 @@
-import 'package:my_personal_avaliator/src/models/avaliador.dart';
+import 'package:my_personal_avaliator/domain/models/avaliador.dart';
+
 import 'aluno.dart';
 
 class Avaliacao {

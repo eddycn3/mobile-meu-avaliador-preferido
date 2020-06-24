@@ -1,4 +1,4 @@
-import 'package:my_personal_avaliator/src/models/avaliador.dart';
+import 'package:my_personal_avaliator/domain/models/avaliador.dart';
 
 enum UserType { avaliador, aluno }
 

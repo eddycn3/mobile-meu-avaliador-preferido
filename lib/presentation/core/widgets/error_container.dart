@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_personal_avaliator/src/blocs/register/register_state.dart';
+import 'package:my_personal_avaliator/application/blocs/register/register_state.dart';
 
 class ErrorContainer extends StatefulWidget {
   final RegisterState state;

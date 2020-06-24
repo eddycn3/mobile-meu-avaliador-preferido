@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:my_personal_avaliator/src/api.dart';
-import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
-import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
-import 'package:my_personal_avaliator/src/models/usuario.dart';
+import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
+import 'package:my_personal_avaliator/domain/models/usuario.dart';
+import 'package:my_personal_avaliator/infrastructure/api.dart';
+import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

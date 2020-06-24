@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/src/blocs/login/login_bloc.dart';
-import 'package:my_personal_avaliator/src/ui/register/register_form.dart';
+import 'package:my_personal_avaliator/application/blocs/login/login_bloc.dart';
+import 'package:my_personal_avaliator/presentation/register/register_form.dart';
 
 class LoginForm extends StatefulWidget {
   @override

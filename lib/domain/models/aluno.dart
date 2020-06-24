@@ -1,4 +1,4 @@
-import 'package:my_personal_avaliator/src/models/endereco.dart';
+import 'package:my_personal_avaliator/domain/models/endereco.dart';
 
 class Aluno {
   String nome;

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
+import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
 part 'auth_event.dart';
 part "auth_state.dart";

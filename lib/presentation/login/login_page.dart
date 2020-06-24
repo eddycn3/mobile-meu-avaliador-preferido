@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/src/blocs/auth/auth_bloc.dart';
-import 'package:my_personal_avaliator/src/blocs/login/login_bloc.dart';
-import 'package:my_personal_avaliator/src/models/repos/user_repo.dart';
-import 'package:my_personal_avaliator/src/ui/login/login_form.dart';
+import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
+import 'package:my_personal_avaliator/application/blocs/login/login_bloc.dart';
+import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
+import 'package:my_personal_avaliator/presentation/login/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   static const id = "/login";

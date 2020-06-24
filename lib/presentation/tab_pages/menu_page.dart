@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_personal_avaliator/src/ui/widgets/menu_row.dart';
+import 'package:my_personal_avaliator/presentation/core/widgets/menu_row.dart';
 
 class MenuPage extends StatelessWidget {
   @override
