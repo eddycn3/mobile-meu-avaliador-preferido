@@ -1,6 +1,3 @@
-const String userAuthSufix = "auth/authenticate";
-const String userCreateSufix = "auth/create";
-
 const String privacy_policy = """
 Eduardo Corveloni Neto criou o aplicativo Meu Avaliador Preferido como um aplicativo gratuito. Este SERVIÇO é fornecido por Eduardo Corveloni Neto sem nenhum custo e destina-se ao uso como está.
 

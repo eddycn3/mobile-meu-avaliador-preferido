@@ -1,3 +1,7 @@
+#app related
+lib/infrastructure/core/api_routes.dart
+
+
 # Miscellaneous
 *.class
 *.log

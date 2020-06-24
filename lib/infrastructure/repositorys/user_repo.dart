@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:my_personal_avaliator/domain/models/usuario.dart';
 import 'package:my_personal_avaliator/infrastructure/api.dart';
-import 'package:my_personal_avaliator/utils/constants.dart';
+import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
 
 class UserRepo {
   final storage = new FlutterSecureStorage();
