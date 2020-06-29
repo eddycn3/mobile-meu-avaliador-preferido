@@ -12,4 +12,20 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     @required T failedValue,
   }) = ShortPassword<T>;
+
+  const factory ValueFailure.invalidPersonName({
+    @required T failedValue,
+  }) = InvalidPersonName<T>;
+
+  const factory ValueFailure.invalidPhone({
+    @required T failedValue,
+  }) = InvalidPhone<T>;
+
+  const factory ValueFailure.invalidCPF({
+    @required T failedValue,
+  }) = InvalidCPF<T>;
+
+  const factory ValueFailure.invalidIdConfef({
+    @required T failedValue,
+  }) = InvalidIdConfef<T>;
 }

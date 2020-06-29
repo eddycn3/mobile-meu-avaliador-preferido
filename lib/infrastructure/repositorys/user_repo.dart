@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:my_personal_avaliator/domain/models/usuario.dart';
+import 'package:my_personal_avaliator/domain/models/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/api.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
 
@@ -29,9 +29,9 @@ class UserRepo {
   Future<RetObj> register({Usuario user}) async {
     RetObj retObj;
     try {
-      var u = Usuario.createUserRequest(user);
+      // var u = Usuario.createUserRequest(user);
       var objR =
-          await Api.post(reqBody: jsonEncode(u), urlSufix: userCreateSufix);
+          await Api.post(reqBody: jsonEncode(""), urlSufix: userCreateSufix);
 
       if (objR.statuCode == 200) {
         var usuario = Usuario.fromJson(objR.obj);

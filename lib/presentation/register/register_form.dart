@@ -10,7 +10,7 @@ import 'package:my_personal_avaliator/application/blocs/register/register_state.
 import 'package:my_personal_avaliator/application/core/funcs_utils.dart';
 import 'package:my_personal_avaliator/application/core/navigation_bloc.dart';
 import 'package:my_personal_avaliator/domain/core/regex_utils.dart';
-import 'package:my_personal_avaliator/domain/models/usuario.dart';
+import 'package:my_personal_avaliator/domain/models/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 import 'package:my_personal_avaliator/presentation/core/widgets/app_icon_button.dart';
 import 'package:my_personal_avaliator/presentation/core/widgets/error_container.dart';

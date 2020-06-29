@@ -7,7 +7,7 @@ import 'package:my_personal_avaliator/infrastructure/api.dart';
 import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/application/core/navigation_bloc.dart';
 import 'package:my_personal_avaliator/application/blocs/register/register_state.dart';
-import 'package:my_personal_avaliator/domain/models/usuario.dart';
+import 'package:my_personal_avaliator/domain/models/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
 class RegisterBloc {

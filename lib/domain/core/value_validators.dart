@@ -2,18 +2,50 @@ import "package:dartz/dartz.dart";
 import "package:my_personal_avaliator/domain/core/failures.dart";
 import 'package:my_personal_avaliator/domain/core/regex_utils.dart';
 
-Either<ValueFailure<String>,String> validateEmailAdress(String input){
-  if(RegexUtils.isEmail(input)){
+Either<ValueFailure<String>, String> validateEmailAdress(String input) {
+  if (RegexUtils.isEmail(input)) {
     return right(input);
-  }else{
+  } else {
     return left(ValueFailure.invalidEmail(failedValue: input));
   }
 }
 
-Either<ValueFailure<String>,String> validatePassword(String input){
-  if(input.length >= 8){
+Either<ValueFailure<String>, String> validatePassword(String input) {
+  if (input.length >= 8) {
     return right(input);
-  }else{
+  } else {
     return left(ValueFailure.shortPassword(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateUserName(String input) {
+  if (RegexUtils.isValidPersonName(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidPersonName(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateUserPhone(String input) {
+  if (RegexUtils.isValidPhone(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidPhone(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateUserCPF(String input) {
+  if (RegexUtils.isValidCPF(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidCPF(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateUserIDCONFEF(String input) {
+  if (RegexUtils.isValidIDCONFEF(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidIdConfef(failedValue: input));
   }
 }

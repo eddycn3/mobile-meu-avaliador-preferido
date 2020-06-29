@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
-import 'package:my_personal_avaliator/domain/models/usuario.dart';
+import 'package:my_personal_avaliator/domain/models/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/api.dart';
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
