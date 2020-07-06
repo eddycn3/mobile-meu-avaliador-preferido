@@ -27,6 +27,10 @@ class _$AuthFailureTearOff {
   EmailAlredyInUse emailAlredyInUse() {
     return const EmailAlredyInUse();
   }
+
+  InvalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
+    return const InvalidEmailAndPasswordCombination();
+  }
 }
 
 // ignore: unused_element
@@ -39,6 +43,7 @@ mixin _$AuthFailure {
     @required Result cpfAlredyInUse(),
     @required Result idConfefAlredyInUse(),
     @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -46,6 +51,7 @@ mixin _$AuthFailure {
     Result cpfAlredyInUse(),
     Result idConfefAlredyInUse(),
     Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -54,6 +60,9 @@ mixin _$AuthFailure {
     @required Result cpfAlredyInUse(CpfAlredyInUse value),
     @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -61,6 +70,8 @@ mixin _$AuthFailure {
     Result cpfAlredyInUse(CpfAlredyInUse value),
     Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
     @required Result orElse(),
   });
 }
@@ -118,11 +129,13 @@ class _$ServerError implements ServerError {
     @required Result cpfAlredyInUse(),
     @required Result idConfefAlredyInUse(),
     @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return serverError();
   }
 
@@ -133,6 +146,7 @@ class _$ServerError implements ServerError {
     Result cpfAlredyInUse(),
     Result idConfefAlredyInUse(),
     Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -149,11 +163,15 @@ class _$ServerError implements ServerError {
     @required Result cpfAlredyInUse(CpfAlredyInUse value),
     @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return serverError(this);
   }
 
@@ -164,6 +182,8 @@ class _$ServerError implements ServerError {
     Result cpfAlredyInUse(CpfAlredyInUse value),
     Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -217,11 +237,13 @@ class _$CpfAlredyInUse implements CpfAlredyInUse {
     @required Result cpfAlredyInUse(),
     @required Result idConfefAlredyInUse(),
     @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return cpfAlredyInUse();
   }
 
@@ -232,6 +254,7 @@ class _$CpfAlredyInUse implements CpfAlredyInUse {
     Result cpfAlredyInUse(),
     Result idConfefAlredyInUse(),
     Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -248,11 +271,15 @@ class _$CpfAlredyInUse implements CpfAlredyInUse {
     @required Result cpfAlredyInUse(CpfAlredyInUse value),
     @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return cpfAlredyInUse(this);
   }
 
@@ -263,6 +290,8 @@ class _$CpfAlredyInUse implements CpfAlredyInUse {
     Result cpfAlredyInUse(CpfAlredyInUse value),
     Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -317,11 +346,13 @@ class _$IdConfefAlredyInUse implements IdConfefAlredyInUse {
     @required Result cpfAlredyInUse(),
     @required Result idConfefAlredyInUse(),
     @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return idConfefAlredyInUse();
   }
 
@@ -332,6 +363,7 @@ class _$IdConfefAlredyInUse implements IdConfefAlredyInUse {
     Result cpfAlredyInUse(),
     Result idConfefAlredyInUse(),
     Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -348,11 +380,15 @@ class _$IdConfefAlredyInUse implements IdConfefAlredyInUse {
     @required Result cpfAlredyInUse(CpfAlredyInUse value),
     @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return idConfefAlredyInUse(this);
   }
 
@@ -363,6 +399,8 @@ class _$IdConfefAlredyInUse implements IdConfefAlredyInUse {
     Result cpfAlredyInUse(CpfAlredyInUse value),
     Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -417,11 +455,13 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     @required Result cpfAlredyInUse(),
     @required Result idConfefAlredyInUse(),
     @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return emailAlredyInUse();
   }
 
@@ -432,6 +472,7 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     Result cpfAlredyInUse(),
     Result idConfefAlredyInUse(),
     Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -448,11 +489,15 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     @required Result cpfAlredyInUse(CpfAlredyInUse value),
     @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
   }) {
     assert(serverError != null);
     assert(cpfAlredyInUse != null);
     assert(idConfefAlredyInUse != null);
     assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
     return emailAlredyInUse(this);
   }
 
@@ -463,6 +508,8 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
     Result cpfAlredyInUse(CpfAlredyInUse value),
     Result idConfefAlredyInUse(IdConfefAlredyInUse value),
     Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -475,4 +522,119 @@ class _$EmailAlredyInUse implements EmailAlredyInUse {
 
 abstract class EmailAlredyInUse implements AuthFailure {
   const factory EmailAlredyInUse() = _$EmailAlredyInUse;
+}
+
+abstract class $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
+  factory $InvalidEmailAndPasswordCombinationCopyWith(
+          InvalidEmailAndPasswordCombination value,
+          $Res Function(InvalidEmailAndPasswordCombination) then) =
+      _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
+}
+
+class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
+  _$InvalidEmailAndPasswordCombinationCopyWithImpl(
+      InvalidEmailAndPasswordCombination _value,
+      $Res Function(InvalidEmailAndPasswordCombination) _then)
+      : super(_value, (v) => _then(v as InvalidEmailAndPasswordCombination));
+
+  @override
+  InvalidEmailAndPasswordCombination get _value =>
+      super._value as InvalidEmailAndPasswordCombination;
+}
+
+class _$InvalidEmailAndPasswordCombination
+    implements InvalidEmailAndPasswordCombination {
+  const _$InvalidEmailAndPasswordCombination();
+
+  @override
+  String toString() {
+    return 'AuthFailure.invalidEmailAndPasswordCombination()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidEmailAndPasswordCombination);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result serverError(),
+    @required Result cpfAlredyInUse(),
+    @required Result idConfefAlredyInUse(),
+    @required Result emailAlredyInUse(),
+    @required Result invalidEmailAndPasswordCombination(),
+  }) {
+    assert(serverError != null);
+    assert(cpfAlredyInUse != null);
+    assert(idConfefAlredyInUse != null);
+    assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
+    return invalidEmailAndPasswordCombination();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result serverError(),
+    Result cpfAlredyInUse(),
+    Result idConfefAlredyInUse(),
+    Result emailAlredyInUse(),
+    Result invalidEmailAndPasswordCombination(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidEmailAndPasswordCombination != null) {
+      return invalidEmailAndPasswordCombination();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result serverError(ServerError value),
+    @required Result cpfAlredyInUse(CpfAlredyInUse value),
+    @required Result idConfefAlredyInUse(IdConfefAlredyInUse value),
+    @required Result emailAlredyInUse(EmailAlredyInUse value),
+    @required
+        Result invalidEmailAndPasswordCombination(
+            InvalidEmailAndPasswordCombination value),
+  }) {
+    assert(serverError != null);
+    assert(cpfAlredyInUse != null);
+    assert(idConfefAlredyInUse != null);
+    assert(emailAlredyInUse != null);
+    assert(invalidEmailAndPasswordCombination != null);
+    return invalidEmailAndPasswordCombination(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result serverError(ServerError value),
+    Result cpfAlredyInUse(CpfAlredyInUse value),
+    Result idConfefAlredyInUse(IdConfefAlredyInUse value),
+    Result emailAlredyInUse(EmailAlredyInUse value),
+    Result invalidEmailAndPasswordCombination(
+        InvalidEmailAndPasswordCombination value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidEmailAndPasswordCombination != null) {
+      return invalidEmailAndPasswordCombination(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidEmailAndPasswordCombination implements AuthFailure {
+  const factory InvalidEmailAndPasswordCombination() =
+      _$InvalidEmailAndPasswordCombination;
 }

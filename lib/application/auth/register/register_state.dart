@@ -13,7 +13,7 @@ abstract class RegisterState with _$RegisterState {
           @required IDCONFEF idconfef,
           @required bool showErrorMessages,
           @required bool isSubmitting,
-          @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) =
+          @required Option<Either<AuthFailure, User>> authFailOrSucessOption}) =
       _RegisterState;
 
   factory RegisterState.initial() => RegisterState(

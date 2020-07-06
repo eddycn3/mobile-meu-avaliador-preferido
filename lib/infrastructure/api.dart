@@ -1,41 +1,44 @@
-import 'dart:convert';
+import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
+import 'package:my_personal_avaliator/infrastructure/core/api_result.dart';
 
-class RetObj {
-  final int statuCode;
-  final dynamic obj;
+abstract class Api {
+  /// Errors:
+  ///
+  ///- FOR USER REQUESTS
+  ///  * `ERROR_EMAIL_EXISTS` - Indicates that email alredy in use
+  ///  * `ERROR_CPF_EXISTS` - Indicates that the cpf alredy in use
+  ///  * `ERROR_IDCONFEF_EXISTS` - Indicates that the id_confef alredy in use
+  ///  * `ERROR_USER_NOT_FOUND` - Indicates that the user cant be found with the email + password combination
+  ///
+  /// - GENERAL
+  ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
+  ///  * `BAD_RESPONSE` - Indicates a bad format response
 
-  RetObj({this.statuCode, this.obj});
-
-  @override
-  String toString() {
-    return "statuCode: $statuCode, obj: $obj";
-  }
-}
-
-class Api {
-  static Future<RetObj> post(
-      {@required String reqBody, @required String urlSufix}) async {
-    RetObj retObj;
-    var client = http.Client();
+  static Future<Map<String, dynamic>> post({
+    @required String reqBody,
+    @required String urlSufix,
+  }) async {
+    final http.Client client = http.Client();
+    http.Response resp;
     try {
-      print(baseURL + urlSufix);
-      print(reqBody);
-
-      Map<String, String> headers = {'Content-Type': 'application/json'};
-
-      var resp = await client.post(
+      final Map<String, String> headers = {'Content-Type': 'application/json'};
+      resp = await client.post(
         Uri.encodeFull(baseURL + urlSufix),
         headers: headers,
         body: reqBody,
       );
-      var objDecoded = jsonDecode(resp.body);
-      retObj = RetObj(obj: objDecoded, statuCode: resp.statusCode);
+      return resp.body as Map<String, dynamic>;
+    } on SocketException {
+      throw ApiError(resp.statusCode, 'NO_INTERNET_CONNECTION');
+    } on HttpException {
+      throw ApiError.fromJson(resp.body as Map<String, dynamic>);
+    } on FormatException {
+      throw ApiError(resp.statusCode, "BAD_RESPONSE");
     } finally {
       client.close();
     }
-    return retObj;
   }
 }

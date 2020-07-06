@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
+
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 import 'package:my_personal_avaliator/presentation/core/loading_indicator.dart';
 import 'package:my_personal_avaliator/presentation/home_page.dart';
@@ -21,23 +21,24 @@ class App extends StatelessWidget {
       title: 'Meu Avaliador Preferido',
       theme: ThemeData(
         // heme of your application.
-        scaffoldBackgroundColor: Color(0XFFD9E7E2),
+        scaffoldBackgroundColor: const Color(0XFFD9E7E2),
         primarySwatch: Colors.green,
       ),
-      home: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-        if (state is AuthSucess) {
-          return HomePage();
-        }
+      home: LoginPage(userRepo: userRepo),
+      // home: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
+      //   if (state is AuthSucess) {
+      //     return HomePage();
+      //   }
 
-        if (state is AuthFailure) {
-          return LoginPage(userRepo: userRepo);
-        }
+      //   if (state is AuthFailure) {
+      //     return LoginPage(userRepo: userRepo);
+      //   }
 
-        if (state is AuthInProgress) {
-          return LoadingIndicator();
-        }
-        return SplashPage(); //Splash
-      }),
+      //   if (state is AuthInProgress) {
+      //     return LoadingIndicator();
+      //   }
+      //   return SplashPage(); //Splash
+      // }),
       routes: AppRoutes.getAppRoutes(context, userRepo),
     );
   }

@@ -1162,7 +1162,7 @@ class _$RegisterStateTearOff {
       @required IDCONFEF idconfef,
       @required bool showErrorMessages,
       @required bool isSubmitting,
-      @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) {
+      @required Option<Either<AuthFailure, User>> authFailOrSucessOption}) {
     return _RegisterState(
       emailAddress: emailAddress,
       password: password,
@@ -1193,7 +1193,7 @@ mixin _$RegisterState {
   IDCONFEF get idconfef;
   bool get showErrorMessages;
   bool get isSubmitting;
-  Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
+  Option<Either<AuthFailure, User>> get authFailOrSucessOption;
 
   $RegisterStateCopyWith<RegisterState> get copyWith;
 }
@@ -1213,7 +1213,7 @@ abstract class $RegisterStateCopyWith<$Res> {
       IDCONFEF idconfef,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
+      Option<Either<AuthFailure, User>> authFailOrSucessOption});
 }
 
 class _$RegisterStateCopyWithImpl<$Res>
@@ -1256,7 +1256,7 @@ class _$RegisterStateCopyWithImpl<$Res>
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
-          : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
+          : authFailOrSucessOption as Option<Either<AuthFailure, User>>,
     ));
   }
 }
@@ -1278,7 +1278,7 @@ abstract class _$RegisterStateCopyWith<$Res>
       IDCONFEF idconfef,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
+      Option<Either<AuthFailure, User>> authFailOrSucessOption});
 }
 
 class __$RegisterStateCopyWithImpl<$Res>
@@ -1323,7 +1323,7 @@ class __$RegisterStateCopyWithImpl<$Res>
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
-          : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
+          : authFailOrSucessOption as Option<Either<AuthFailure, User>>,
     ));
   }
 }
@@ -1372,7 +1372,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<AuthFailure, Unit>> authFailOrSucessOption;
+  final Option<Either<AuthFailure, User>> authFailOrSucessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1466,7 +1466,7 @@ abstract class _RegisterState implements RegisterState {
           @required IDCONFEF idconfef,
           @required bool showErrorMessages,
           @required bool isSubmitting,
-          @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) =
+          @required Option<Either<AuthFailure, User>> authFailOrSucessOption}) =
       _$_RegisterState;
 
   @override
@@ -1490,7 +1490,7 @@ abstract class _RegisterState implements RegisterState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
+  Option<Either<AuthFailure, User>> get authFailOrSucessOption;
   @override
   _$RegisterStateCopyWith<_RegisterState> get copyWith;
 }

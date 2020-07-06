@@ -4,9 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:my_personal_avaliator/app_constants.dart';
 
-import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
-import 'package:my_personal_avaliator/application/blocs/register/register_bloc.dart';
-import 'package:my_personal_avaliator/application/blocs/register/register_state.dart';
 import 'package:my_personal_avaliator/application/core/funcs_utils.dart';
 import 'package:my_personal_avaliator/application/core/navigation_bloc.dart';
 import 'package:my_personal_avaliator/domain/core/regex_utils.dart';
@@ -66,7 +63,7 @@ class _RegisterFormState extends State<RegisterForm> {
         _carouselController.jumpToPage(0);
         return;
       }
-      var u = new Usuario(
+      var u = new User(
           userName: _userNameController.text,
           passWord: _passWordController.text,
           userType: 1,

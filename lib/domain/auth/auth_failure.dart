@@ -8,4 +8,6 @@ abstract class AuthFailure with _$AuthFailure {
   const factory AuthFailure.cpfAlredyInUse() = CpfAlredyInUse;
   const factory AuthFailure.idConfefAlredyInUse() = IdConfefAlredyInUse;
   const factory AuthFailure.emailAlredyInUse() = EmailAlredyInUse;
+  const factory AuthFailure.invalidEmailAndPasswordCombination() =
+      InvalidEmailAndPasswordCombination;
 }

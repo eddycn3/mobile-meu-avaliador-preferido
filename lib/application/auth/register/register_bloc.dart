@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
+import 'package:my_personal_avaliator/infrastructure/models/freezed_classes.dart';
 
 part 'register_event.dart';
 part 'register_state.dart';
@@ -56,7 +57,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         authFailOrSucessOption: none(),
       );
     }, registerUser: (e) async* {
-      Either<AuthFailure, Unit> _failOrSucess;
+      Either<AuthFailure, User> _failOrSucess;
       final areRegisterFieldsValid = state.emailAddress.isValid() &&
           state.password.isValid() &&
           state.nome.isValid() &&
