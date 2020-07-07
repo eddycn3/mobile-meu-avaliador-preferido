@@ -10,7 +10,7 @@ class AppRoutes {
     return {
       HomePage.id: (context) => HomePage(),
       LoginPage.id: (context) => LoginPage(userRepo: userRepo),
-      RegisterForm.id: (context) => RegisterForm(userRepo: userRepo)
+      //RegisterForm.id: (context) => RegisterForm(userRepo: userRepo)
     };
   }
 }

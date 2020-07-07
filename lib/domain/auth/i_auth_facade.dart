@@ -5,7 +5,7 @@ import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
 import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
-abstract class IAuthFacate {
+abstract class IAuthFacade {
   Future<Either<AuthFailure, User>> signInWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/application/blocs/auth/auth_bloc.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -18,17 +16,15 @@ class ProfilePage extends StatelessWidget {
                   Icons.exit_to_app,
                   size: 30,
                 ),
-                onPressed: () {
-                  BlocProvider.of<AuthBloc>(context).add(AuthLoggedOut());
-                }),
+                onPressed: () {}),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: CircleAvatar(
                   backgroundImage: AssetImage("images/fakeperson.png"),
@@ -63,7 +59,8 @@ class ProfilePage extends StatelessWidget {
               ),
               Card(
                 color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 25.0),
                 child: ListTile(
                   leading: Icon(
                     Icons.phone,
@@ -81,7 +78,8 @@ class ProfilePage extends StatelessWidget {
               ),
               Card(
                 color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 25.0),
                 child: ListTile(
                   leading: Icon(
                     Icons.email,

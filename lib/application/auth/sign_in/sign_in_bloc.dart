@@ -17,12 +17,9 @@ part 'sign_in_bloc.freezed.dart';
 
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  final IAuthFacate _authFacate;
+  final IAuthFacade _authFacate;
 
-  SignInBloc(this._authFacate);
-
-  @override
-  SignInState get initialState => SignInState.initial();
+  SignInBloc(this._authFacate) : super(SignInState.initial());
 
   @override
   Stream<SignInState> mapEventToState(

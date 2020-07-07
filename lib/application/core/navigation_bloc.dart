@@ -12,10 +12,7 @@ class NavigatorActionPop extends NavigatorActionEvent {}
 
 class NavigatorBloc extends Bloc<NavigatorActionEvent, dynamic> {
   final GlobalKey<NavigatorState> navigatorKey;
-  NavigatorBloc({this.navigatorKey});
-
-  @override
-  dynamic get initialState => 0;
+  NavigatorBloc({this.navigatorKey}) : super(0);
 
   @override
   Stream<dynamic> mapEventToState(NavigatorActionEvent event) async* {

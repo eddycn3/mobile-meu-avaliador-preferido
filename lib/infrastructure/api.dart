@@ -17,7 +17,7 @@ abstract class Api {
   ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
   ///  * `BAD_RESPONSE` - Indicates a bad format response
 
-  static Future<Map<String, dynamic>> post({
+  static Future<String> post({
     @required String reqBody,
     @required String urlSufix,
   }) async {
@@ -30,7 +30,7 @@ abstract class Api {
         headers: headers,
         body: reqBody,
       );
-      return resp.body as Map<String, dynamic>;
+      return resp.body;
     } on SocketException {
       throw ApiError(resp.statusCode, 'NO_INTERNET_CONNECTION');
     } on HttpException {

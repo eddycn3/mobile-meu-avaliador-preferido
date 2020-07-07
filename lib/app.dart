@@ -11,7 +11,7 @@ import 'package:my_personal_avaliator/rotas.dart';
 class App extends StatelessWidget {
   final UserRepo userRepo;
   final GlobalKey<NavigatorState> navigatorKey;
-  App({Key key, @required this.userRepo, @required this.navigatorKey})
+  const App({Key key, @required this.userRepo, @required this.navigatorKey})
       : super(key: key);
 
   @override
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
       title: 'Meu Avaliador Preferido',
       theme: ThemeData(
         // heme of your application.
-        scaffoldBackgroundColor: const Color(0XFFD9E7E2),
+        scaffoldBackgroundColor: const Color(0xffd9e7e2),
         primarySwatch: Colors.green,
       ),
       home: LoginPage(userRepo: userRepo),

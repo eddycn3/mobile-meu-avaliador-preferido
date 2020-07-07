@@ -5,14 +5,14 @@ class AppIconButtom extends StatelessWidget {
   final String label;
   final Function onIconButtonPressed;
 
-  AppIconButtom({this.icon, this.label, this.onIconButtonPressed});
+  const AppIconButtom({this.icon, this.label, this.onIconButtonPressed});
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
       fillColor: Colors.green,
       splashColor: Colors.green[300],
-      onPressed: onIconButtonPressed,
+      onPressed: () => onIconButtonPressed,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -29,7 +29,7 @@ class AppIconButtom extends StatelessWidget {
                 fontFamily: "SourceSansPro",
                 fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           )
         ],

@@ -12,21 +12,22 @@ import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
 @LazySingleton(as: IAuthFacade)
-class UserAuthFacade implements IAuthFacate {
+class UserAuthFacade implements IAuthFacade {
   final UserRepo _userRepo;
 
   UserAuthFacade(this._userRepo);
 
   @override
-  Future<Either<AuthFailure, User>> registerUser(
-      {EmailAddress emailAddress,
-      Password password,
-      FullName nome,
-      String empresa,
-      String site,
-      PhoneNumber telefone,
-      CPF cpf,
-      IDCONFEF idconfef}) async {
+  Future<Either<AuthFailure, User>> registerUser({
+    EmailAddress emailAddress,
+    Password password,
+    FullName nome,
+    String empresa,
+    String site,
+    PhoneNumber telefone,
+    CPF cpf,
+    IDCONFEF idconfef,
+  }) async {
     final emailStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final nomeStr = nome.getOrCrash();
@@ -43,12 +44,12 @@ class UserAuthFacade implements IAuthFacate {
               site: site,
               telefone: telefoneStr));
 
-      final Map<String, dynamic> retApi = await Api.post(
+      final retApi = await Api.post(
         reqBody: jsonEncode(user),
         urlSufix: userCreateSufix,
       );
 
-      final User userFromApi = User.fromJson(retApi);
+      final User userFromApi = User.fromJson(retApi as Map<String, dynamic>);
 
       _userRepo.persistToken(userFromApi.token);
 
@@ -79,7 +80,7 @@ class UserAuthFacade implements IAuthFacate {
       final user = User(userName: emailStr, passWord: passwordStr);
       final retApi =
           await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
-      return right(User.fromJson(retApi));
+      return right(User.fromJson(retApi as Map<String, dynamic>));
     } on ApiError catch (e) {
       if (e.errorMsg == "ERROR_USER_NOT_FOUND") {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
