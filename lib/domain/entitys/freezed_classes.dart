@@ -7,12 +7,12 @@ part 'freezed_classes.g.dart';
 abstract class User with _$User {
   const factory User({
     int id,
-    String userName,
-    String passWord,
-    int userType,
+    @JsonKey(name: 'user_name') String userName,
+    @JsonKey(name: 'password') String passWord,
+    @JsonKey(name: 'user_type') int userType,
     String token,
     @JsonSerializable(explicitToJson: true)
-    @JsonKey(name: 'userInfo')
+    @JsonKey(name: 'user_info')
         Avaliador userInfo,
   }) = _User;
 

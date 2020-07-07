@@ -17,12 +17,15 @@ class _$UserTearOff {
 
   _User call(
       {int id,
-      String userName,
-      String passWord,
-      int userType,
+      @JsonKey(name: 'user_name')
+          String userName,
+      @JsonKey(name: 'password')
+          String passWord,
+      @JsonKey(name: 'user_type')
+          int userType,
       String token,
       @JsonSerializable(explicitToJson: true)
-      @JsonKey(name: 'userInfo')
+      @JsonKey(name: 'user_info')
           Avaliador userInfo}) {
     return _User(
       id: id,
@@ -40,12 +43,15 @@ const $User = _$UserTearOff();
 
 mixin _$User {
   int get id;
+  @JsonKey(name: 'user_name')
   String get userName;
+  @JsonKey(name: 'password')
   String get passWord;
+  @JsonKey(name: 'user_type')
   int get userType;
   String get token;
   @JsonSerializable(explicitToJson: true)
-  @JsonKey(name: 'userInfo')
+  @JsonKey(name: 'user_info')
   Avaliador get userInfo;
 
   Map<String, dynamic> toJson();
@@ -57,12 +63,15 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String userName,
-      String passWord,
-      int userType,
+      @JsonKey(name: 'user_name')
+          String userName,
+      @JsonKey(name: 'password')
+          String passWord,
+      @JsonKey(name: 'user_type')
+          int userType,
       String token,
       @JsonSerializable(explicitToJson: true)
-      @JsonKey(name: 'userInfo')
+      @JsonKey(name: 'user_info')
           Avaliador userInfo});
 
   $AvaliadorCopyWith<$Res> get userInfo;
@@ -111,12 +120,15 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      String userName,
-      String passWord,
-      int userType,
+      @JsonKey(name: 'user_name')
+          String userName,
+      @JsonKey(name: 'password')
+          String passWord,
+      @JsonKey(name: 'user_type')
+          int userType,
       String token,
       @JsonSerializable(explicitToJson: true)
-      @JsonKey(name: 'userInfo')
+      @JsonKey(name: 'user_info')
           Avaliador userInfo});
 
   @override
@@ -155,12 +167,15 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 class _$_User implements _User {
   const _$_User(
       {this.id,
-      this.userName,
-      this.passWord,
-      this.userType,
+      @JsonKey(name: 'user_name')
+          this.userName,
+      @JsonKey(name: 'password')
+          this.passWord,
+      @JsonKey(name: 'user_type')
+          this.userType,
       this.token,
       @JsonSerializable(explicitToJson: true)
-      @JsonKey(name: 'userInfo')
+      @JsonKey(name: 'user_info')
           this.userInfo});
 
   factory _$_User.fromJson(Map<String, dynamic> json) =>
@@ -169,16 +184,19 @@ class _$_User implements _User {
   @override
   final int id;
   @override
+  @JsonKey(name: 'user_name')
   final String userName;
   @override
+  @JsonKey(name: 'password')
   final String passWord;
   @override
+  @JsonKey(name: 'user_type')
   final int userType;
   @override
   final String token;
   @override
   @JsonSerializable(explicitToJson: true)
-  @JsonKey(name: 'userInfo')
+  @JsonKey(name: 'user_info')
   final Avaliador userInfo;
 
   @override
@@ -231,12 +249,15 @@ class _$_User implements _User {
 abstract class _User implements User {
   const factory _User(
       {int id,
-      String userName,
-      String passWord,
-      int userType,
+      @JsonKey(name: 'user_name')
+          String userName,
+      @JsonKey(name: 'password')
+          String passWord,
+      @JsonKey(name: 'user_type')
+          int userType,
       String token,
       @JsonSerializable(explicitToJson: true)
-      @JsonKey(name: 'userInfo')
+      @JsonKey(name: 'user_info')
           Avaliador userInfo}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
@@ -244,16 +265,19 @@ abstract class _User implements User {
   @override
   int get id;
   @override
+  @JsonKey(name: 'user_name')
   String get userName;
   @override
+  @JsonKey(name: 'password')
   String get passWord;
   @override
+  @JsonKey(name: 'user_type')
   int get userType;
   @override
   String get token;
   @override
   @JsonSerializable(explicitToJson: true)
-  @JsonKey(name: 'userInfo')
+  @JsonKey(name: 'user_info')
   Avaliador get userInfo;
   @override
   _$UserCopyWith<_User> get copyWith;

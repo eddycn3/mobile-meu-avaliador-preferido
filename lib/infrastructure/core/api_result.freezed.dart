@@ -15,9 +15,8 @@ ApiError _$ApiErrorFromJson(Map<String, dynamic> json) {
 class _$ApiErrorTearOff {
   const _$ApiErrorTearOff();
 
-  _ApiError call(int httpStatusCode, String errorMsg) {
+  _ApiError call(String errorMsg) {
     return _ApiError(
-      httpStatusCode,
       errorMsg,
     );
   }
@@ -27,7 +26,6 @@ class _$ApiErrorTearOff {
 const $ApiError = _$ApiErrorTearOff();
 
 mixin _$ApiError {
-  int get httpStatusCode;
   String get errorMsg;
 
   Map<String, dynamic> toJson();
@@ -37,7 +35,7 @@ mixin _$ApiError {
 abstract class $ApiErrorCopyWith<$Res> {
   factory $ApiErrorCopyWith(ApiError value, $Res Function(ApiError) then) =
       _$ApiErrorCopyWithImpl<$Res>;
-  $Res call({int httpStatusCode, String errorMsg});
+  $Res call({String errorMsg});
 }
 
 class _$ApiErrorCopyWithImpl<$Res> implements $ApiErrorCopyWith<$Res> {
@@ -49,13 +47,9 @@ class _$ApiErrorCopyWithImpl<$Res> implements $ApiErrorCopyWith<$Res> {
 
   @override
   $Res call({
-    Object httpStatusCode = freezed,
     Object errorMsg = freezed,
   }) {
     return _then(_value.copyWith(
-      httpStatusCode: httpStatusCode == freezed
-          ? _value.httpStatusCode
-          : httpStatusCode as int,
       errorMsg: errorMsg == freezed ? _value.errorMsg : errorMsg as String,
     ));
   }
@@ -65,7 +59,7 @@ abstract class _$ApiErrorCopyWith<$Res> implements $ApiErrorCopyWith<$Res> {
   factory _$ApiErrorCopyWith(_ApiError value, $Res Function(_ApiError) then) =
       __$ApiErrorCopyWithImpl<$Res>;
   @override
-  $Res call({int httpStatusCode, String errorMsg});
+  $Res call({String errorMsg});
 }
 
 class __$ApiErrorCopyWithImpl<$Res> extends _$ApiErrorCopyWithImpl<$Res>
@@ -78,11 +72,9 @@ class __$ApiErrorCopyWithImpl<$Res> extends _$ApiErrorCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object httpStatusCode = freezed,
     Object errorMsg = freezed,
   }) {
     return _then(_ApiError(
-      httpStatusCode == freezed ? _value.httpStatusCode : httpStatusCode as int,
       errorMsg == freezed ? _value.errorMsg : errorMsg as String,
     ));
   }
@@ -90,30 +82,23 @@ class __$ApiErrorCopyWithImpl<$Res> extends _$ApiErrorCopyWithImpl<$Res>
 
 @JsonSerializable()
 class _$_ApiError implements _ApiError {
-  const _$_ApiError(this.httpStatusCode, this.errorMsg)
-      : assert(httpStatusCode != null),
-        assert(errorMsg != null);
+  const _$_ApiError(this.errorMsg) : assert(errorMsg != null);
 
   factory _$_ApiError.fromJson(Map<String, dynamic> json) =>
       _$_$_ApiErrorFromJson(json);
 
   @override
-  final int httpStatusCode;
-  @override
   final String errorMsg;
 
   @override
   String toString() {
-    return 'ApiError(httpStatusCode: $httpStatusCode, errorMsg: $errorMsg)';
+    return 'ApiError(errorMsg: $errorMsg)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ApiError &&
-            (identical(other.httpStatusCode, httpStatusCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.httpStatusCode, httpStatusCode)) &&
             (identical(other.errorMsg, errorMsg) ||
                 const DeepCollectionEquality()
                     .equals(other.errorMsg, errorMsg)));
@@ -121,9 +106,7 @@ class _$_ApiError implements _ApiError {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(httpStatusCode) ^
-      const DeepCollectionEquality().hash(errorMsg);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorMsg);
 
   @override
   _$ApiErrorCopyWith<_ApiError> get copyWith =>
@@ -136,12 +119,10 @@ class _$_ApiError implements _ApiError {
 }
 
 abstract class _ApiError implements ApiError {
-  const factory _ApiError(int httpStatusCode, String errorMsg) = _$_ApiError;
+  const factory _ApiError(String errorMsg) = _$_ApiError;
 
   factory _ApiError.fromJson(Map<String, dynamic> json) = _$_ApiError.fromJson;
 
-  @override
-  int get httpStatusCode;
   @override
   String get errorMsg;
   @override

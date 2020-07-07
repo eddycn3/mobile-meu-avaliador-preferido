@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
@@ -24,19 +25,27 @@ abstract class Api {
     final http.Client client = http.Client();
     http.Response resp;
     try {
+      print(reqBody);
+      print(baseURL + urlSufix);
       final Map<String, String> headers = {'Content-Type': 'application/json'};
       resp = await client.post(
         Uri.encodeFull(baseURL + urlSufix),
         headers: headers,
         body: reqBody,
       );
-      return resp.body;
+      if (resp.statusCode == 200) {
+        return resp.body;
+      } else {
+        final error = ApiError.fromJson(jsonDecode(resp.body));
+        print(error);
+        throw error;
+      }
     } on SocketException {
-      throw ApiError(resp.statusCode, 'NO_INTERNET_CONNECTION');
+      throw const ApiError('NO_INTERNET_CONNECTION');
     } on HttpException {
-      throw ApiError.fromJson(resp.body as Map<String, dynamic>);
+      throw const ApiError('HttpException_ERROR');
     } on FormatException {
-      throw ApiError(resp.statusCode, "BAD_RESPONSE");
+      throw const ApiError("BAD_RESPONSE");
     } finally {
       client.close();
     }

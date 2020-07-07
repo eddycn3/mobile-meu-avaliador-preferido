@@ -6,7 +6,6 @@ part 'api_result.g.dart';
 @freezed
 abstract class ApiError with _$ApiError {
   const factory ApiError(
-    int httpStatusCode,
     String errorMsg,
   ) = _ApiError;
 

@@ -9,23 +9,23 @@ part of 'freezed_classes.dart';
 _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
   return _$_User(
     id: json['id'] as int,
-    userName: json['userName'] as String,
-    passWord: json['passWord'] as String,
-    userType: json['userType'] as int,
+    userName: json['user_name'] as String,
+    passWord: json['password'] as String,
+    userType: json['user_type'] as int,
     token: json['token'] as String,
-    userInfo: json['userInfo'] == null
+    userInfo: json['user_info'] == null
         ? null
-        : Avaliador.fromJson(json['userInfo'] as Map<String, dynamic>),
+        : Avaliador.fromJson(json['user_info'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
       'id': instance.id,
-      'userName': instance.userName,
-      'passWord': instance.passWord,
-      'userType': instance.userType,
+      'user_name': instance.userName,
+      'password': instance.passWord,
+      'user_type': instance.userType,
       'token': instance.token,
-      'userInfo': instance.userInfo,
+      'user_info': instance.userInfo,
     };
 
 _$_Avaliador _$_$_AvaliadorFromJson(Map<String, dynamic> json) {
