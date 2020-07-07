@@ -3,17 +3,19 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
-import 'package:my_personal_avaliator/infrastructure/models/freezed_classes.dart';
+import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
 part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 
 part 'sign_in_bloc.freezed.dart';
 
+@injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthFacate _authFacate;
 
@@ -71,7 +73,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
       yield state.copyWith(
         isSubmitting: false,
-        authFailOrSucessOption: some(failureOrSucess),
+        googleAuthFailOrSucessOption: some(failureOrSucess),
       );
     });
   }

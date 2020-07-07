@@ -9,13 +9,13 @@ part of 'freezed_classes.dart';
 
 T _$identity<T>(T value) => value;
 User _$UserFromJson(Map<String, dynamic> json) {
-  return _Usuario.fromJson(json);
+  return _User.fromJson(json);
 }
 
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _Usuario call(
+  _User call(
       {int id,
       String userName,
       String passWord,
@@ -24,7 +24,7 @@ class _$UserTearOff {
       @JsonSerializable(explicitToJson: true)
       @JsonKey(name: 'userInfo')
           Avaliador userInfo}) {
-    return _Usuario(
+    return _User(
       id: id,
       userName: userName,
       passWord: passWord,
@@ -105,9 +105,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   }
 }
 
-abstract class _$UsuarioCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$UsuarioCopyWith(_Usuario value, $Res Function(_Usuario) then) =
-      __$UsuarioCopyWithImpl<$Res>;
+abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
+      __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -123,13 +123,13 @@ abstract class _$UsuarioCopyWith<$Res> implements $UserCopyWith<$Res> {
   $AvaliadorCopyWith<$Res> get userInfo;
 }
 
-class __$UsuarioCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$UsuarioCopyWith<$Res> {
-  __$UsuarioCopyWithImpl(_Usuario _value, $Res Function(_Usuario) _then)
-      : super(_value, (v) => _then(v as _Usuario));
+class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
+    implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
+      : super(_value, (v) => _then(v as _User));
 
   @override
-  _Usuario get _value => super._value as _Usuario;
+  _User get _value => super._value as _User;
 
   @override
   $Res call({
@@ -140,7 +140,7 @@ class __$UsuarioCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object token = freezed,
     Object userInfo = freezed,
   }) {
-    return _then(_Usuario(
+    return _then(_User(
       id: id == freezed ? _value.id : id as int,
       userName: userName == freezed ? _value.userName : userName as String,
       passWord: passWord == freezed ? _value.passWord : passWord as String,
@@ -152,8 +152,8 @@ class __$UsuarioCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
-class _$_Usuario implements _Usuario {
-  const _$_Usuario(
+class _$_User implements _User {
+  const _$_User(
       {this.id,
       this.userName,
       this.passWord,
@@ -163,8 +163,8 @@ class _$_Usuario implements _Usuario {
       @JsonKey(name: 'userInfo')
           this.userInfo});
 
-  factory _$_Usuario.fromJson(Map<String, dynamic> json) =>
-      _$_$_UsuarioFromJson(json);
+  factory _$_User.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserFromJson(json);
 
   @override
   final int id;
@@ -189,7 +189,7 @@ class _$_Usuario implements _Usuario {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Usuario &&
+        (other is _User &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.userName, userName) ||
@@ -219,17 +219,17 @@ class _$_Usuario implements _Usuario {
       const DeepCollectionEquality().hash(userInfo);
 
   @override
-  _$UsuarioCopyWith<_Usuario> get copyWith =>
-      __$UsuarioCopyWithImpl<_Usuario>(this, _$identity);
+  _$UserCopyWith<_User> get copyWith =>
+      __$UserCopyWithImpl<_User>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UsuarioToJson(this);
+    return _$_$_UserToJson(this);
   }
 }
 
-abstract class _Usuario implements User {
-  const factory _Usuario(
+abstract class _User implements User {
+  const factory _User(
       {int id,
       String userName,
       String passWord,
@@ -237,9 +237,9 @@ abstract class _Usuario implements User {
       String token,
       @JsonSerializable(explicitToJson: true)
       @JsonKey(name: 'userInfo')
-          Avaliador userInfo}) = _$_Usuario;
+          Avaliador userInfo}) = _$_User;
 
-  factory _Usuario.fromJson(Map<String, dynamic> json) = _$_Usuario.fromJson;
+  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
   int get id;
@@ -256,7 +256,7 @@ abstract class _Usuario implements User {
   @JsonKey(name: 'userInfo')
   Avaliador get userInfo;
   @override
-  _$UsuarioCopyWith<_Usuario> get copyWith;
+  _$UserCopyWith<_User> get copyWith;
 }
 
 Avaliador _$AvaliadorFromJson(Map<String, dynamic> json) {

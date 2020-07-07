@@ -1,15 +1,17 @@
 import 'dart:convert';
 
+import 'package:injectable/injectable.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
+import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/api.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_result.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
-import 'package:my_personal_avaliator/infrastructure/models/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
 
+@LazySingleton(as: IAuthFacade)
 class UserAuthFacade implements IAuthFacate {
   final UserRepo _userRepo;
 
@@ -19,10 +21,10 @@ class UserAuthFacade implements IAuthFacate {
   Future<Either<AuthFailure, User>> registerUser(
       {EmailAddress emailAddress,
       Password password,
-      NomeUsuario nome,
+      FullName nome,
       String empresa,
       String site,
-      Telefone telefone,
+      PhoneNumber telefone,
       CPF cpf,
       IDCONFEF idconfef}) async {
     final emailStr = emailAddress.getOrCrash();

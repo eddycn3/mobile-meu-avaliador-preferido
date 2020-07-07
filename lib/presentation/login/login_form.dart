@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_personal_avaliator/application/blocs/login/login_bloc.dart';
 import 'package:my_personal_avaliator/presentation/register/register_form.dart';
 
 class LoginForm extends StatefulWidget {
@@ -21,14 +20,14 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   _onLoginButtonPressed() {
-    if (_formKey.currentState.validate()) {
-      BlocProvider.of<LoginBloc>(context).add(
-        LoginButtonPressed(
-          username: _userNameController.text,
-          password: _passWordController.text,
-        ),
-      );
-    }
+    // if (_formKey.currentState.validate()) {
+    //   BlocProvider.of<LoginBloc>(context).add(
+    //     LoginButtonPressed(
+    //       username: _userNameController.text,
+    //       password: _passWordController.text,
+    //     ),
+    //   );
+    // }
   }
 
   @override

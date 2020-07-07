@@ -14,7 +14,7 @@ abstract class User with _$User {
     @JsonSerializable(explicitToJson: true)
     @JsonKey(name: 'userInfo')
         Avaliador userInfo,
-  }) = _Usuario;
+  }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

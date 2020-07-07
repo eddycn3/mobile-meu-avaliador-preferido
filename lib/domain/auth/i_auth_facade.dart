@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
-import 'package:my_personal_avaliator/infrastructure/models/freezed_classes.dart';
+import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
 abstract class IAuthFacate {
   Future<Either<AuthFailure, User>> signInWithEmailAndPassword({
@@ -14,10 +14,10 @@ abstract class IAuthFacate {
   Future<Either<AuthFailure, User>> registerUser({
     @required EmailAddress emailAddress,
     @required Password password,
-    @required NomeUsuario nome,
+    @required FullName nome,
     String empresa,
     String site,
-    @required Telefone telefone,
+    @required PhoneNumber telefone,
     @required CPF cpf,
     @required IDCONFEF idconfef,
   });

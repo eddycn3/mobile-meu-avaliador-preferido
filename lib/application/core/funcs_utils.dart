@@ -19,8 +19,8 @@ Future<void> showAppDialog({
         content: SingleChildScrollView(child: child),
         actions: <Widget>[
           FlatButton(
-            child: Text('Ok'),
-            onPressed: onActionPressed,
+            onPressed: () => onActionPressed,
+            child: const Text('Ok'),
           ),
         ],
       );

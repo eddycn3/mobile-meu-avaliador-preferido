@@ -6,8 +6,8 @@ part of 'freezed_classes.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Usuario _$_$_UsuarioFromJson(Map<String, dynamic> json) {
-  return _$_Usuario(
+_$_User _$_$_UserFromJson(Map<String, dynamic> json) {
+  return _$_User(
     id: json['id'] as int,
     userName: json['userName'] as String,
     passWord: json['passWord'] as String,
@@ -19,8 +19,7 @@ _$_Usuario _$_$_UsuarioFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_UsuarioToJson(_$_Usuario instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
       'id': instance.id,
       'userName': instance.userName,
       'passWord': instance.passWord,

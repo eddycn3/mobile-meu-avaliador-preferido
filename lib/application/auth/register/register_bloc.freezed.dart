@@ -1154,10 +1154,10 @@ class _$RegisterStateTearOff {
   _RegisterState call(
       {@required EmailAddress emailAddress,
       @required Password password,
-      @required NomeUsuario nome,
+      @required FullName nome,
       String empresa,
       String site,
-      @required Telefone telefone,
+      @required PhoneNumber telefone,
       @required CPF cpf,
       @required IDCONFEF idconfef,
       @required bool showErrorMessages,
@@ -1185,10 +1185,10 @@ const $RegisterState = _$RegisterStateTearOff();
 mixin _$RegisterState {
   EmailAddress get emailAddress;
   Password get password;
-  NomeUsuario get nome;
+  FullName get nome;
   String get empresa;
   String get site;
-  Telefone get telefone;
+  PhoneNumber get telefone;
   CPF get cpf;
   IDCONFEF get idconfef;
   bool get showErrorMessages;
@@ -1205,10 +1205,10 @@ abstract class $RegisterStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      NomeUsuario nome,
+      FullName nome,
       String empresa,
       String site,
-      Telefone telefone,
+      PhoneNumber telefone,
       CPF cpf,
       IDCONFEF idconfef,
       bool showErrorMessages,
@@ -1243,10 +1243,10 @@ class _$RegisterStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
-      nome: nome == freezed ? _value.nome : nome as NomeUsuario,
+      nome: nome == freezed ? _value.nome : nome as FullName,
       empresa: empresa == freezed ? _value.empresa : empresa as String,
       site: site == freezed ? _value.site : site as String,
-      telefone: telefone == freezed ? _value.telefone : telefone as Telefone,
+      telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
       cpf: cpf == freezed ? _value.cpf : cpf as CPF,
       idconfef: idconfef == freezed ? _value.idconfef : idconfef as IDCONFEF,
       showErrorMessages: showErrorMessages == freezed
@@ -1270,10 +1270,10 @@ abstract class _$RegisterStateCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      NomeUsuario nome,
+      FullName nome,
       String empresa,
       String site,
-      Telefone telefone,
+      PhoneNumber telefone,
       CPF cpf,
       IDCONFEF idconfef,
       bool showErrorMessages,
@@ -1310,10 +1310,10 @@ class __$RegisterStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
-      nome: nome == freezed ? _value.nome : nome as NomeUsuario,
+      nome: nome == freezed ? _value.nome : nome as FullName,
       empresa: empresa == freezed ? _value.empresa : empresa as String,
       site: site == freezed ? _value.site : site as String,
-      telefone: telefone == freezed ? _value.telefone : telefone as Telefone,
+      telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
       cpf: cpf == freezed ? _value.cpf : cpf as CPF,
       idconfef: idconfef == freezed ? _value.idconfef : idconfef as IDCONFEF,
       showErrorMessages: showErrorMessages == freezed
@@ -1356,13 +1356,13 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   @override
   final Password password;
   @override
-  final NomeUsuario nome;
+  final FullName nome;
   @override
   final String empresa;
   @override
   final String site;
   @override
-  final Telefone telefone;
+  final PhoneNumber telefone;
   @override
   final CPF cpf;
   @override
@@ -1458,10 +1458,10 @@ abstract class _RegisterState implements RegisterState {
   const factory _RegisterState(
           {@required EmailAddress emailAddress,
           @required Password password,
-          @required NomeUsuario nome,
+          @required FullName nome,
           String empresa,
           String site,
-          @required Telefone telefone,
+          @required PhoneNumber telefone,
           @required CPF cpf,
           @required IDCONFEF idconfef,
           @required bool showErrorMessages,
@@ -1474,13 +1474,13 @@ abstract class _RegisterState implements RegisterState {
   @override
   Password get password;
   @override
-  NomeUsuario get nome;
+  FullName get nome;
   @override
   String get empresa;
   @override
   String get site;
   @override
-  Telefone get telefone;
+  PhoneNumber get telefone;
   @override
   CPF get cpf;
   @override

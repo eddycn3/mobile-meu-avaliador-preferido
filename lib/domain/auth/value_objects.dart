@@ -31,28 +31,28 @@ class Password extends ValueObject<String> {
   const Password._(this.value);
 }
 
-class NomeUsuario extends ValueObject<String> {
+class FullName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory NomeUsuario(String input) {
+  factory FullName(String input) {
     assert(input != null);
-    return NomeUsuario._(validateUserName(input));
+    return FullName._(validateUserName(input));
   }
 
-  const NomeUsuario._(this.value);
+  const FullName._(this.value);
 }
 
-class Telefone extends ValueObject<String> {
+class PhoneNumber extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Telefone(String input) {
+  factory PhoneNumber(String input) {
     assert(input != null);
-    return Telefone._(validateUserPhone(input));
+    return PhoneNumber._(validateUserPhone(input));
   }
 
-  const Telefone._(this.value);
+  const PhoneNumber._(this.value);
 }
 
 class CPF extends ValueObject<String> {

@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
-import 'package:my_personal_avaliator/infrastructure/models/freezed_classes.dart';
+import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
 part 'register_event.dart';
 part 'register_state.dart';
@@ -38,12 +38,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       );
     }, nomeUsuarioChanged: (e) async* {
       yield state.copyWith(
-        nome: NomeUsuario(e.nomeUsuario),
+        nome: FullName(e.nomeUsuario),
         authFailOrSucessOption: none(),
       );
     }, telefoneChanged: (e) async* {
       yield state.copyWith(
-        telefone: Telefone(e.telefone),
+        telefone: PhoneNumber(e.telefone),
         authFailOrSucessOption: none(),
       );
     }, cpfChanged: (e) async* {
