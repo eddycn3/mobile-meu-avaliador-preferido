@@ -93,10 +93,12 @@ class UserAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithGoogle() {
-    // TODO: implement signInWithGoogle
     throw UnimplementedError();
   }
 
   @override
   Future<bool> userHasToken() => _userRepo.hasToken();
+
+  @override
+  Future<void> deleteUserToken() => _userRepo.deleteToken();
 }

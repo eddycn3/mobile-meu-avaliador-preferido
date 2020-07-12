@@ -24,5 +24,7 @@ abstract class IAuthFacade {
 
   Future<bool> userHasToken();
 
+  Future<void> deleteUserToken();
+
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
 }

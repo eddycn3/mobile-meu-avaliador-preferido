@@ -29,7 +29,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           yield const AuthState.authFailure();
         }
       },
-      signedOut: (e) async* {},
+      signedOut: (e) async* {
+        yield const AuthState.authInProgress();
+        await _authFacade.deleteUserToken();
+        yield const AuthState.authFailure();
+      },
     );
   }
 }
