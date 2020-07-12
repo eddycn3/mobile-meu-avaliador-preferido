@@ -78,9 +78,11 @@ class UserAuthFacade implements IAuthFacade {
       final emailStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
       final user = User(userName: emailStr, passWord: passwordStr);
-      final retApi =
-          await Api.post(reqBody: jsonEncode(user), urlSufix: userAuthSufix);
-      return right(User.fromJson(retApi as Map<String, dynamic>));
+      final retApi = await Api.post(
+        reqBody: jsonEncode(user),
+        urlSufix: userAuthSufix,
+      );
+      return right(User.fromJson(jsonDecode(retApi)));
     } on ApiError catch (e) {
       if (e.errorMsg == "ERROR_USER_NOT_FOUND") {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
@@ -94,4 +96,7 @@ class UserAuthFacade implements IAuthFacade {
     // TODO: implement signInWithGoogle
     throw UnimplementedError();
   }
+
+  @override
+  Future<bool> userHasToken() => _userRepo.hasToken();
 }

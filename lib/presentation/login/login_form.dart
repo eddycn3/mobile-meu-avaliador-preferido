@@ -1,4 +1,3 @@
-import 'package:flushbar/flushbar.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,7 +67,7 @@ class LoginForm extends StatelessWidget {
                   validator: (_) =>
                       context.bloc<SignInBloc>().state.emailAddress.value.fold(
                             (l) => l.maybeMap(
-                                invalidEmail: (_) => "email invalido",
+                                emptyEmail: (_) => "entre com o email",
                                 orElse: () => null),
                             (_) => null,
                           ),
@@ -93,7 +92,7 @@ class LoginForm extends StatelessWidget {
                   validator: (_) =>
                       context.bloc<SignInBloc>().state.password.value.fold(
                             (l) => l.maybeMap(
-                                shortPassword: (_) => "senha curta",
+                                emptyPassword: (_) => "entre com a senha",
                                 orElse: () => null),
                             (_) => null,
                           ),

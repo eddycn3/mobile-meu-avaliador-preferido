@@ -3,19 +3,24 @@ import "package:my_personal_avaliator/domain/core/failures.dart";
 import 'package:my_personal_avaliator/domain/core/regex_utils.dart';
 
 Either<ValueFailure<String>, String> validateEmailAdress(String input) {
+  if (input.isEmpty) {
+    return left(ValueFailure.emptyEmail(failedValue: input));
+  }
   if (isEmail(input)) {
     return right(input);
-  } else {
-    return left(ValueFailure.invalidEmail(failedValue: input));
   }
+
+  return left(ValueFailure.invalidEmail(failedValue: input));
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
+  if (input.isEmpty) {
+    return left(ValueFailure.emptyPassword(failedValue: input));
+  }
   if (input.length < 8) {
     return left(ValueFailure.shortPassword(failedValue: input));
-  } else {
-    return right(input);
   }
+  return right(input);
 }
 
 Either<ValueFailure<String>, String> validateUserName(String input) {

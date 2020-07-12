@@ -41,7 +41,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           state.emailAddress.isValid() && state.password.isValid();
 
       if (isEmailAndPasswordValid) {
-        //ON SUBMMIT
+        // ON SUBMMIT
         yield state.copyWith(
           isSubmitting: true,
           authFailOrSucessOption: none(),
@@ -53,7 +53,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         );
       }
 
-      //STOP SUBMMIT
+      // STOP SUBMMIT
       yield state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,

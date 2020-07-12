@@ -18,8 +18,20 @@ class _$ValueFailureTearOff {
     );
   }
 
+  EmptyEmail<T> emptyEmail<T>({@required T failedValue}) {
+    return EmptyEmail<T>(
+      failedValue: failedValue,
+    );
+  }
+
   ShortPassword<T> shortPassword<T>({@required T failedValue}) {
     return ShortPassword<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  EmptyPassword<T> emptyPassword<T>({@required T failedValue}) {
+    return EmptyPassword<T>(
       failedValue: failedValue,
     );
   }
@@ -58,7 +70,9 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
@@ -67,7 +81,9 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -77,7 +93,9 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
@@ -86,7 +104,9 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -196,14 +216,18 @@ class _$InvalidEmail<T>
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -215,7 +239,9 @@ class _$InvalidEmail<T>
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -233,14 +259,18 @@ class _$InvalidEmail<T>
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -252,7 +282,9 @@ class _$InvalidEmail<T>
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -274,6 +306,169 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   T get failedValue;
   @override
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
+}
+
+abstract class $EmptyEmailCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $EmptyEmailCopyWith(
+          EmptyEmail<T> value, $Res Function(EmptyEmail<T>) then) =
+      _$EmptyEmailCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+class _$EmptyEmailCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyEmailCopyWith<T, $Res> {
+  _$EmptyEmailCopyWithImpl(
+      EmptyEmail<T> _value, $Res Function(EmptyEmail<T>) _then)
+      : super(_value, (v) => _then(v as EmptyEmail<T>));
+
+  @override
+  EmptyEmail<T> get _value => super._value as EmptyEmail<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptyEmail<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
+  const _$EmptyEmail({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyEmail(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyEmail'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyEmail<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptyEmailCopyWith<T, EmptyEmail<T>> get copyWith =>
+      _$EmptyEmailCopyWithImpl<T, EmptyEmail<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
+    @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
+    @required Result invalidPersonName(T failedValue),
+    @required Result invalidPhone(T failedValue),
+    @required Result invalidCPF(T failedValue),
+    @required Result invalidIdConfef(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    return emptyEmail(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
+    Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
+    Result invalidPersonName(T failedValue),
+    Result invalidPhone(T failedValue),
+    Result invalidCPF(T failedValue),
+    Result invalidIdConfef(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyEmail != null) {
+      return emptyEmail(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
+    @required Result invalidPersonName(InvalidPersonName<T> value),
+    @required Result invalidPhone(InvalidPhone<T> value),
+    @required Result invalidCPF(InvalidCPF<T> value),
+    @required Result invalidIdConfef(InvalidIdConfef<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    return emptyEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
+    Result invalidPersonName(InvalidPersonName<T> value),
+    Result invalidPhone(InvalidPhone<T> value),
+    Result invalidCPF(InvalidCPF<T> value),
+    Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyEmail != null) {
+      return emptyEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyEmail<T> implements ValueFailure<T> {
+  const factory EmptyEmail({@required T failedValue}) = _$EmptyEmail<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $EmptyEmailCopyWith<T, EmptyEmail<T>> get copyWith;
 }
 
 abstract class $ShortPasswordCopyWith<T, $Res>
@@ -349,14 +544,18 @@ class _$ShortPassword<T>
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -368,7 +567,9 @@ class _$ShortPassword<T>
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -386,14 +587,18 @@ class _$ShortPassword<T>
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -405,7 +610,9 @@ class _$ShortPassword<T>
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -427,6 +634,171 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   T get failedValue;
   @override
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith;
+}
+
+abstract class $EmptyPasswordCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $EmptyPasswordCopyWith(
+          EmptyPassword<T> value, $Res Function(EmptyPassword<T>) then) =
+      _$EmptyPasswordCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+class _$EmptyPasswordCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyPasswordCopyWith<T, $Res> {
+  _$EmptyPasswordCopyWithImpl(
+      EmptyPassword<T> _value, $Res Function(EmptyPassword<T>) _then)
+      : super(_value, (v) => _then(v as EmptyPassword<T>));
+
+  @override
+  EmptyPassword<T> get _value => super._value as EmptyPassword<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptyPassword<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+class _$EmptyPassword<T>
+    with DiagnosticableTreeMixin
+    implements EmptyPassword<T> {
+  const _$EmptyPassword({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyPassword(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyPassword'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyPassword<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptyPasswordCopyWith<T, EmptyPassword<T>> get copyWith =>
+      _$EmptyPasswordCopyWithImpl<T, EmptyPassword<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
+    @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
+    @required Result invalidPersonName(T failedValue),
+    @required Result invalidPhone(T failedValue),
+    @required Result invalidCPF(T failedValue),
+    @required Result invalidIdConfef(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    return emptyPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
+    Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
+    Result invalidPersonName(T failedValue),
+    Result invalidPhone(T failedValue),
+    Result invalidCPF(T failedValue),
+    Result invalidIdConfef(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyPassword != null) {
+      return emptyPassword(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
+    @required Result invalidPersonName(InvalidPersonName<T> value),
+    @required Result invalidPhone(InvalidPhone<T> value),
+    @required Result invalidCPF(InvalidCPF<T> value),
+    @required Result invalidIdConfef(InvalidIdConfef<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    return emptyPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
+    Result invalidPersonName(InvalidPersonName<T> value),
+    Result invalidPhone(InvalidPhone<T> value),
+    Result invalidCPF(InvalidCPF<T> value),
+    Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyPassword != null) {
+      return emptyPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyPassword<T> implements ValueFailure<T> {
+  const factory EmptyPassword({@required T failedValue}) = _$EmptyPassword<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $EmptyPasswordCopyWith<T, EmptyPassword<T>> get copyWith;
 }
 
 abstract class $InvalidPersonNameCopyWith<T, $Res>
@@ -503,14 +875,18 @@ class _$InvalidPersonName<T>
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -522,7 +898,9 @@ class _$InvalidPersonName<T>
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -540,14 +918,18 @@ class _$InvalidPersonName<T>
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -559,7 +941,9 @@ class _$InvalidPersonName<T>
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -657,14 +1041,18 @@ class _$InvalidPhone<T>
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -676,7 +1064,9 @@ class _$InvalidPhone<T>
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -694,14 +1084,18 @@ class _$InvalidPhone<T>
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -713,7 +1107,9 @@ class _$InvalidPhone<T>
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -808,14 +1204,18 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -827,7 +1227,9 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -845,14 +1247,18 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -864,7 +1270,9 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
@@ -961,14 +1369,18 @@ class _$InvalidIdConfef<T>
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
     @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
     @required Result invalidPersonName(T failedValue),
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -980,7 +1392,9 @@ class _$InvalidIdConfef<T>
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
     Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
     Result invalidPersonName(T failedValue),
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
@@ -998,14 +1412,18 @@ class _$InvalidIdConfef<T>
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
     @required Result invalidPersonName(InvalidPersonName<T> value),
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
   }) {
     assert(invalidEmail != null);
+    assert(emptyEmail != null);
     assert(shortPassword != null);
+    assert(emptyPassword != null);
     assert(invalidPersonName != null);
     assert(invalidPhone != null);
     assert(invalidCPF != null);
@@ -1017,7 +1435,9 @@ class _$InvalidIdConfef<T>
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
     Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
     Result invalidPersonName(InvalidPersonName<T> value),
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),

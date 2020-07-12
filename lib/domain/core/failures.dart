@@ -9,9 +9,17 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     @required T failedValue,
   }) = InvalidEmail<T>;
 
+  const factory ValueFailure.emptyEmail({
+    @required T failedValue,
+  }) = EmptyEmail<T>;
+
   const factory ValueFailure.shortPassword({
     @required T failedValue,
   }) = ShortPassword<T>;
+
+  const factory ValueFailure.emptyPassword({
+    @required T failedValue,
+  }) = EmptyPassword<T>;
 
   const factory ValueFailure.invalidPersonName({
     @required T failedValue,

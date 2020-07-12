@@ -22,5 +22,7 @@ abstract class IAuthFacade {
     @required IDCONFEF idconfef,
   });
 
+  Future<bool> userHasToken();
+
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
 }
