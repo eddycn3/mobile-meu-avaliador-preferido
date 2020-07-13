@@ -12,10 +12,8 @@ T _$identity<T>(T value) => value;
 class _$AuthEventTearOff {
   const _$AuthEventTearOff();
 
-  SignedIn authCheckStarted(String token) {
-    return SignedIn(
-      token,
-    );
+  SignedIn authCheckStarted() {
+    return const SignedIn();
   }
 
   SignedOut signedOut() {
@@ -29,12 +27,12 @@ const $AuthEvent = _$AuthEventTearOff();
 mixin _$AuthEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authCheckStarted(String token),
+    @required Result authCheckStarted(),
     @required Result signedOut(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authCheckStarted(String token),
+    Result authCheckStarted(),
     Result signedOut(),
     @required Result orElse(),
   });
@@ -67,7 +65,6 @@ class _$AuthEventCopyWithImpl<$Res> implements $AuthEventCopyWith<$Res> {
 abstract class $SignedInCopyWith<$Res> {
   factory $SignedInCopyWith(SignedIn value, $Res Function(SignedIn) then) =
       _$SignedInCopyWithImpl<$Res>;
-  $Res call({String token});
 }
 
 class _$SignedInCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
@@ -77,65 +74,45 @@ class _$SignedInCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
 
   @override
   SignedIn get _value => super._value as SignedIn;
-
-  @override
-  $Res call({
-    Object token = freezed,
-  }) {
-    return _then(SignedIn(
-      token == freezed ? _value.token : token as String,
-    ));
-  }
 }
 
 class _$SignedIn implements SignedIn {
-  const _$SignedIn(this.token) : assert(token != null);
-
-  @override
-  final String token;
+  const _$SignedIn();
 
   @override
   String toString() {
-    return 'AuthEvent.authCheckStarted(token: $token)';
+    return 'AuthEvent.authCheckStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SignedIn &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)));
+    return identical(this, other) || (other is SignedIn);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(token);
-
-  @override
-  $SignedInCopyWith<SignedIn> get copyWith =>
-      _$SignedInCopyWithImpl<SignedIn>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authCheckStarted(String token),
+    @required Result authCheckStarted(),
     @required Result signedOut(),
   }) {
     assert(authCheckStarted != null);
     assert(signedOut != null);
-    return authCheckStarted(token);
+    return authCheckStarted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authCheckStarted(String token),
+    Result authCheckStarted(),
     Result signedOut(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (authCheckStarted != null) {
-      return authCheckStarted(token);
+      return authCheckStarted();
     }
     return orElse();
   }
@@ -167,10 +144,7 @@ class _$SignedIn implements SignedIn {
 }
 
 abstract class SignedIn implements AuthEvent {
-  const factory SignedIn(String token) = _$SignedIn;
-
-  String get token;
-  $SignedInCopyWith<SignedIn> get copyWith;
+  const factory SignedIn() = _$SignedIn;
 }
 
 abstract class $SignedOutCopyWith<$Res> {
@@ -206,7 +180,7 @@ class _$SignedOut implements SignedOut {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authCheckStarted(String token),
+    @required Result authCheckStarted(),
     @required Result signedOut(),
   }) {
     assert(authCheckStarted != null);
@@ -217,7 +191,7 @@ class _$SignedOut implements SignedOut {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authCheckStarted(String token),
+    Result authCheckStarted(),
     Result signedOut(),
     @required Result orElse(),
   }) {

@@ -49,9 +49,9 @@ class UserAuthFacade implements IAuthFacade {
         urlSufix: userCreateSufix,
       );
 
-      final User userFromApi = User.fromJson(retApi as Map<String, dynamic>);
+      final User userFromApi = User.fromJson(jsonDecode(retApi));
 
-      _userRepo.persistToken(userFromApi.token);
+      await _userRepo.persistToken(userFromApi.token);
 
       return right(userFromApi);
     } on ApiError catch (e) {
@@ -82,7 +82,9 @@ class UserAuthFacade implements IAuthFacade {
         reqBody: jsonEncode(user),
         urlSufix: userAuthSufix,
       );
-      return right(User.fromJson(jsonDecode(retApi)));
+      final User userRet = User.fromJson(jsonDecode(retApi));
+      await _userRepo.persistToken(userRet.token);
+      return right(userRet);
     } on ApiError catch (e) {
       if (e.errorMsg == "ERROR_USER_NOT_FOUND") {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
