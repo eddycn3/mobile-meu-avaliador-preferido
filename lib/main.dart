@@ -6,10 +6,8 @@ import 'package:my_personal_avaliator/application/core/app_bloc_delegate.dart';
 import 'package:my_personal_avaliator/injection.dart';
 
 void main() {
-  configureInjection(Environment.prod);
   Bloc.observer = AppBlocDelegate();
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey();
-  runApp(App(
-    navigatorKey: _navigatorKey,
-  ));
+  configureInjection(Environment.prod);
+  runApp(App(navigatorKey: _navigatorKey));
 }

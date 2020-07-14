@@ -14,7 +14,10 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider<AuthBloc>(create: (context) {
-            return getIt<AuthBloc>()..add(const AuthEvent.authCheckStarted());
+            return getIt<AuthBloc>()
+              ..add(
+                const AuthEvent.authCheckStarted(),
+              );
           }),
           BlocProvider<NavigatorBloc>(create: (context) {
             return NavigatorBloc(navigatorKey: navigatorKey);

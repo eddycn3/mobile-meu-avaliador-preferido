@@ -1,7 +1,9 @@
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_personal_avaliator/application/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/application/auth/sign_in/sign_in_bloc.dart';
+import 'package:my_personal_avaliator/presentation/home_page.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -18,8 +20,9 @@ class LoginForm extends StatelessWidget {
                 invalidEmailAndPasswordCombination: (_) =>
                     "usuario ou senha inválidos ;("),
           ).show(context);
-        }, (_) {
-          //TO DO NAVIGATE TO MAIN PAGE
+        }, (_) async {
+          await Navigator.of(context).pushNamed(HomePage.id);
+          context.bloc<AuthBloc>().add(const AuthEvent.authCheckStarted());
         });
       });
     }, builder: (context, state) {
