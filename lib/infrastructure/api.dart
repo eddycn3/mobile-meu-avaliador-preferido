@@ -17,7 +17,6 @@ abstract class Api {
   /// - GENERAL
   ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
   ///  * `BAD_RESPONSE` - Indicates a bad format response
-
   static Future<String> post({
     @required String reqBody,
     @required String urlSufix,
@@ -43,7 +42,47 @@ abstract class Api {
     } on SocketException {
       throw const ApiError('NO_INTERNET_CONNECTION');
     } on HttpException {
-      throw const ApiError('HttpException_ERROR');
+      throw const ApiError('HTTP_EXCEPTION_ERROR');
+    } on FormatException {
+      throw const ApiError("BAD_RESPONSE");
+    } finally {
+      client.close();
+    }
+  }
+
+  /// Errors:
+  /// * `ERROR_USER_INFO_NOT_FOUND` - Indicates that the user cant be found with the given id
+  /// * `NO_TOKEN_PROVIDED`
+  /// * `TOKEN_ERROR`
+  /// * `TOKEN_MALFORMED`
+  /// * `INVALID_TOKEN`
+  static Future<String> get({
+    @required String urlSufix,
+    @required String userToken,
+  }) async {
+    final http.Client client = http.Client();
+    http.Response resp;
+    try {
+      print(baseURL + urlSufix);
+      final Map<String, String> headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer {$userToken}'
+      };
+      resp = await client.get(
+        Uri.encodeFull(baseURL + urlSufix),
+        headers: headers,
+      );
+      if (resp.statusCode == 200) {
+        return resp.body;
+      } else {
+        final error = ApiError.fromJson(jsonDecode(resp.body));
+        print(error);
+        throw error;
+      }
+    } on SocketException {
+      throw const ApiError('NO_INTERNET_CONNECTION');
+    } on HttpException {
+      throw const ApiError('HTTP_EXCEPTION_ERROR');
     } on FormatException {
       throw const ApiError("BAD_RESPONSE");
     } finally {

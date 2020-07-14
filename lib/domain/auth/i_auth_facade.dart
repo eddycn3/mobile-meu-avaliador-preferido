@@ -22,6 +22,11 @@ abstract class IAuthFacade {
     @required IDCONFEF idconfef,
   });
 
+  Future<Either<AuthFailure, Avaliador>> getUserInfo({
+    @required int id,
+    @required String userToken,
+  });
+
   Future<bool> userHasToken();
 
   Future<void> deleteUserToken();

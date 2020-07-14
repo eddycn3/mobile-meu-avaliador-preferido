@@ -9,12 +9,11 @@ import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 import 'package:my_personal_avaliator/infrastructure/api.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_result.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
-import 'package:my_personal_avaliator/infrastructure/repositorys/user_repo.dart';
+import 'package:my_personal_avaliator/infrastructure/local_repositorys/user_repo.dart';
 
 @LazySingleton(as: IAuthFacade)
 class UserAuthFacade implements IAuthFacade {
   final UserRepo _userRepo;
-
   UserAuthFacade(this._userRepo);
 
   @override
@@ -31,7 +30,9 @@ class UserAuthFacade implements IAuthFacade {
     final emailStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final nomeStr = nome.getOrCrash();
-    final telefoneStr = emailAddress.getOrCrash();
+    final telefoneStr = telefone.getOrCrash();
+    final cpfStr = cpf.getOrCrash();
+    final idConfefStr = idconfef.getOrCrash();
     try {
       final user = User(
           userName: emailStr,
@@ -42,7 +43,9 @@ class UserAuthFacade implements IAuthFacade {
               email: emailStr,
               empresa: empresa,
               site: site,
-              telefone: telefoneStr));
+              telefone: telefoneStr,
+              cpf: cpfStr,
+              id_confef: idConfefStr));
 
       final retApi = await Api.post(
         reqBody: jsonEncode(user),
@@ -103,4 +106,16 @@ class UserAuthFacade implements IAuthFacade {
 
   @override
   Future<void> deleteUserToken() => _userRepo.deleteToken();
+
+  @override
+  Future<Either<AuthFailure, Avaliador>> getUserInfo({
+    int id,
+    String userToken,
+  }) async {
+    final userInfo = await Api.get(
+      urlSufix: userInfoSufix + id.toString(),
+      userToken: userToken,
+    );
+    return left(const AuthFailure.serverError());
+  }
 }
