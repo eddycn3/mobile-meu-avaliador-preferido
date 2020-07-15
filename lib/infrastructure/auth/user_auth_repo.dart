@@ -6,9 +6,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:meta/meta.dart';
+import 'package:my_personal_avaliator/infrastructure/auth/user_auth_dtos.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_error.dart';
 
+// ignore_for_file: argument_type_not_assignable
 @injectable
 class UserAuthRepo {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
@@ -23,7 +25,7 @@ class UserAuthRepo {
   /// - GENERAL
   ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
   ///  * `BAD_RESPONSE` - Indicates a bad format response
-  Future<String> create({
+  Future<UserDto> create({
     @required String reqBody,
     @required String urlSufix,
   }) async {
@@ -37,9 +39,8 @@ class UserAuthRepo {
         body: reqBody,
       );
       if (resp.statusCode == 200) {
-        return resp.body;
+        return UserDto.fromJson(jsonDecode(resp.body));
       } else {
-        // ignore: argument_type_not_assignable
         final error = ApiError.fromJson(jsonDecode(resp.body));
         throw error;
       }
@@ -59,7 +60,7 @@ class UserAuthRepo {
   /// - GENERAL
   ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
   ///  * `BAD_RESPONSE` - Indicates a bad format response
-  Future<String> authenticate({
+  Future<UserDto> authenticate({
     @required String reqBody,
     @required String urlSufix,
   }) async {
@@ -73,7 +74,7 @@ class UserAuthRepo {
         body: reqBody,
       );
       if (resp.statusCode == 200) {
-        return resp.body;
+        return UserDto.fromJson(jsonDecode(resp.body));
       } else {
         // ignore: argument_type_not_assignable
         final error = ApiError.fromJson(jsonDecode(resp.body));

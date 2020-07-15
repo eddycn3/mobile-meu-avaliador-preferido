@@ -1,14 +1,17 @@
 import 'dart:convert';
-
-import 'package:injectable/injectable.dart';
-import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
+
+import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/user_auth.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
+import 'package:my_personal_avaliator/infrastructure/auth/user_auth_dtos.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_error.dart';
 import 'package:my_personal_avaliator/infrastructure/core/api_routes.dart';
 import 'package:my_personal_avaliator/infrastructure/auth/user_auth_repo.dart';
+
+// ignore_for_file: argument_type_not_assignable
 
 @LazySingleton(as: IAuthFacade)
 class UserAuthFacade implements IAuthFacade {
@@ -16,46 +19,18 @@ class UserAuthFacade implements IAuthFacade {
   UserAuthFacade(this._userAuthRepo);
 
   @override
-  Future<Either<AuthFailure, User>> registerUser({
-    EmailAddress emailAddress,
-    Password password,
-    FullName nome,
-    String empresa,
-    String site,
-    PhoneNumber telefone,
-    CPF cpf,
-    IDCONFEF idconfef,
-  }) async {
-    final emailStr = emailAddress.getOrCrash();
-    final passwordStr = password.getOrCrash();
-    final nomeStr = nome.getOrCrash();
-    final telefoneStr = telefone.getOrCrash();
-    final cpfStr = cpf.getOrCrash();
-    final idConfefStr = idconfef.getOrCrash();
+  Future<Either<AuthFailure, User>> registerUser({User user}) async {
     try {
-      final user = User(
-          userName: emailStr,
-          passWord: passwordStr,
-          userType: 1,
-          userInfo: Avaliador(
-              nome: nomeStr,
-              email: emailStr,
-              empresa: empresa,
-              site: site,
-              telefone: telefoneStr,
-              cpf: cpfStr,
-              id_confef: idConfefStr));
+      final UserDto userDto = UserDto.fromDomain(user);
 
-      final retApi = await _userAuthRepo.create(
-        reqBody: jsonEncode(user),
+      final UserDto userInfoFromApi = await _userAuthRepo.create(
+        reqBody: userDto.toJson(),
         urlSufix: userCreateSufix,
       );
-      // ignore: argument_type_not_assignable
-      final User userFromApi = User.fromJson(jsonDecode(retApi));
 
-      await _userAuthRepo.persistToken(userFromApi.token);
+      await _userAuthRepo.persistToken(userInfoFromApi.token);
 
-      return right(userFromApi);
+      return right(userInfoFromApi);
     } on ApiError catch (e) {
       switch (e.errorMsg) {
         case "ERROR_EMAIL_EXISTS":
@@ -80,14 +55,15 @@ class UserAuthFacade implements IAuthFacade {
       final emailStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
       final user = User(userName: emailStr, passWord: passwordStr);
-      final retApi = await _userAuthRepo.create(
+
+      final UserDto userInfoFromApi = await _userAuthRepo.authenticate(
         reqBody: jsonEncode(user),
         urlSufix: userAuthSufix,
       );
-      // ignore: argument_type_not_assignable
-      final User userRet = User.fromJson(jsonDecode(retApi));
-      await _userAuthRepo.persistToken(userRet.token);
-      return right(userRet);
+
+      await _userAuthRepo.persistToken(userInfoFromApi.token);
+
+      return right(userInfoFromApi);
     } on ApiError catch (e) {
       if (e.errorMsg == "ERROR_USER_NOT_FOUND") {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());

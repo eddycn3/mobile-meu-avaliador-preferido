@@ -6,8 +6,8 @@ part 'user_auth_dtos.freezed.dart';
 part 'user_auth_dtos.g.dart';
 
 @freezed
-abstract class UserDto with _$UserDto {
-  UserDto._();
+abstract class UserDto implements _$UserDto {
+  const UserDto._();
 
   const factory UserDto({
     int id,
@@ -18,7 +18,7 @@ abstract class UserDto with _$UserDto {
     @JsonSerializable(explicitToJson: true)
     @JsonKey(name: 'user_info')
         AvaliadorDto userInfo,
-  }) = _User;
+  }) = _UserDto;
 
   factory UserDto.fromDomain(User user) {
     return UserDto(
@@ -45,8 +45,8 @@ abstract class UserDto with _$UserDto {
 }
 
 @freezed
-abstract class AvaliadorDto with _$AvaliadorDto {
-  AvaliadorDto._();
+abstract class AvaliadorDto implements _$AvaliadorDto {
+  const AvaliadorDto._();
 
   const factory AvaliadorDto(
       {@required String nome,
@@ -56,7 +56,7 @@ abstract class AvaliadorDto with _$AvaliadorDto {
       @required String telefone,
       @required String cpf,
       // ignore: non_constant_identifier_names
-      @required String id_confef}) = _Avaliador;
+      @required String id_confef}) = _AvaliadorDto;
 
   factory AvaliadorDto.fromDomain(Avaliador avaliador) {
     return AvaliadorDto(

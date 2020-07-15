@@ -69,15 +69,15 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           authFailOrSucessOption: none(),
         );
 
-        _failOrSucess = await _authFacate.registerUser(
-            emailAddress: state.emailAddress,
-            password: state.password,
-            nome: state.nome,
-            telefone: state.telefone,
-            cpf: state.cpf,
-            idconfef: state.idconfef);
-      }
+        //   _failOrSucess = await _authFacate.registerUser(
+        //       emailAddress: state.emailAddress,
+        //       password: state.password,
+        //       nome: state.nome,
+        //       telefone: state.telefone,
+        //       cpf: state.cpf,
+        //       idconfef: state.idconfef);
 
+      }
       yield state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,

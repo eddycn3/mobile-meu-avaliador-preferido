@@ -6,8 +6,8 @@ part of 'user_auth_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_User _$_$_UserFromJson(Map<String, dynamic> json) {
-  return _$_User(
+_$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
+  return _$_UserDto(
     id: json['id'] as int,
     userName: json['user_name'] as String,
     passWord: json['password'] as String,
@@ -19,7 +19,8 @@ _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'user_name': instance.userName,
       'password': instance.passWord,
@@ -28,8 +29,8 @@ Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
       'user_info': instance.userInfo,
     };
 
-_$_Avaliador _$_$_AvaliadorFromJson(Map<String, dynamic> json) {
-  return _$_Avaliador(
+_$_AvaliadorDto _$_$_AvaliadorDtoFromJson(Map<String, dynamic> json) {
+  return _$_AvaliadorDto(
     nome: json['nome'] as String,
     empresa: json['empresa'] as String,
     site: json['site'] as String,
@@ -40,7 +41,7 @@ _$_Avaliador _$_$_AvaliadorFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_AvaliadorToJson(_$_Avaliador instance) =>
+Map<String, dynamic> _$_$_AvaliadorDtoToJson(_$_AvaliadorDto instance) =>
     <String, dynamic>{
       'nome': instance.nome,
       'empresa': instance.empresa,

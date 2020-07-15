@@ -11,16 +11,7 @@ abstract class IAuthFacade {
     @required Password password,
   });
 
-  Future<Either<AuthFailure, User>> registerUser({
-    @required EmailAddress emailAddress,
-    @required Password password,
-    @required FullName nome,
-    String empresa,
-    String site,
-    @required PhoneNumber telefone,
-    @required CPF cpf,
-    @required IDCONFEF idconfef,
-  });
+  Future<Either<AuthFailure, User>> registerUser({@required User user});
 
   Future<bool> userHasToken();
 

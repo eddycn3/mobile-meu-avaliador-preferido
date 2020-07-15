@@ -4,8 +4,8 @@ import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
 part 'user_auth.freezed.dart';
 
 @freezed
-abstract class User with _$User {
-  User._();
+abstract class User implements _$User {
+  const User._();
   const factory User({
     int id,
     @required EmailAddress userName,
@@ -17,8 +17,8 @@ abstract class User with _$User {
 }
 
 @freezed
-abstract class Avaliador with _$Avaliador {
-  Avaliador._();
+abstract class Avaliador implements _$Avaliador {
+  const Avaliador._();
 
   const factory Avaliador({
     @required FullName nome,
