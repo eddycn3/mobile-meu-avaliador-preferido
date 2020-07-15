@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'api_result.freezed.dart';
-part 'api_result.g.dart';
+part 'api_error.freezed.dart';
+part 'api_error.g.dart';
 
 @freezed
 abstract class ApiError with _$ApiError {

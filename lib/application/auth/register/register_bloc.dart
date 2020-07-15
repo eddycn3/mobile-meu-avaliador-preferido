@@ -7,8 +7,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
+import 'package:my_personal_avaliator/domain/auth/user_auth.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
-import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
 part 'register_event.dart';
 part 'register_state.dart';

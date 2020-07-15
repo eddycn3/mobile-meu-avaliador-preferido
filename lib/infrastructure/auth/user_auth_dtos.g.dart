@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'freezed_classes.dart';
+part of 'user_auth_dtos.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -15,7 +15,7 @@ _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
     token: json['token'] as String,
     userInfo: json['user_info'] == null
         ? null
-        : Avaliador.fromJson(json['user_info'] as Map<String, dynamic>),
+        : AvaliadorDto.fromJson(json['user_info'] as Map<String, dynamic>),
   );
 }
 

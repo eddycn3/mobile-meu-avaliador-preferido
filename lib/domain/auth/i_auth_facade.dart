@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
+import 'package:my_personal_avaliator/domain/auth/user_auth.dart';
 
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
-import 'package:my_personal_avaliator/domain/entitys/freezed_classes.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailure, User>> signInWithEmailAndPassword({
@@ -20,11 +20,6 @@ abstract class IAuthFacade {
     @required PhoneNumber telefone,
     @required CPF cpf,
     @required IDCONFEF idconfef,
-  });
-
-  Future<Either<AuthFailure, Avaliador>> getUserInfo({
-    @required int id,
-    @required String userToken,
   });
 
   Future<bool> userHasToken();
