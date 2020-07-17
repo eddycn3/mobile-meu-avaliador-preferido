@@ -36,7 +36,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         authFailOrSucessOption: none(),
       );
     }, signInWithEmailAndPasswordPressed: (e) async* {
-      Either<AuthFailure, User> failOrSucess;
+      Either<AuthFailure, Unit> failOrSucess;
       final isEmailAndPasswordValid =
           state.emailAddress.isValid() && state.password.isValid();
 

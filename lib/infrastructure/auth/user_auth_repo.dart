@@ -26,7 +26,7 @@ class UserAuthRepo {
   ///  * `NO_INTERNET_CONNECTION` - Indicates that the id_confef alredy in use
   ///  * `BAD_RESPONSE` - Indicates a bad format response
   Future<UserDto> create({
-    @required String reqBody,
+    @required Map reqBody,
     @required String urlSufix,
   }) async {
     final http.Client client = http.Client();
@@ -67,6 +67,8 @@ class UserAuthRepo {
     final http.Client client = http.Client();
     http.Response resp;
     try {
+      print(baseURL + urlSufix);
+      print(reqBody);
       final Map<String, String> headers = {'Content-Type': 'application/json'};
       resp = await client.post(
         Uri.encodeFull(baseURL + urlSufix),

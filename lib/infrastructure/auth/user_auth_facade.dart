@@ -19,7 +19,7 @@ class UserAuthFacade implements IAuthFacade {
   UserAuthFacade(this._userAuthRepo);
 
   @override
-  Future<Either<AuthFailure, User>> registerUser({User user}) async {
+  Future<Either<AuthFailure, Unit>> registerUser({User user}) async {
     try {
       final UserDto userDto = UserDto.fromDomain(user);
 
@@ -30,7 +30,7 @@ class UserAuthFacade implements IAuthFacade {
 
       await _userAuthRepo.persistToken(userInfoFromApi.token);
 
-      return right(userInfoFromApi);
+      return right(unit);
     } on ApiError catch (e) {
       switch (e.errorMsg) {
         case "ERROR_EMAIL_EXISTS":
@@ -49,12 +49,13 @@ class UserAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, User>> signInWithEmailAndPassword(
+  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
       {EmailAddress emailAddress, Password password}) async {
     try {
-      final emailStr = emailAddress.getOrCrash();
-      final passwordStr = password.getOrCrash();
-      final user = User(userName: emailStr, passWord: passwordStr);
+      final user = {
+        "user_name": emailAddress.getOrCrash(),
+        "password": password.getOrCrash(),
+      };
 
       final UserDto userInfoFromApi = await _userAuthRepo.authenticate(
         reqBody: jsonEncode(user),
@@ -63,7 +64,7 @@ class UserAuthFacade implements IAuthFacade {
 
       await _userAuthRepo.persistToken(userInfoFromApi.token);
 
-      return right(userInfoFromApi);
+      return right(unit);
     } on ApiError catch (e) {
       if (e.errorMsg == "ERROR_USER_NOT_FOUND") {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());

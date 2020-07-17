@@ -565,7 +565,7 @@ class _$SignInStateTearOff {
       @required
           bool isSubmitting,
       @required
-          Option<Either<AuthFailure, User>> authFailOrSucessOption,
+          Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
       @required
           Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption}) {
     return _SignInState(
@@ -587,7 +587,7 @@ mixin _$SignInState {
   Password get password;
   bool get showErrorMessages;
   bool get isSubmitting;
-  Option<Either<AuthFailure, User>> get authFailOrSucessOption;
+  Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
   Option<Either<AuthFailure, Unit>> get googleAuthFailOrSucessOption;
 
   $SignInStateCopyWith<SignInState> get copyWith;
@@ -602,7 +602,7 @@ abstract class $SignInStateCopyWith<$Res> {
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, User>> authFailOrSucessOption,
+      Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
       Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption});
 }
 
@@ -634,7 +634,7 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
-          : authFailOrSucessOption as Option<Either<AuthFailure, User>>,
+          : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
       googleAuthFailOrSucessOption: googleAuthFailOrSucessOption == freezed
           ? _value.googleAuthFailOrSucessOption
           : googleAuthFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
@@ -653,7 +653,7 @@ abstract class _$SignInStateCopyWith<$Res>
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, User>> authFailOrSucessOption,
+      Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
       Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption});
 }
 
@@ -687,7 +687,7 @@ class __$SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
-          : authFailOrSucessOption as Option<Either<AuthFailure, User>>,
+          : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
       googleAuthFailOrSucessOption: googleAuthFailOrSucessOption == freezed
           ? _value.googleAuthFailOrSucessOption
           : googleAuthFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
@@ -719,7 +719,7 @@ class _$_SignInState implements _SignInState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<AuthFailure, User>> authFailOrSucessOption;
+  final Option<Either<AuthFailure, Unit>> authFailOrSucessOption;
   @override
   final Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption;
 
@@ -780,7 +780,7 @@ abstract class _SignInState implements SignInState {
           @required
               bool isSubmitting,
           @required
-              Option<Either<AuthFailure, User>> authFailOrSucessOption,
+              Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
           @required
               Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption}) =
       _$_SignInState;
@@ -794,7 +794,7 @@ abstract class _SignInState implements SignInState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, User>> get authFailOrSucessOption;
+  Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
   @override
   Option<Either<AuthFailure, Unit>> get googleAuthFailOrSucessOption;
   @override

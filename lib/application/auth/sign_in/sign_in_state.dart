@@ -7,7 +7,7 @@ abstract class SignInState with _$SignInState {
     @required Password password,
     @required bool showErrorMessages,
     @required bool isSubmitting,
-    @required Option<Either<AuthFailure, User>> authFailOrSucessOption,
+    @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
     @required Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption,
   }) = _SignInState;
 
