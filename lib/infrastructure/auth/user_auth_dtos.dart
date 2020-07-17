@@ -11,9 +11,9 @@ abstract class UserDto implements _$UserDto {
 
   const factory UserDto({
     int id,
-    @required @JsonKey(name: 'user_name') String userName,
-    @required @JsonKey(name: 'password') String passWord,
-    @required @JsonKey(name: 'user_type') int userType,
+    @JsonKey(name: 'user_name') String userName,
+    @JsonKey(name: 'password') String passWord,
+    @JsonKey(name: 'user_type') int userType,
     String token,
     @JsonSerializable(explicitToJson: true)
     @JsonKey(name: 'user_info')

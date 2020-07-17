@@ -17,13 +17,10 @@ class _$UserDtoTearOff {
 
   _UserDto call(
       {int id,
-      @required
       @JsonKey(name: 'user_name')
           String userName,
-      @required
       @JsonKey(name: 'password')
           String passWord,
-      @required
       @JsonKey(name: 'user_type')
           int userType,
       String token,
@@ -172,23 +169,17 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
       {this.id,
-      @required
       @JsonKey(name: 'user_name')
           this.userName,
-      @required
       @JsonKey(name: 'password')
           this.passWord,
-      @required
       @JsonKey(name: 'user_type')
           this.userType,
       this.token,
       @JsonSerializable(explicitToJson: true)
       @JsonKey(name: 'user_info')
           this.userInfo})
-      : assert(userName != null),
-        assert(passWord != null),
-        assert(userType != null),
-        super._();
+      : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
       _$_$_UserDtoFromJson(json);
@@ -262,13 +253,10 @@ abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
   const factory _UserDto(
       {int id,
-      @required
       @JsonKey(name: 'user_name')
           String userName,
-      @required
       @JsonKey(name: 'password')
           String passWord,
-      @required
       @JsonKey(name: 'user_type')
           int userType,
       String token,

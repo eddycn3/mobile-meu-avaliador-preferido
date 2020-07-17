@@ -57,7 +57,7 @@ class UserAuthFacade implements IAuthFacade {
         "password": password.getOrCrash(),
       };
 
-      final UserDto userInfoFromApi = await _userAuthRepo.authenticate(
+      final userInfoFromApi = await _userAuthRepo.authenticate(
         reqBody: jsonEncode(user),
         urlSufix: userAuthSufix,
       );

@@ -76,9 +76,11 @@ class UserAuthRepo {
         body: reqBody,
       );
       if (resp.statusCode == 200) {
-        return UserDto.fromJson(jsonDecode(resp.body));
+        final jsonResponse = jsonDecode(resp.body);
+        final id = jsonResponse["id"];
+        final token = jsonResponse["token"];
+        return UserDto(id: id, token: token);
       } else {
-        // ignore: argument_type_not_assignable
         final error = ApiError.fromJson(jsonDecode(resp.body));
         throw error;
       }
