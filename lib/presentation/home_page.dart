@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
           labelColor: Colors.green,
           unselectedLabelColor: Colors.grey,
           indicatorSize: TabBarIndicatorSize.label,
-          indicatorPadding: EdgeInsets.all(5.0),
+          indicatorPadding: const EdgeInsets.all(5.0),
           indicatorColor: Colors.green[500],
         ),
       ),

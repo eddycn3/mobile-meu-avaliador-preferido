@@ -124,8 +124,12 @@ class LoginForm extends StatelessWidget {
                           fontSize: 20.0),
                     )),
                 const SizedBox(
-                  height: 8.0,
+                  height: 16.0,
                 ),
+                if (state.isSubmitting) ...[
+                  const LinearProgressIndicator(),
+                  const SizedBox(height: 8),
+                ],
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
