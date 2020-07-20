@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_personal_avaliator/application/auth/auth_bloc.dart';
 import 'package:my_personal_avaliator/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:my_personal_avaliator/presentation/home_page.dart';
+import 'package:my_personal_avaliator/presentation/register/register_form.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -144,7 +145,9 @@ class LoginForm extends StatelessWidget {
                     ),
                     GestureDetector(
                       //IMPLEMENTAR CADASTRE AQUI
-                      onTap: () {},
+                      onTap: () async {
+                        await Navigator.of(context).pushNamed(RegisterForm.id);
+                      },
                       child: Text(
                         "Cadastre aqui!",
                         style: TextStyle(
