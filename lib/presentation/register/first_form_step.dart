@@ -7,27 +7,38 @@ class FirstFormStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const SizedBox(height: 20),
-        TextFormField(
-          keyboardType: TextInputType.emailAddress,
-          cursorColor: Colors.green,
-          decoration: InputDecoration(
-            hintText: "E-MAIL",
-            hintStyle: TextStyle(color: Colors.grey),
-          ),
-        ),
-        const SizedBox(height: 20),
-        TextFormField(
-          obscureText: true,
-          cursorColor: Colors.green,
-          decoration: InputDecoration(
-            hintText: "SENHA",
-            hintStyle: TextStyle(color: Colors.grey),
-          ),
-        ),
-      ],
+    return BlocBuilder<RegisterBloc, RegisterState>(
+      builder: (context, state) {
+        final _registerBloc = BlocProvider.of<RegisterBloc>(context);
+        return Column(
+          children: <Widget>[
+            const SizedBox(height: 20),
+            TextFormField(
+              onChanged: (e) {
+                _registerBloc.add(RegisterEvent.emailChanged(e));
+              },
+              keyboardType: TextInputType.emailAddress,
+              cursorColor: Colors.green,
+              decoration: InputDecoration(
+                hintText: "E-MAIL",
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              onChanged: (s) {
+                _registerBloc.add(RegisterEvent.passwordChanged(s));
+              },
+              obscureText: true,
+              cursorColor: Colors.green,
+              decoration: InputDecoration(
+                hintText: "SENHA",
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

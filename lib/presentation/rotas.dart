@@ -11,7 +11,7 @@ class AppRoutes {
       SplashPage.id: (context) => SplashPage(),
       HomePage.id: (context) => HomePage(),
       LoginPage.id: (context) => LoginPage(),
-      //RegisterForm.id: (context) => RegisterForm(userRepo: userRepo)
+      RegisterForm.id: (context) => RegisterForm()
     };
   }
 }

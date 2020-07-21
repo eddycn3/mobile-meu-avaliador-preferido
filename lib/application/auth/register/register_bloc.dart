@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
@@ -15,6 +16,7 @@ part 'register_state.dart';
 
 part "register_bloc.freezed.dart";
 
+@injectable
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final IAuthFacade _authFacate;
 
@@ -55,7 +57,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         authFailOrSucessOption: none(),
       );
     }, registerUser: (e) async* {
-      Either<AuthFailure, User> _failOrSucess;
+      Either<AuthFailure, Unit> _failOrSucess;
       final areRegisterFieldsValid = state.emailAddress.isValid() &&
           state.password.isValid() &&
           state.nome.isValid() &&
@@ -68,16 +70,21 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           isSubmitting: true,
           authFailOrSucessOption: none(),
         );
-
-        //   _failOrSucess = await _authFacate.registerUser(
-        //       emailAddress: state.emailAddress,
-        //       password: state.password,
-        //       nome: state.nome,
-        //       telefone: state.telefone,
-        //       cpf: state.cpf,
-        //       idconfef: state.idconfef);
-
+        final User userFromDomain = User(
+          userName: state.emailAddress,
+          passWord: state.password,
+          userInfo: Avaliador(
+              nome: state.nome,
+              email: state.emailAddress,
+              empresa: state.empresa,
+              site: state.site,
+              telefone: state.telefone,
+              cpf: state.cpf,
+              id_confef: state.idconfef),
+        );
+        _failOrSucess = await _authFacate.registerUser(user: userFromDomain);
       }
+      // copyWith overrides the current STATE
       yield state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,

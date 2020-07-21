@@ -22,7 +22,7 @@ class LoginForm extends StatelessWidget {
                     "usuario ou senha inválidos ;("),
           ).show(context);
         }, (_) async {
-          await Navigator.of(context).pushNamed(HomePage.id);
+          await Navigator.of(context).pushReplacementNamed(HomePage.id);
           context.bloc<AuthBloc>().add(const AuthEvent.authCheckStarted());
         });
       });

@@ -13,5 +13,9 @@ abstract class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.idConfefChanged(String idconfef) =
       IdConfefChanged;
 
+  const factory RegisterEvent.empresaChanged(String idconfef) = EmpresaChanged;
+
+  const factory RegisterEvent.siteChanged(String idconfef) = SiteChanged;
+
   const factory RegisterEvent.registerUser() = RegisterUser;
 }
