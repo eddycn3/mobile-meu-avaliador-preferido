@@ -2,6 +2,20 @@ import "package:dartz/dartz.dart";
 import "package:my_personal_avaliator/domain/core/failures.dart";
 import 'package:my_personal_avaliator/domain/core/regex_utils.dart';
 
+Either<ValueFailure<String>, String> validateWebSite(String input) {
+  if (isWebSite(input)) {
+    return right(input);
+  }
+  return left(ValueFailure.invalidWebSite(failedValue: input));
+}
+
+Either<ValueFailure<String>, String> validateText(String input) {
+  if (isText(input)) {
+    return right(input);
+  }
+  return left(ValueFailure.invalidText(failedValue: input));
+}
+
 Either<ValueFailure<String>, String> validateEmailAdress(String input) {
   if (input.isEmpty) {
     return left(ValueFailure.emptyEmail(failedValue: input));

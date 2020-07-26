@@ -556,25 +556,17 @@ class _$SignInStateTearOff {
   const _$SignInStateTearOff();
 
   _SignInState call(
-      {@required
-          EmailAddress emailAddress,
-      @required
-          Password password,
-      @required
-          bool showErrorMessages,
-      @required
-          bool isSubmitting,
-      @required
-          Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
-      @required
-          Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption}) {
+      {@required EmailAddress emailAddress,
+      @required Password password,
+      @required bool showErrorMessages,
+      @required bool isSubmitting,
+      @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) {
     return _SignInState(
       emailAddress: emailAddress,
       password: password,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       authFailOrSucessOption: authFailOrSucessOption,
-      googleAuthFailOrSucessOption: googleAuthFailOrSucessOption,
     );
   }
 }
@@ -588,7 +580,6 @@ mixin _$SignInState {
   bool get showErrorMessages;
   bool get isSubmitting;
   Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
-  Option<Either<AuthFailure, Unit>> get googleAuthFailOrSucessOption;
 
   $SignInStateCopyWith<SignInState> get copyWith;
 }
@@ -602,8 +593,7 @@ abstract class $SignInStateCopyWith<$Res> {
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
-      Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption});
+      Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
 }
 
 class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
@@ -620,7 +610,6 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailOrSucessOption = freezed,
-    Object googleAuthFailOrSucessOption = freezed,
   }) {
     return _then(_value.copyWith(
       emailAddress: emailAddress == freezed
@@ -635,9 +624,6 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
           : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
-      googleAuthFailOrSucessOption: googleAuthFailOrSucessOption == freezed
-          ? _value.googleAuthFailOrSucessOption
-          : googleAuthFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -653,8 +639,7 @@ abstract class _$SignInStateCopyWith<$Res>
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
-      Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption});
+      Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
 }
 
 class __$SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
@@ -673,7 +658,6 @@ class __$SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailOrSucessOption = freezed,
-    Object googleAuthFailOrSucessOption = freezed,
   }) {
     return _then(_SignInState(
       emailAddress: emailAddress == freezed
@@ -688,9 +672,6 @@ class __$SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
       authFailOrSucessOption: authFailOrSucessOption == freezed
           ? _value.authFailOrSucessOption
           : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
-      googleAuthFailOrSucessOption: googleAuthFailOrSucessOption == freezed
-          ? _value.googleAuthFailOrSucessOption
-          : googleAuthFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -701,14 +682,12 @@ class _$_SignInState implements _SignInState {
       @required this.password,
       @required this.showErrorMessages,
       @required this.isSubmitting,
-      @required this.authFailOrSucessOption,
-      @required this.googleAuthFailOrSucessOption})
+      @required this.authFailOrSucessOption})
       : assert(emailAddress != null),
         assert(password != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
-        assert(authFailOrSucessOption != null),
-        assert(googleAuthFailOrSucessOption != null);
+        assert(authFailOrSucessOption != null);
 
   @override
   final EmailAddress emailAddress;
@@ -720,12 +699,10 @@ class _$_SignInState implements _SignInState {
   final bool isSubmitting;
   @override
   final Option<Either<AuthFailure, Unit>> authFailOrSucessOption;
-  @override
-  final Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption;
 
   @override
   String toString() {
-    return 'SignInState(emailAddress: $emailAddress, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailOrSucessOption: $authFailOrSucessOption, googleAuthFailOrSucessOption: $googleAuthFailOrSucessOption)';
+    return 'SignInState(emailAddress: $emailAddress, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailOrSucessOption: $authFailOrSucessOption)';
   }
 
   @override
@@ -746,12 +723,7 @@ class _$_SignInState implements _SignInState {
                     .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.authFailOrSucessOption, authFailOrSucessOption) ||
                 const DeepCollectionEquality().equals(
-                    other.authFailOrSucessOption, authFailOrSucessOption)) &&
-            (identical(other.googleAuthFailOrSucessOption,
-                    googleAuthFailOrSucessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.googleAuthFailOrSucessOption,
-                    googleAuthFailOrSucessOption)));
+                    other.authFailOrSucessOption, authFailOrSucessOption)));
   }
 
   @override
@@ -761,8 +733,7 @@ class _$_SignInState implements _SignInState {
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailOrSucessOption) ^
-      const DeepCollectionEquality().hash(googleAuthFailOrSucessOption);
+      const DeepCollectionEquality().hash(authFailOrSucessOption);
 
   @override
   _$SignInStateCopyWith<_SignInState> get copyWith =>
@@ -771,18 +742,11 @@ class _$_SignInState implements _SignInState {
 
 abstract class _SignInState implements SignInState {
   const factory _SignInState(
-          {@required
-              EmailAddress emailAddress,
-          @required
-              Password password,
-          @required
-              bool showErrorMessages,
-          @required
-              bool isSubmitting,
-          @required
-              Option<Either<AuthFailure, Unit>> authFailOrSucessOption,
-          @required
-              Option<Either<AuthFailure, Unit>> googleAuthFailOrSucessOption}) =
+          {@required EmailAddress emailAddress,
+          @required Password password,
+          @required bool showErrorMessages,
+          @required bool isSubmitting,
+          @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) =
       _$_SignInState;
 
   @override
@@ -795,8 +759,6 @@ abstract class _SignInState implements SignInState {
   bool get isSubmitting;
   @override
   Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
-  @override
-  Option<Either<AuthFailure, Unit>> get googleAuthFailOrSucessOption;
   @override
   _$SignInStateCopyWith<_SignInState> get copyWith;
 }

@@ -52,7 +52,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           password: state.password,
         );
       }
-
       // STOP SUBMMIT
       yield state.copyWith(
         isSubmitting: false,
@@ -70,7 +69,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
       yield state.copyWith(
         isSubmitting: false,
-        googleAuthFailOrSucessOption: some(failureOrSucess),
+        authFailOrSucessOption: some(failureOrSucess),
       );
     });
   }

@@ -36,4 +36,11 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidIdConfef({
     @required T failedValue,
   }) = InvalidIdConfef<T>;
+
+  const factory ValueFailure.invalidWebSite({
+    @required T failedValue,
+  }) = InvalidWebSite<T>;
+
+  const factory ValueFailure.invalidText({@required T failedValue}) =
+      InvalidText<T>;
 }

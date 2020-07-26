@@ -239,8 +239,8 @@ class _$AvaliadorTearOff {
 
   _Avaliador call(
       {@required FullName nome,
-      String empresa,
-      String site,
+      Empresa empresa,
+      WebSite site,
       @required EmailAddress email,
       @required PhoneNumber telefone,
       @required CPF cpf,
@@ -262,8 +262,8 @@ const $Avaliador = _$AvaliadorTearOff();
 
 mixin _$Avaliador {
   FullName get nome;
-  String get empresa;
-  String get site;
+  Empresa get empresa;
+  WebSite get site;
   EmailAddress get email;
   PhoneNumber get telefone;
   CPF get cpf;
@@ -277,8 +277,8 @@ abstract class $AvaliadorCopyWith<$Res> {
       _$AvaliadorCopyWithImpl<$Res>;
   $Res call(
       {FullName nome,
-      String empresa,
-      String site,
+      Empresa empresa,
+      WebSite site,
       EmailAddress email,
       PhoneNumber telefone,
       CPF cpf,
@@ -304,8 +304,8 @@ class _$AvaliadorCopyWithImpl<$Res> implements $AvaliadorCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       nome: nome == freezed ? _value.nome : nome as FullName,
-      empresa: empresa == freezed ? _value.empresa : empresa as String,
-      site: site == freezed ? _value.site : site as String,
+      empresa: empresa == freezed ? _value.empresa : empresa as Empresa,
+      site: site == freezed ? _value.site : site as WebSite,
       email: email == freezed ? _value.email : email as EmailAddress,
       telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
       cpf: cpf == freezed ? _value.cpf : cpf as CPF,
@@ -322,8 +322,8 @@ abstract class _$AvaliadorCopyWith<$Res> implements $AvaliadorCopyWith<$Res> {
   @override
   $Res call(
       {FullName nome,
-      String empresa,
-      String site,
+      Empresa empresa,
+      WebSite site,
       EmailAddress email,
       PhoneNumber telefone,
       CPF cpf,
@@ -350,8 +350,8 @@ class __$AvaliadorCopyWithImpl<$Res> extends _$AvaliadorCopyWithImpl<$Res>
   }) {
     return _then(_Avaliador(
       nome: nome == freezed ? _value.nome : nome as FullName,
-      empresa: empresa == freezed ? _value.empresa : empresa as String,
-      site: site == freezed ? _value.site : site as String,
+      empresa: empresa == freezed ? _value.empresa : empresa as Empresa,
+      site: site == freezed ? _value.site : site as WebSite,
       email: email == freezed ? _value.email : email as EmailAddress,
       telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
       cpf: cpf == freezed ? _value.cpf : cpf as CPF,
@@ -380,9 +380,9 @@ class _$_Avaliador extends _Avaliador {
   @override
   final FullName nome;
   @override
-  final String empresa;
+  final Empresa empresa;
   @override
-  final String site;
+  final WebSite site;
   @override
   final EmailAddress email;
   @override
@@ -440,8 +440,8 @@ abstract class _Avaliador extends Avaliador {
   const _Avaliador._() : super._();
   const factory _Avaliador(
       {@required FullName nome,
-      String empresa,
-      String site,
+      Empresa empresa,
+      WebSite site,
       @required EmailAddress email,
       @required PhoneNumber telefone,
       @required CPF cpf,
@@ -450,9 +450,9 @@ abstract class _Avaliador extends Avaliador {
   @override
   FullName get nome;
   @override
-  String get empresa;
+  Empresa get empresa;
   @override
-  String get site;
+  WebSite get site;
   @override
   EmailAddress get email;
   @override

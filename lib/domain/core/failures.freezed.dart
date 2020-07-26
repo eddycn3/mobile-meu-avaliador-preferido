@@ -59,6 +59,18 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  InvalidWebSite<T> invalidWebSite<T>({@required T failedValue}) {
+    return InvalidWebSite<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  InvalidText<T> invalidText<T>({@required T failedValue}) {
+    return InvalidText<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -77,6 +89,8 @@ mixin _$ValueFailure<T> {
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -88,6 +102,8 @@ mixin _$ValueFailure<T> {
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -100,6 +116,8 @@ mixin _$ValueFailure<T> {
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -111,6 +129,8 @@ mixin _$ValueFailure<T> {
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   });
 
@@ -223,6 +243,8 @@ class _$InvalidEmail<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -232,6 +254,8 @@ class _$InvalidEmail<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidEmail(failedValue);
   }
 
@@ -246,6 +270,8 @@ class _$InvalidEmail<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -266,6 +292,8 @@ class _$InvalidEmail<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -275,6 +303,8 @@ class _$InvalidEmail<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidEmail(this);
   }
 
@@ -289,6 +319,8 @@ class _$InvalidEmail<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -386,6 +418,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -395,6 +429,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return emptyEmail(failedValue);
   }
 
@@ -409,6 +445,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -429,6 +467,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -438,6 +478,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return emptyEmail(this);
   }
 
@@ -452,6 +494,8 @@ class _$EmptyEmail<T> with DiagnosticableTreeMixin implements EmptyEmail<T> {
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -551,6 +595,8 @@ class _$ShortPassword<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -560,6 +606,8 @@ class _$ShortPassword<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return shortPassword(failedValue);
   }
 
@@ -574,6 +622,8 @@ class _$ShortPassword<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -594,6 +644,8 @@ class _$ShortPassword<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -603,6 +655,8 @@ class _$ShortPassword<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return shortPassword(this);
   }
 
@@ -617,6 +671,8 @@ class _$ShortPassword<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -716,6 +772,8 @@ class _$EmptyPassword<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -725,6 +783,8 @@ class _$EmptyPassword<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return emptyPassword(failedValue);
   }
 
@@ -739,6 +799,8 @@ class _$EmptyPassword<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -759,6 +821,8 @@ class _$EmptyPassword<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -768,6 +832,8 @@ class _$EmptyPassword<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return emptyPassword(this);
   }
 
@@ -782,6 +848,8 @@ class _$EmptyPassword<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -882,6 +950,8 @@ class _$InvalidPersonName<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -891,6 +961,8 @@ class _$InvalidPersonName<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidPersonName(failedValue);
   }
 
@@ -905,6 +977,8 @@ class _$InvalidPersonName<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -925,6 +999,8 @@ class _$InvalidPersonName<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -934,6 +1010,8 @@ class _$InvalidPersonName<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidPersonName(this);
   }
 
@@ -948,6 +1026,8 @@ class _$InvalidPersonName<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1048,6 +1128,8 @@ class _$InvalidPhone<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1057,6 +1139,8 @@ class _$InvalidPhone<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidPhone(failedValue);
   }
 
@@ -1071,6 +1155,8 @@ class _$InvalidPhone<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1091,6 +1177,8 @@ class _$InvalidPhone<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1100,6 +1188,8 @@ class _$InvalidPhone<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidPhone(this);
   }
 
@@ -1114,6 +1204,8 @@ class _$InvalidPhone<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1211,6 +1303,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1220,6 +1314,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidCPF(failedValue);
   }
 
@@ -1234,6 +1330,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1254,6 +1352,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1263,6 +1363,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidCPF(this);
   }
 
@@ -1277,6 +1379,8 @@ class _$InvalidCPF<T> with DiagnosticableTreeMixin implements InvalidCPF<T> {
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1376,6 +1480,8 @@ class _$InvalidIdConfef<T>
     @required Result invalidPhone(T failedValue),
     @required Result invalidCPF(T failedValue),
     @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1385,6 +1491,8 @@ class _$InvalidIdConfef<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidIdConfef(failedValue);
   }
 
@@ -1399,6 +1507,8 @@ class _$InvalidIdConfef<T>
     Result invalidPhone(T failedValue),
     Result invalidCPF(T failedValue),
     Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1419,6 +1529,8 @@ class _$InvalidIdConfef<T>
     @required Result invalidPhone(InvalidPhone<T> value),
     @required Result invalidCPF(InvalidCPF<T> value),
     @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
   }) {
     assert(invalidEmail != null);
     assert(emptyEmail != null);
@@ -1428,6 +1540,8 @@ class _$InvalidIdConfef<T>
     assert(invalidPhone != null);
     assert(invalidCPF != null);
     assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
     return invalidIdConfef(this);
   }
 
@@ -1442,6 +1556,8 @@ class _$InvalidIdConfef<T>
     Result invalidPhone(InvalidPhone<T> value),
     Result invalidCPF(InvalidCPF<T> value),
     Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1460,4 +1576,356 @@ abstract class InvalidIdConfef<T> implements ValueFailure<T> {
   T get failedValue;
   @override
   $InvalidIdConfefCopyWith<T, InvalidIdConfef<T>> get copyWith;
+}
+
+abstract class $InvalidWebSiteCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidWebSiteCopyWith(
+          InvalidWebSite<T> value, $Res Function(InvalidWebSite<T>) then) =
+      _$InvalidWebSiteCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+class _$InvalidWebSiteCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidWebSiteCopyWith<T, $Res> {
+  _$InvalidWebSiteCopyWithImpl(
+      InvalidWebSite<T> _value, $Res Function(InvalidWebSite<T>) _then)
+      : super(_value, (v) => _then(v as InvalidWebSite<T>));
+
+  @override
+  InvalidWebSite<T> get _value => super._value as InvalidWebSite<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidWebSite<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+class _$InvalidWebSite<T>
+    with DiagnosticableTreeMixin
+    implements InvalidWebSite<T> {
+  const _$InvalidWebSite({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidWebSite(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidWebSite'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidWebSite<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidWebSiteCopyWith<T, InvalidWebSite<T>> get copyWith =>
+      _$InvalidWebSiteCopyWithImpl<T, InvalidWebSite<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
+    @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
+    @required Result invalidPersonName(T failedValue),
+    @required Result invalidPhone(T failedValue),
+    @required Result invalidCPF(T failedValue),
+    @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
+    return invalidWebSite(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
+    Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
+    Result invalidPersonName(T failedValue),
+    Result invalidPhone(T failedValue),
+    Result invalidCPF(T failedValue),
+    Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidWebSite != null) {
+      return invalidWebSite(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
+    @required Result invalidPersonName(InvalidPersonName<T> value),
+    @required Result invalidPhone(InvalidPhone<T> value),
+    @required Result invalidCPF(InvalidCPF<T> value),
+    @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
+    return invalidWebSite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
+    Result invalidPersonName(InvalidPersonName<T> value),
+    Result invalidPhone(InvalidPhone<T> value),
+    Result invalidCPF(InvalidCPF<T> value),
+    Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidWebSite != null) {
+      return invalidWebSite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidWebSite<T> implements ValueFailure<T> {
+  const factory InvalidWebSite({@required T failedValue}) = _$InvalidWebSite<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $InvalidWebSiteCopyWith<T, InvalidWebSite<T>> get copyWith;
+}
+
+abstract class $InvalidTextCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidTextCopyWith(
+          InvalidText<T> value, $Res Function(InvalidText<T>) then) =
+      _$InvalidTextCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+class _$InvalidTextCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidTextCopyWith<T, $Res> {
+  _$InvalidTextCopyWithImpl(
+      InvalidText<T> _value, $Res Function(InvalidText<T>) _then)
+      : super(_value, (v) => _then(v as InvalidText<T>));
+
+  @override
+  InvalidText<T> get _value => super._value as InvalidText<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidText<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+class _$InvalidText<T> with DiagnosticableTreeMixin implements InvalidText<T> {
+  const _$InvalidText({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.invalidText(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidText'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidText<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidTextCopyWith<T, InvalidText<T>> get copyWith =>
+      _$InvalidTextCopyWithImpl<T, InvalidText<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmail(T failedValue),
+    @required Result emptyEmail(T failedValue),
+    @required Result shortPassword(T failedValue),
+    @required Result emptyPassword(T failedValue),
+    @required Result invalidPersonName(T failedValue),
+    @required Result invalidPhone(T failedValue),
+    @required Result invalidCPF(T failedValue),
+    @required Result invalidIdConfef(T failedValue),
+    @required Result invalidWebSite(T failedValue),
+    @required Result invalidText(T failedValue),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
+    return invalidText(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmail(T failedValue),
+    Result emptyEmail(T failedValue),
+    Result shortPassword(T failedValue),
+    Result emptyPassword(T failedValue),
+    Result invalidPersonName(T failedValue),
+    Result invalidPhone(T failedValue),
+    Result invalidCPF(T failedValue),
+    Result invalidIdConfef(T failedValue),
+    Result invalidWebSite(T failedValue),
+    Result invalidText(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidText != null) {
+      return invalidText(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result emptyEmail(EmptyEmail<T> value),
+    @required Result shortPassword(ShortPassword<T> value),
+    @required Result emptyPassword(EmptyPassword<T> value),
+    @required Result invalidPersonName(InvalidPersonName<T> value),
+    @required Result invalidPhone(InvalidPhone<T> value),
+    @required Result invalidCPF(InvalidCPF<T> value),
+    @required Result invalidIdConfef(InvalidIdConfef<T> value),
+    @required Result invalidWebSite(InvalidWebSite<T> value),
+    @required Result invalidText(InvalidText<T> value),
+  }) {
+    assert(invalidEmail != null);
+    assert(emptyEmail != null);
+    assert(shortPassword != null);
+    assert(emptyPassword != null);
+    assert(invalidPersonName != null);
+    assert(invalidPhone != null);
+    assert(invalidCPF != null);
+    assert(invalidIdConfef != null);
+    assert(invalidWebSite != null);
+    assert(invalidText != null);
+    return invalidText(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmail(InvalidEmail<T> value),
+    Result emptyEmail(EmptyEmail<T> value),
+    Result shortPassword(ShortPassword<T> value),
+    Result emptyPassword(EmptyPassword<T> value),
+    Result invalidPersonName(InvalidPersonName<T> value),
+    Result invalidPhone(InvalidPhone<T> value),
+    Result invalidCPF(InvalidCPF<T> value),
+    Result invalidIdConfef(InvalidIdConfef<T> value),
+    Result invalidWebSite(InvalidWebSite<T> value),
+    Result invalidText(InvalidText<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidText != null) {
+      return invalidText(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidText<T> implements ValueFailure<T> {
+  const factory InvalidText({@required T failedValue}) = _$InvalidText<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $InvalidTextCopyWith<T, InvalidText<T>> get copyWith;
 }

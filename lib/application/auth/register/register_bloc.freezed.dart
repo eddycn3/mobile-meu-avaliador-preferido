@@ -24,39 +24,9 @@ class _$RegisterEventTearOff {
     );
   }
 
-  NomeUsuarioChanged nomeUsuarioChanged(String nomeUsuario) {
-    return NomeUsuarioChanged(
-      nomeUsuario,
-    );
-  }
-
-  TelefoneChanged telefoneChanged(String telefone) {
-    return TelefoneChanged(
-      telefone,
-    );
-  }
-
-  CpfChanged cpfChanged(String cpf) {
-    return CpfChanged(
-      cpf,
-    );
-  }
-
-  IdConfefChanged idConfefChanged(String idconfef) {
-    return IdConfefChanged(
-      idconfef,
-    );
-  }
-
-  EmpresaChanged empresaChanged(String idconfef) {
-    return EmpresaChanged(
-      idconfef,
-    );
-  }
-
-  SiteChanged siteChanged(String idconfef) {
-    return SiteChanged(
-      idconfef,
+  UserInfoChanged userInfoChanged(Avaliador userInfo) {
+    return UserInfoChanged(
+      userInfo,
     );
   }
 
@@ -73,24 +43,14 @@ mixin _$RegisterEvent {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
+    @required Result userInfoChanged(Avaliador userInfo),
     @required Result registerUser(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
+    Result userInfoChanged(Avaliador userInfo),
     Result registerUser(),
     @required Result orElse(),
   });
@@ -98,24 +58,14 @@ mixin _$RegisterEvent {
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
     @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
+    @required Result userInfoChanged(UserInfoChanged value),
     @required Result registerUser(RegisterUser value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
+    Result userInfoChanged(UserInfoChanged value),
     Result registerUser(RegisterUser value),
     @required Result orElse(),
   });
@@ -202,22 +152,12 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
+    @required Result userInfoChanged(Avaliador userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return emailChanged(email);
   }
@@ -227,12 +167,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
+    Result userInfoChanged(Avaliador userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -248,22 +183,12 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
     @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
+    @required Result userInfoChanged(UserInfoChanged value),
     @required Result registerUser(RegisterUser value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return emailChanged(this);
   }
@@ -273,12 +198,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
+    Result userInfoChanged(UserInfoChanged value),
     Result registerUser(RegisterUser value),
     @required Result orElse(),
   }) {
@@ -367,22 +287,12 @@ class _$PasswordChanged
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
+    @required Result userInfoChanged(Avaliador userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return passwordChanged(password);
   }
@@ -392,12 +302,7 @@ class _$PasswordChanged
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
+    Result userInfoChanged(Avaliador userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -413,22 +318,12 @@ class _$PasswordChanged
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
     @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
+    @required Result userInfoChanged(UserInfoChanged value),
     @required Result registerUser(RegisterUser value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return passwordChanged(this);
   }
@@ -438,12 +333,7 @@ class _$PasswordChanged
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
+    Result userInfoChanged(UserInfoChanged value),
     Result registerUser(RegisterUser value),
     @required Result orElse(),
   }) {
@@ -462,94 +352,96 @@ abstract class PasswordChanged implements RegisterEvent {
   $PasswordChangedCopyWith<PasswordChanged> get copyWith;
 }
 
-abstract class $NomeUsuarioChangedCopyWith<$Res> {
-  factory $NomeUsuarioChangedCopyWith(
-          NomeUsuarioChanged value, $Res Function(NomeUsuarioChanged) then) =
-      _$NomeUsuarioChangedCopyWithImpl<$Res>;
-  $Res call({String nomeUsuario});
+abstract class $UserInfoChangedCopyWith<$Res> {
+  factory $UserInfoChangedCopyWith(
+          UserInfoChanged value, $Res Function(UserInfoChanged) then) =
+      _$UserInfoChangedCopyWithImpl<$Res>;
+  $Res call({Avaliador userInfo});
+
+  $AvaliadorCopyWith<$Res> get userInfo;
 }
 
-class _$NomeUsuarioChangedCopyWithImpl<$Res>
+class _$UserInfoChangedCopyWithImpl<$Res>
     extends _$RegisterEventCopyWithImpl<$Res>
-    implements $NomeUsuarioChangedCopyWith<$Res> {
-  _$NomeUsuarioChangedCopyWithImpl(
-      NomeUsuarioChanged _value, $Res Function(NomeUsuarioChanged) _then)
-      : super(_value, (v) => _then(v as NomeUsuarioChanged));
+    implements $UserInfoChangedCopyWith<$Res> {
+  _$UserInfoChangedCopyWithImpl(
+      UserInfoChanged _value, $Res Function(UserInfoChanged) _then)
+      : super(_value, (v) => _then(v as UserInfoChanged));
 
   @override
-  NomeUsuarioChanged get _value => super._value as NomeUsuarioChanged;
+  UserInfoChanged get _value => super._value as UserInfoChanged;
 
   @override
   $Res call({
-    Object nomeUsuario = freezed,
+    Object userInfo = freezed,
   }) {
-    return _then(NomeUsuarioChanged(
-      nomeUsuario == freezed ? _value.nomeUsuario : nomeUsuario as String,
+    return _then(UserInfoChanged(
+      userInfo == freezed ? _value.userInfo : userInfo as Avaliador,
     ));
+  }
+
+  @override
+  $AvaliadorCopyWith<$Res> get userInfo {
+    if (_value.userInfo == null) {
+      return null;
+    }
+    return $AvaliadorCopyWith<$Res>(_value.userInfo, (value) {
+      return _then(_value.copyWith(userInfo: value));
+    });
   }
 }
 
-class _$NomeUsuarioChanged
+class _$UserInfoChanged
     with DiagnosticableTreeMixin
-    implements NomeUsuarioChanged {
-  const _$NomeUsuarioChanged(this.nomeUsuario) : assert(nomeUsuario != null);
+    implements UserInfoChanged {
+  const _$UserInfoChanged(this.userInfo) : assert(userInfo != null);
 
   @override
-  final String nomeUsuario;
+  final Avaliador userInfo;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.nomeUsuarioChanged(nomeUsuario: $nomeUsuario)';
+    return 'RegisterEvent.userInfoChanged(userInfo: $userInfo)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.nomeUsuarioChanged'))
-      ..add(DiagnosticsProperty('nomeUsuario', nomeUsuario));
+      ..add(DiagnosticsProperty('type', 'RegisterEvent.userInfoChanged'))
+      ..add(DiagnosticsProperty('userInfo', userInfo));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NomeUsuarioChanged &&
-            (identical(other.nomeUsuario, nomeUsuario) ||
+        (other is UserInfoChanged &&
+            (identical(other.userInfo, userInfo) ||
                 const DeepCollectionEquality()
-                    .equals(other.nomeUsuario, nomeUsuario)));
+                    .equals(other.userInfo, userInfo)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(nomeUsuario);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userInfo);
 
   @override
-  $NomeUsuarioChangedCopyWith<NomeUsuarioChanged> get copyWith =>
-      _$NomeUsuarioChangedCopyWithImpl<NomeUsuarioChanged>(this, _$identity);
+  $UserInfoChangedCopyWith<UserInfoChanged> get copyWith =>
+      _$UserInfoChangedCopyWithImpl<UserInfoChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
+    @required Result userInfoChanged(Avaliador userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
-    return nomeUsuarioChanged(nomeUsuario);
+    return userInfoChanged(userInfo);
   }
 
   @override
@@ -557,18 +449,13 @@ class _$NomeUsuarioChanged
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
+    Result userInfoChanged(Avaliador userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nomeUsuarioChanged != null) {
-      return nomeUsuarioChanged(nomeUsuario);
+    if (userInfoChanged != null) {
+      return userInfoChanged(userInfo);
     }
     return orElse();
   }
@@ -578,24 +465,14 @@ class _$NomeUsuarioChanged
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
     @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
+    @required Result userInfoChanged(UserInfoChanged value),
     @required Result registerUser(RegisterUser value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
-    return nomeUsuarioChanged(this);
+    return userInfoChanged(this);
   }
 
   @override
@@ -603,843 +480,23 @@ class _$NomeUsuarioChanged
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
+    Result userInfoChanged(UserInfoChanged value),
     Result registerUser(RegisterUser value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nomeUsuarioChanged != null) {
-      return nomeUsuarioChanged(this);
+    if (userInfoChanged != null) {
+      return userInfoChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class NomeUsuarioChanged implements RegisterEvent {
-  const factory NomeUsuarioChanged(String nomeUsuario) = _$NomeUsuarioChanged;
-
-  String get nomeUsuario;
-  $NomeUsuarioChangedCopyWith<NomeUsuarioChanged> get copyWith;
-}
-
-abstract class $TelefoneChangedCopyWith<$Res> {
-  factory $TelefoneChangedCopyWith(
-          TelefoneChanged value, $Res Function(TelefoneChanged) then) =
-      _$TelefoneChangedCopyWithImpl<$Res>;
-  $Res call({String telefone});
-}
-
-class _$TelefoneChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements $TelefoneChangedCopyWith<$Res> {
-  _$TelefoneChangedCopyWithImpl(
-      TelefoneChanged _value, $Res Function(TelefoneChanged) _then)
-      : super(_value, (v) => _then(v as TelefoneChanged));
-
-  @override
-  TelefoneChanged get _value => super._value as TelefoneChanged;
-
-  @override
-  $Res call({
-    Object telefone = freezed,
-  }) {
-    return _then(TelefoneChanged(
-      telefone == freezed ? _value.telefone : telefone as String,
-    ));
-  }
-}
-
-class _$TelefoneChanged
-    with DiagnosticableTreeMixin
-    implements TelefoneChanged {
-  const _$TelefoneChanged(this.telefone) : assert(telefone != null);
-
-  @override
-  final String telefone;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.telefoneChanged(telefone: $telefone)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.telefoneChanged'))
-      ..add(DiagnosticsProperty('telefone', telefone));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is TelefoneChanged &&
-            (identical(other.telefone, telefone) ||
-                const DeepCollectionEquality()
-                    .equals(other.telefone, telefone)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(telefone);
-
-  @override
-  $TelefoneChangedCopyWith<TelefoneChanged> get copyWith =>
-      _$TelefoneChangedCopyWithImpl<TelefoneChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
-    @required Result registerUser(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return telefoneChanged(telefone);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
-    Result registerUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (telefoneChanged != null) {
-      return telefoneChanged(telefone);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
-    @required Result registerUser(RegisterUser value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return telefoneChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
-    Result registerUser(RegisterUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (telefoneChanged != null) {
-      return telefoneChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TelefoneChanged implements RegisterEvent {
-  const factory TelefoneChanged(String telefone) = _$TelefoneChanged;
-
-  String get telefone;
-  $TelefoneChangedCopyWith<TelefoneChanged> get copyWith;
-}
-
-abstract class $CpfChangedCopyWith<$Res> {
-  factory $CpfChangedCopyWith(
-          CpfChanged value, $Res Function(CpfChanged) then) =
-      _$CpfChangedCopyWithImpl<$Res>;
-  $Res call({String cpf});
-}
-
-class _$CpfChangedCopyWithImpl<$Res> extends _$RegisterEventCopyWithImpl<$Res>
-    implements $CpfChangedCopyWith<$Res> {
-  _$CpfChangedCopyWithImpl(CpfChanged _value, $Res Function(CpfChanged) _then)
-      : super(_value, (v) => _then(v as CpfChanged));
-
-  @override
-  CpfChanged get _value => super._value as CpfChanged;
-
-  @override
-  $Res call({
-    Object cpf = freezed,
-  }) {
-    return _then(CpfChanged(
-      cpf == freezed ? _value.cpf : cpf as String,
-    ));
-  }
-}
-
-class _$CpfChanged with DiagnosticableTreeMixin implements CpfChanged {
-  const _$CpfChanged(this.cpf) : assert(cpf != null);
-
-  @override
-  final String cpf;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.cpfChanged(cpf: $cpf)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.cpfChanged'))
-      ..add(DiagnosticsProperty('cpf', cpf));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is CpfChanged &&
-            (identical(other.cpf, cpf) ||
-                const DeepCollectionEquality().equals(other.cpf, cpf)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cpf);
-
-  @override
-  $CpfChangedCopyWith<CpfChanged> get copyWith =>
-      _$CpfChangedCopyWithImpl<CpfChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
-    @required Result registerUser(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return cpfChanged(cpf);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
-    Result registerUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (cpfChanged != null) {
-      return cpfChanged(cpf);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
-    @required Result registerUser(RegisterUser value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return cpfChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
-    Result registerUser(RegisterUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (cpfChanged != null) {
-      return cpfChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CpfChanged implements RegisterEvent {
-  const factory CpfChanged(String cpf) = _$CpfChanged;
-
-  String get cpf;
-  $CpfChangedCopyWith<CpfChanged> get copyWith;
-}
-
-abstract class $IdConfefChangedCopyWith<$Res> {
-  factory $IdConfefChangedCopyWith(
-          IdConfefChanged value, $Res Function(IdConfefChanged) then) =
-      _$IdConfefChangedCopyWithImpl<$Res>;
-  $Res call({String idconfef});
-}
-
-class _$IdConfefChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements $IdConfefChangedCopyWith<$Res> {
-  _$IdConfefChangedCopyWithImpl(
-      IdConfefChanged _value, $Res Function(IdConfefChanged) _then)
-      : super(_value, (v) => _then(v as IdConfefChanged));
-
-  @override
-  IdConfefChanged get _value => super._value as IdConfefChanged;
-
-  @override
-  $Res call({
-    Object idconfef = freezed,
-  }) {
-    return _then(IdConfefChanged(
-      idconfef == freezed ? _value.idconfef : idconfef as String,
-    ));
-  }
-}
-
-class _$IdConfefChanged
-    with DiagnosticableTreeMixin
-    implements IdConfefChanged {
-  const _$IdConfefChanged(this.idconfef) : assert(idconfef != null);
-
-  @override
-  final String idconfef;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.idConfefChanged(idconfef: $idconfef)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.idConfefChanged'))
-      ..add(DiagnosticsProperty('idconfef', idconfef));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is IdConfefChanged &&
-            (identical(other.idconfef, idconfef) ||
-                const DeepCollectionEquality()
-                    .equals(other.idconfef, idconfef)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(idconfef);
-
-  @override
-  $IdConfefChangedCopyWith<IdConfefChanged> get copyWith =>
-      _$IdConfefChangedCopyWithImpl<IdConfefChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
-    @required Result registerUser(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return idConfefChanged(idconfef);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
-    Result registerUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (idConfefChanged != null) {
-      return idConfefChanged(idconfef);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
-    @required Result registerUser(RegisterUser value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return idConfefChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
-    Result registerUser(RegisterUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (idConfefChanged != null) {
-      return idConfefChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class IdConfefChanged implements RegisterEvent {
-  const factory IdConfefChanged(String idconfef) = _$IdConfefChanged;
-
-  String get idconfef;
-  $IdConfefChangedCopyWith<IdConfefChanged> get copyWith;
-}
-
-abstract class $EmpresaChangedCopyWith<$Res> {
-  factory $EmpresaChangedCopyWith(
-          EmpresaChanged value, $Res Function(EmpresaChanged) then) =
-      _$EmpresaChangedCopyWithImpl<$Res>;
-  $Res call({String idconfef});
-}
-
-class _$EmpresaChangedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements $EmpresaChangedCopyWith<$Res> {
-  _$EmpresaChangedCopyWithImpl(
-      EmpresaChanged _value, $Res Function(EmpresaChanged) _then)
-      : super(_value, (v) => _then(v as EmpresaChanged));
-
-  @override
-  EmpresaChanged get _value => super._value as EmpresaChanged;
-
-  @override
-  $Res call({
-    Object idconfef = freezed,
-  }) {
-    return _then(EmpresaChanged(
-      idconfef == freezed ? _value.idconfef : idconfef as String,
-    ));
-  }
-}
-
-class _$EmpresaChanged with DiagnosticableTreeMixin implements EmpresaChanged {
-  const _$EmpresaChanged(this.idconfef) : assert(idconfef != null);
-
-  @override
-  final String idconfef;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.empresaChanged(idconfef: $idconfef)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.empresaChanged'))
-      ..add(DiagnosticsProperty('idconfef', idconfef));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is EmpresaChanged &&
-            (identical(other.idconfef, idconfef) ||
-                const DeepCollectionEquality()
-                    .equals(other.idconfef, idconfef)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(idconfef);
-
-  @override
-  $EmpresaChangedCopyWith<EmpresaChanged> get copyWith =>
-      _$EmpresaChangedCopyWithImpl<EmpresaChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
-    @required Result registerUser(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return empresaChanged(idconfef);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
-    Result registerUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empresaChanged != null) {
-      return empresaChanged(idconfef);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
-    @required Result registerUser(RegisterUser value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return empresaChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
-    Result registerUser(RegisterUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empresaChanged != null) {
-      return empresaChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmpresaChanged implements RegisterEvent {
-  const factory EmpresaChanged(String idconfef) = _$EmpresaChanged;
-
-  String get idconfef;
-  $EmpresaChangedCopyWith<EmpresaChanged> get copyWith;
-}
-
-abstract class $SiteChangedCopyWith<$Res> {
-  factory $SiteChangedCopyWith(
-          SiteChanged value, $Res Function(SiteChanged) then) =
-      _$SiteChangedCopyWithImpl<$Res>;
-  $Res call({String idconfef});
-}
-
-class _$SiteChangedCopyWithImpl<$Res> extends _$RegisterEventCopyWithImpl<$Res>
-    implements $SiteChangedCopyWith<$Res> {
-  _$SiteChangedCopyWithImpl(
-      SiteChanged _value, $Res Function(SiteChanged) _then)
-      : super(_value, (v) => _then(v as SiteChanged));
-
-  @override
-  SiteChanged get _value => super._value as SiteChanged;
-
-  @override
-  $Res call({
-    Object idconfef = freezed,
-  }) {
-    return _then(SiteChanged(
-      idconfef == freezed ? _value.idconfef : idconfef as String,
-    ));
-  }
-}
-
-class _$SiteChanged with DiagnosticableTreeMixin implements SiteChanged {
-  const _$SiteChanged(this.idconfef) : assert(idconfef != null);
-
-  @override
-  final String idconfef;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterEvent.siteChanged(idconfef: $idconfef)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterEvent.siteChanged'))
-      ..add(DiagnosticsProperty('idconfef', idconfef));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SiteChanged &&
-            (identical(other.idconfef, idconfef) ||
-                const DeepCollectionEquality()
-                    .equals(other.idconfef, idconfef)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(idconfef);
-
-  @override
-  $SiteChangedCopyWith<SiteChanged> get copyWith =>
-      _$SiteChangedCopyWithImpl<SiteChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
-    @required Result registerUser(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return siteChanged(idconfef);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
-    Result registerUser(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (siteChanged != null) {
-      return siteChanged(idconfef);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
-    @required Result registerUser(RegisterUser value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
-    assert(registerUser != null);
-    return siteChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
-    Result registerUser(RegisterUser value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (siteChanged != null) {
-      return siteChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SiteChanged implements RegisterEvent {
-  const factory SiteChanged(String idconfef) = _$SiteChanged;
-
-  String get idconfef;
-  $SiteChangedCopyWith<SiteChanged> get copyWith;
+abstract class UserInfoChanged implements RegisterEvent {
+  const factory UserInfoChanged(Avaliador userInfo) = _$UserInfoChanged;
+
+  Avaliador get userInfo;
+  $UserInfoChangedCopyWith<UserInfoChanged> get copyWith;
 }
 
 abstract class $RegisterUserCopyWith<$Res> {
@@ -1485,22 +542,12 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result nomeUsuarioChanged(String nomeUsuario),
-    @required Result telefoneChanged(String telefone),
-    @required Result cpfChanged(String cpf),
-    @required Result idConfefChanged(String idconfef),
-    @required Result empresaChanged(String idconfef),
-    @required Result siteChanged(String idconfef),
+    @required Result userInfoChanged(Avaliador userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return registerUser();
   }
@@ -1510,12 +557,7 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result nomeUsuarioChanged(String nomeUsuario),
-    Result telefoneChanged(String telefone),
-    Result cpfChanged(String cpf),
-    Result idConfefChanged(String idconfef),
-    Result empresaChanged(String idconfef),
-    Result siteChanged(String idconfef),
+    Result userInfoChanged(Avaliador userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -1531,22 +573,12 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
     @required Result passwordChanged(PasswordChanged value),
-    @required Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    @required Result telefoneChanged(TelefoneChanged value),
-    @required Result cpfChanged(CpfChanged value),
-    @required Result idConfefChanged(IdConfefChanged value),
-    @required Result empresaChanged(EmpresaChanged value),
-    @required Result siteChanged(SiteChanged value),
+    @required Result userInfoChanged(UserInfoChanged value),
     @required Result registerUser(RegisterUser value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
-    assert(nomeUsuarioChanged != null);
-    assert(telefoneChanged != null);
-    assert(cpfChanged != null);
-    assert(idConfefChanged != null);
-    assert(empresaChanged != null);
-    assert(siteChanged != null);
+    assert(userInfoChanged != null);
     assert(registerUser != null);
     return registerUser(this);
   }
@@ -1556,12 +588,7 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
     Result passwordChanged(PasswordChanged value),
-    Result nomeUsuarioChanged(NomeUsuarioChanged value),
-    Result telefoneChanged(TelefoneChanged value),
-    Result cpfChanged(CpfChanged value),
-    Result idConfefChanged(IdConfefChanged value),
-    Result empresaChanged(EmpresaChanged value),
-    Result siteChanged(SiteChanged value),
+    Result userInfoChanged(UserInfoChanged value),
     Result registerUser(RegisterUser value),
     @required Result orElse(),
   }) {
@@ -1581,26 +608,12 @@ class _$RegisterStateTearOff {
   const _$RegisterStateTearOff();
 
   _RegisterState call(
-      {@required EmailAddress emailAddress,
-      @required Password password,
-      @required FullName nome,
-      String empresa,
-      String site,
-      @required PhoneNumber telefone,
-      @required CPF cpf,
-      @required IDCONFEF idconfef,
+      {@required User user,
       @required bool showErrorMessages,
       @required bool isSubmitting,
       @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) {
     return _RegisterState(
-      emailAddress: emailAddress,
-      password: password,
-      nome: nome,
-      empresa: empresa,
-      site: site,
-      telefone: telefone,
-      cpf: cpf,
-      idconfef: idconfef,
+      user: user,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       authFailOrSucessOption: authFailOrSucessOption,
@@ -1612,14 +625,7 @@ class _$RegisterStateTearOff {
 const $RegisterState = _$RegisterStateTearOff();
 
 mixin _$RegisterState {
-  EmailAddress get emailAddress;
-  Password get password;
-  FullName get nome;
-  String get empresa;
-  String get site;
-  PhoneNumber get telefone;
-  CPF get cpf;
-  IDCONFEF get idconfef;
+  User get user;
   bool get showErrorMessages;
   bool get isSubmitting;
   Option<Either<AuthFailure, Unit>> get authFailOrSucessOption;
@@ -1632,17 +638,12 @@ abstract class $RegisterStateCopyWith<$Res> {
           RegisterState value, $Res Function(RegisterState) then) =
       _$RegisterStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddress emailAddress,
-      Password password,
-      FullName nome,
-      String empresa,
-      String site,
-      PhoneNumber telefone,
-      CPF cpf,
-      IDCONFEF idconfef,
+      {User user,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
+
+  $UserCopyWith<$Res> get user;
 }
 
 class _$RegisterStateCopyWithImpl<$Res>
@@ -1655,29 +656,13 @@ class _$RegisterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object password = freezed,
-    Object nome = freezed,
-    Object empresa = freezed,
-    Object site = freezed,
-    Object telefone = freezed,
-    Object cpf = freezed,
-    Object idconfef = freezed,
+    Object user = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailOrSucessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
-      nome: nome == freezed ? _value.nome : nome as FullName,
-      empresa: empresa == freezed ? _value.empresa : empresa as String,
-      site: site == freezed ? _value.site : site as String,
-      telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
-      cpf: cpf == freezed ? _value.cpf : cpf as CPF,
-      idconfef: idconfef == freezed ? _value.idconfef : idconfef as IDCONFEF,
+      user: user == freezed ? _value.user : user as User,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -1688,6 +673,16 @@ class _$RegisterStateCopyWithImpl<$Res>
           : authFailOrSucessOption as Option<Either<AuthFailure, Unit>>,
     ));
   }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 abstract class _$RegisterStateCopyWith<$Res>
@@ -1697,17 +692,13 @@ abstract class _$RegisterStateCopyWith<$Res>
       __$RegisterStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddress emailAddress,
-      Password password,
-      FullName nome,
-      String empresa,
-      String site,
-      PhoneNumber telefone,
-      CPF cpf,
-      IDCONFEF idconfef,
+      {User user,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailOrSucessOption});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 class __$RegisterStateCopyWithImpl<$Res>
@@ -1722,29 +713,13 @@ class __$RegisterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object password = freezed,
-    Object nome = freezed,
-    Object empresa = freezed,
-    Object site = freezed,
-    Object telefone = freezed,
-    Object cpf = freezed,
-    Object idconfef = freezed,
+    Object user = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object authFailOrSucessOption = freezed,
   }) {
     return _then(_RegisterState(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
-      nome: nome == freezed ? _value.nome : nome as FullName,
-      empresa: empresa == freezed ? _value.empresa : empresa as String,
-      site: site == freezed ? _value.site : site as String,
-      telefone: telefone == freezed ? _value.telefone : telefone as PhoneNumber,
-      cpf: cpf == freezed ? _value.cpf : cpf as CPF,
-      idconfef: idconfef == freezed ? _value.idconfef : idconfef as IDCONFEF,
+      user: user == freezed ? _value.user : user as User,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -1759,43 +734,17 @@ class __$RegisterStateCopyWithImpl<$Res>
 
 class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   const _$_RegisterState(
-      {@required this.emailAddress,
-      @required this.password,
-      @required this.nome,
-      this.empresa,
-      this.site,
-      @required this.telefone,
-      @required this.cpf,
-      @required this.idconfef,
+      {@required this.user,
       @required this.showErrorMessages,
       @required this.isSubmitting,
       @required this.authFailOrSucessOption})
-      : assert(emailAddress != null),
-        assert(password != null),
-        assert(nome != null),
-        assert(telefone != null),
-        assert(cpf != null),
-        assert(idconfef != null),
+      : assert(user != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
         assert(authFailOrSucessOption != null);
 
   @override
-  final EmailAddress emailAddress;
-  @override
-  final Password password;
-  @override
-  final FullName nome;
-  @override
-  final String empresa;
-  @override
-  final String site;
-  @override
-  final PhoneNumber telefone;
-  @override
-  final CPF cpf;
-  @override
-  final IDCONFEF idconfef;
+  final User user;
   @override
   final bool showErrorMessages;
   @override
@@ -1805,7 +754,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RegisterState(emailAddress: $emailAddress, password: $password, nome: $nome, empresa: $empresa, site: $site, telefone: $telefone, cpf: $cpf, idconfef: $idconfef, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailOrSucessOption: $authFailOrSucessOption)';
+    return 'RegisterState(user: $user, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailOrSucessOption: $authFailOrSucessOption)';
   }
 
   @override
@@ -1813,14 +762,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RegisterState'))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('nome', nome))
-      ..add(DiagnosticsProperty('empresa', empresa))
-      ..add(DiagnosticsProperty('site', site))
-      ..add(DiagnosticsProperty('telefone', telefone))
-      ..add(DiagnosticsProperty('cpf', cpf))
-      ..add(DiagnosticsProperty('idconfef', idconfef))
+      ..add(DiagnosticsProperty('user', user))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
       ..add(DiagnosticsProperty(
@@ -1831,27 +773,8 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RegisterState &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.nome, nome) ||
-                const DeepCollectionEquality().equals(other.nome, nome)) &&
-            (identical(other.empresa, empresa) ||
-                const DeepCollectionEquality()
-                    .equals(other.empresa, empresa)) &&
-            (identical(other.site, site) ||
-                const DeepCollectionEquality().equals(other.site, site)) &&
-            (identical(other.telefone, telefone) ||
-                const DeepCollectionEquality()
-                    .equals(other.telefone, telefone)) &&
-            (identical(other.cpf, cpf) ||
-                const DeepCollectionEquality().equals(other.cpf, cpf)) &&
-            (identical(other.idconfef, idconfef) ||
-                const DeepCollectionEquality()
-                    .equals(other.idconfef, idconfef)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -1866,14 +789,7 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(nome) ^
-      const DeepCollectionEquality().hash(empresa) ^
-      const DeepCollectionEquality().hash(site) ^
-      const DeepCollectionEquality().hash(telefone) ^
-      const DeepCollectionEquality().hash(cpf) ^
-      const DeepCollectionEquality().hash(idconfef) ^
+      const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(authFailOrSucessOption);
@@ -1885,35 +801,14 @@ class _$_RegisterState with DiagnosticableTreeMixin implements _RegisterState {
 
 abstract class _RegisterState implements RegisterState {
   const factory _RegisterState(
-          {@required EmailAddress emailAddress,
-          @required Password password,
-          @required FullName nome,
-          String empresa,
-          String site,
-          @required PhoneNumber telefone,
-          @required CPF cpf,
-          @required IDCONFEF idconfef,
+          {@required User user,
           @required bool showErrorMessages,
           @required bool isSubmitting,
           @required Option<Either<AuthFailure, Unit>> authFailOrSucessOption}) =
       _$_RegisterState;
 
   @override
-  EmailAddress get emailAddress;
-  @override
-  Password get password;
-  @override
-  FullName get nome;
-  @override
-  String get empresa;
-  @override
-  String get site;
-  @override
-  PhoneNumber get telefone;
-  @override
-  CPF get cpf;
-  @override
-  IDCONFEF get idconfef;
+  User get user;
   @override
   bool get showErrorMessages;
   @override

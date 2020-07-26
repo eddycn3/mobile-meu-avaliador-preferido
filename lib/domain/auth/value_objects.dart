@@ -78,3 +78,33 @@ class IDCONFEF extends ValueObject<String> {
 
   const IDCONFEF._(this.value);
 }
+
+class WebSite extends ValueObject<String> {
+  @override
+  // TODO: implement value
+  final Either<ValueFailure<String>, String> value;
+
+  factory WebSite(String input) {
+    if (input != null) {
+      return WebSite._(validateWebSite(input));
+    }
+    return WebSite._(right(input));
+  }
+
+  const WebSite._(this.value);
+}
+
+class Empresa extends ValueObject<String> {
+  @override
+  // TODO: implement value
+  final Either<ValueFailure<String>, String> value;
+
+  factory Empresa(String input) {
+    if (input != null) {
+      return Empresa._(validateText(input));
+    }
+    return Empresa._(right(input));
+  }
+
+  const Empresa._(this.value);
+}

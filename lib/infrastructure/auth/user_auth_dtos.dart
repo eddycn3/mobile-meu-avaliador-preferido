@@ -73,8 +73,8 @@ abstract class AvaliadorDto implements _$AvaliadorDto {
   Avaliador toDomain() {
     return Avaliador(
         nome: FullName(nome),
-        empresa: empresa,
-        site: site,
+        empresa: Empresa(empresa),
+        site: WebSite(site),
         email: EmailAddress(email),
         telefone: PhoneNumber(telefone),
         cpf: CPF(cpf),
