@@ -14,19 +14,23 @@ abstract class User implements _$User {
     @required Password passWord,
     int userType,
     String token,
-    Avaliador userInfo,
+    UserInfo<Avaliador> userInfo,
   }) = _User;
 
   factory User.empty() => User(
-      id: 0,
-      userName: EmailAddress(""),
-      passWord: Password(""),
-      token: "",
-      userInfo: Avaliador.empty());
+        id: 0,
+        userName: EmailAddress(""),
+        passWord: Password(""),
+        token: "",
+        userInfo: UserInfo(Avaliador.empty()),
+      );
 
-  // Option<ValueFailure<dynamic>> get failureOption{
-  //   return userName.failureOrUnit.andThen(passWord.failureOrUnit).andThen(userInfo.)
-  // }
+  Option<ValueFailure<dynamic>> get failureOption {
+    return userName.failureOrUnit
+        .andThen(passWord.failureOrUnit)
+        .andThen(userInfo.getOrCrash())
+        .fold((l) => some(l), (_) => none());
+  }
 }
 
 @freezed
@@ -51,5 +55,15 @@ abstract class Avaliador implements _$Avaliador {
       cpf: CPF(""),
       id_confef: IDCONFEF(""));
 
- 
+  Option<ValueFailure<dynamic>> get failureOption {
+    return nome.failureOrUnit
+        .andThen(nome.failureOrUnit)
+        .andThen(empresa.failureOrUnit)
+        .andThen(site.failureOrUnit)
+        .andThen(email.failureOrUnit)
+        .andThen(telefone.failureOrUnit)
+        .andThen(cpf.failureOrUnit)
+        .andThen(id_confef.failureOrUnit)
+        .fold((l) => some(l), (r) => none());
+  }
 }

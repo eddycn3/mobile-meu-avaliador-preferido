@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:my_personal_avaliator/domain/auth/user_auth.dart';
 import 'package:my_personal_avaliator/domain/core/failures.dart';
 import 'package:my_personal_avaliator/domain/core/value_objects.dart';
 import 'package:my_personal_avaliator/domain/core/value_validators.dart';
@@ -81,7 +82,6 @@ class IDCONFEF extends ValueObject<String> {
 
 class WebSite extends ValueObject<String> {
   @override
-  // TODO: implement value
   final Either<ValueFailure<String>, String> value;
 
   factory WebSite(String input) {
@@ -96,7 +96,6 @@ class WebSite extends ValueObject<String> {
 
 class Empresa extends ValueObject<String> {
   @override
-  // TODO: implement value
   final Either<ValueFailure<String>, String> value;
 
   factory Empresa(String input) {
@@ -107,4 +106,15 @@ class Empresa extends ValueObject<String> {
   }
 
   const Empresa._(this.value);
+}
+
+class UserInfo<T> extends ValueObject<Avaliador> {
+  @override
+  final Either<ValueFailure<Avaliador>, Avaliador> value;
+
+  factory UserInfo(Avaliador input) {
+    return UserInfo._(right(input));
+  }
+
+  const UserInfo._(this.value);
 }

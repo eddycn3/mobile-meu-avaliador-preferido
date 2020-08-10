@@ -18,7 +18,7 @@ class _$UserTearOff {
       @required Password passWord,
       int userType,
       String token,
-      Avaliador userInfo}) {
+      UserInfo<Avaliador> userInfo}) {
     return _User(
       id: id,
       userName: userName,
@@ -39,7 +39,7 @@ mixin _$User {
   Password get passWord;
   int get userType;
   String get token;
-  Avaliador get userInfo;
+  UserInfo<Avaliador> get userInfo;
 
   $UserCopyWith<User> get copyWith;
 }
@@ -53,9 +53,7 @@ abstract class $UserCopyWith<$Res> {
       Password passWord,
       int userType,
       String token,
-      Avaliador userInfo});
-
-  $AvaliadorCopyWith<$Res> get userInfo;
+      UserInfo<Avaliador> userInfo});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -81,18 +79,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       passWord: passWord == freezed ? _value.passWord : passWord as Password,
       userType: userType == freezed ? _value.userType : userType as int,
       token: token == freezed ? _value.token : token as String,
-      userInfo: userInfo == freezed ? _value.userInfo : userInfo as Avaliador,
+      userInfo: userInfo == freezed
+          ? _value.userInfo
+          : userInfo as UserInfo<Avaliador>,
     ));
-  }
-
-  @override
-  $AvaliadorCopyWith<$Res> get userInfo {
-    if (_value.userInfo == null) {
-      return null;
-    }
-    return $AvaliadorCopyWith<$Res>(_value.userInfo, (value) {
-      return _then(_value.copyWith(userInfo: value));
-    });
   }
 }
 
@@ -106,10 +96,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Password passWord,
       int userType,
       String token,
-      Avaliador userInfo});
-
-  @override
-  $AvaliadorCopyWith<$Res> get userInfo;
+      UserInfo<Avaliador> userInfo});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -136,7 +123,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       passWord: passWord == freezed ? _value.passWord : passWord as Password,
       userType: userType == freezed ? _value.userType : userType as int,
       token: token == freezed ? _value.token : token as String,
-      userInfo: userInfo == freezed ? _value.userInfo : userInfo as Avaliador,
+      userInfo: userInfo == freezed
+          ? _value.userInfo
+          : userInfo as UserInfo<Avaliador>,
     ));
   }
 }
@@ -164,7 +153,7 @@ class _$_User extends _User {
   @override
   final String token;
   @override
-  final Avaliador userInfo;
+  final UserInfo<Avaliador> userInfo;
 
   @override
   String toString() {
@@ -216,7 +205,7 @@ abstract class _User extends User {
       @required Password passWord,
       int userType,
       String token,
-      Avaliador userInfo}) = _$_User;
+      UserInfo<Avaliador> userInfo}) = _$_User;
 
   @override
   int get id;
@@ -229,7 +218,7 @@ abstract class _User extends User {
   @override
   String get token;
   @override
-  Avaliador get userInfo;
+  UserInfo<Avaliador> get userInfo;
   @override
   _$UserCopyWith<_User> get copyWith;
 }
