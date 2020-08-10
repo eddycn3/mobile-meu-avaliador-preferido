@@ -23,6 +23,10 @@ abstract class User implements _$User {
       passWord: Password(""),
       token: "",
       userInfo: Avaliador.empty());
+
+  // Option<ValueFailure<dynamic>> get failureOption{
+  //   return userName.failureOrUnit.andThen(passWord.failureOrUnit).andThen(userInfo.)
+  // }
 }
 
 @freezed
@@ -46,4 +50,6 @@ abstract class Avaliador implements _$Avaliador {
       telefone: PhoneNumber(""),
       cpf: CPF(""),
       id_confef: IDCONFEF(""));
+
+ 
 }

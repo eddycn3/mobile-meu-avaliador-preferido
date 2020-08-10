@@ -185,7 +185,7 @@ class _RegisterFormState extends State<RegisterForm> {
                                             width: 400,
                                             child: Markdown(
                                               selectable: true,
-                                              data: privacy_policy,
+                                              data: privacyPolicy,
                                             ),
                                           ),
                                           title: "Política de Privacidade");

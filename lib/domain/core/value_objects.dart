@@ -14,6 +14,10 @@ abstract class ValueObject<T> extends Equatable {
     return value.fold((f) => throw UnexpectedValueError(f), id);
   } // id = identity - same as writing (right) => right
 
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold((l) => left(l), (r) => right(unit));
+  }
+
   bool isValid() => value.isRight();
 
   @override

@@ -61,12 +61,12 @@ abstract class AvaliadorDto implements _$AvaliadorDto {
   factory AvaliadorDto.fromDomain(Avaliador avaliador) {
     return AvaliadorDto(
       nome: avaliador.nome.getOrCrash(),
-      empresa: avaliador.empresa,
+      empresa: avaliador.empresa.getOrCrash(),
       telefone: avaliador.telefone.getOrCrash(),
       cpf: avaliador.cpf.getOrCrash(),
       email: avaliador.email.getOrCrash(),
       id_confef: avaliador.id_confef.getOrCrash(),
-      site: avaliador.site,
+      site: avaliador.site.getOrCrash(),
     );
   }
 

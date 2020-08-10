@@ -15,7 +15,7 @@ class SecondFormStep extends StatelessWidget {
           children: <Widget>[
             TextFormField(
               onChanged: (value) {
-                _registerBloc.add(RegisterEvent.nomeUsuarioChanged(value));
+                //_registerBloc.add(RegisterEvent.nomeUsuarioChanged(value));
               },
               cursorColor: Colors.green,
               decoration: InputDecoration(
@@ -25,7 +25,7 @@ class SecondFormStep extends StatelessWidget {
             ),
             TextFormField(
               onChanged: (value) {
-                _registerBloc.add(RegisterEvent.empresaChanged(value));
+                //_registerBloc.add(RegisterEvent.empresaChanged(value));
               },
               cursorColor: Colors.green,
               decoration: InputDecoration(
@@ -35,7 +35,7 @@ class SecondFormStep extends StatelessWidget {
             ),
             TextFormField(
               onChanged: (value) {
-                _registerBloc.add(RegisterEvent.siteChanged(value));
+                //_registerBloc.add(RegisterEvent.siteChanged(value));
               },
               cursorColor: Colors.green,
               decoration: InputDecoration(
@@ -45,7 +45,7 @@ class SecondFormStep extends StatelessWidget {
             ),
             TextFormField(
               onChanged: (value) {
-                _registerBloc.add(RegisterEvent.telefoneChanged(value));
+                //_registerBloc.add(RegisterEvent.telefoneChanged(value));
               },
               keyboardType: TextInputType.phone,
               cursorColor: Colors.green,

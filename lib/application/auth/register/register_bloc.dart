@@ -44,7 +44,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       },
       registerUser: (e) async* {
         Either<AuthFailure, Unit> _failOrSucess;
-        final areRegisterFieldsValid = true;
+
+        const areRegisterFieldsValid = true;
 
         if (areRegisterFieldsValid) {
           yield state.copyWith(
@@ -52,7 +53,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             authFailOrSucessOption: none(),
           );
 
-          _failOrSucess = await _authFacate.registerUser(user: user);
+          // _failOrSucess = await _authFacate.registerUser(user: user);
         }
         // copyWith overrides the current STATE
         yield state.copyWith(

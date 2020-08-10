@@ -1,4 +1,4 @@
-const String privacy_policy = """
+const String privacyPolicy = """
 Eduardo Corveloni Neto criou o aplicativo Meu Avaliador Preferido como um aplicativo gratuito. Este SERVIÇO é fornecido por Eduardo Corveloni Neto sem nenhum custo e destina-se ao uso como está.
 
 Esta página é usada para informar os visitantes sobre minhas políticas com a coleta, uso e divulgação de Informações pessoais, se alguém decidir usar meu Serviço.
