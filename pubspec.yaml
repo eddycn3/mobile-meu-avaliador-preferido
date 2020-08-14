@@ -11,26 +11,28 @@ dependencies:
     sdk: flutter
 
   flushbar: ^1.10.4
-  carousel_slider: ^2.1.0
+  carousel_slider: ^2.2.1
   flutter_secure_storage: ^3.3.3
   equatable: ^1.2.0
   rxdart: ^0.24.1
   http: ^0.12.1
-  flutter_bloc: ^6.0.0
   meta: ^1.1.8
   cupertino_icons: ^0.1.2
   flutter_markdown: ^0.4.2
   freezed_annotation: ^0.11.0
+  flutter_bloc: ^6.0.1
   dartz: ^0.9.1
   json_annotation: ^3.0.1
-  json_serializable: ^3.3.0
-  injectable: ^0.4.0+1
-  get_it: ^4.0.2
+  injectable: ^1.0.4
+  get_it: ^4.0.4
+
 dev_dependencies:
+  freezed: ^0.11.5
   build_runner:
   lint: ^1.2.0
-  freezed: ^0.11.2
-  injectable_generator: ^0.4.1
+  injectable_generator: ^1.0.4
+  json_serializable: ^3.3.0
+
   flutter_test:
     sdk: flutter
 
