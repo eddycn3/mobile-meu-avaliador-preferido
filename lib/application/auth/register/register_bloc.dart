@@ -45,15 +45,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       registerUser: (e) async* {
         Either<AuthFailure, Unit> _failOrSucess;
 
-        const areRegisterFieldsValid = true;
-
-        if (areRegisterFieldsValid) {
+        if (state.user.failureOption.isNone()) {
           yield state.copyWith(
             isSubmitting: true,
             authFailOrSucessOption: none(),
           );
 
-          // _failOrSucess = await _authFacate.registerUser(user: user);
+          _failOrSucess = await _authFacate.registerUser(user: state.user);
         }
         // copyWith overrides the current STATE
         yield state.copyWith(
