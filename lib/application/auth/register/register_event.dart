@@ -7,7 +7,7 @@ abstract class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.passwordChanged(String password) =
       PasswordChanged;
 
-  const factory RegisterEvent.userInfoChanged(Avaliador userInfo) =
+  const factory RegisterEvent.userInfoChanged(UserInfo<Avaliador> userInfo) =
       UserInfoChanged;
 
   const factory RegisterEvent.registerUser() = RegisterUser;

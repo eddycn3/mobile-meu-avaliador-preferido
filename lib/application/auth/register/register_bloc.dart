@@ -40,7 +40,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         );
       },
       userInfoChanged: (e) async* {
-        yield state.user.copyWith(userInfo: e.userInfo);
+        yield state.copyWith();
       },
       registerUser: (e) async* {
         Either<AuthFailure, Unit> _failOrSucess;

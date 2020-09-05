@@ -108,11 +108,11 @@ class Empresa extends ValueObject<String> {
   const Empresa._(this.value);
 }
 
-class UserInfo<T> extends ValueObject<Avaliador> {
+class UserInfo<T> extends ValueObject<T> {
   @override
-  final Either<ValueFailure<Avaliador>, Avaliador> value;
+  final Either<ValueFailure<T>, T> value;
 
-  factory UserInfo(Avaliador input) {
+  factory UserInfo(T input) {
     return UserInfo._(right(input));
   }
 
