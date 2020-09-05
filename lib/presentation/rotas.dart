@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_personal_avaliator/presentation/auth/register/register_form.dart';
+import 'package:my_personal_avaliator/presentation/auth/sign_in/login_page.dart';
 import 'package:my_personal_avaliator/presentation/home_page.dart';
-import 'package:my_personal_avaliator/presentation/sign_in/login_page.dart';
-import 'package:my_personal_avaliator/presentation/register/register_form.dart';
 import 'package:my_personal_avaliator/presentation/splash_page.dart';
 
 class AppRoutes {

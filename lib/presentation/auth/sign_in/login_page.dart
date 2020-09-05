@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_personal_avaliator/application/auth/sign_in/sign_in_bloc.dart';
 import 'package:my_personal_avaliator/injection.dart';
-import 'package:my_personal_avaliator/presentation/sign_in/login_form.dart';
+import 'package:my_personal_avaliator/presentation/auth/sign_in/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   static const id = "/login";
