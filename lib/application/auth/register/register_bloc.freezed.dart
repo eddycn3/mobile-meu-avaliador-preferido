@@ -27,7 +27,7 @@ class _$RegisterEventTearOff {
   }
 
 // ignore: unused_element
-  UserInfoChanged userInfoChanged(UserInfo<Avaliador> userInfo) {
+  UserInfoChanged userInfoChanged(AvaliadorPrimitive userInfo) {
     return UserInfoChanged(
       userInfo,
     );
@@ -47,14 +47,14 @@ mixin _$RegisterEvent {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    @required Result userInfoChanged(AvaliadorPrimitive userInfo),
     @required Result registerUser(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    Result userInfoChanged(AvaliadorPrimitive userInfo),
     Result registerUser(),
     @required Result orElse(),
   });
@@ -156,7 +156,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    @required Result userInfoChanged(AvaliadorPrimitive userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
@@ -171,7 +171,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    Result userInfoChanged(AvaliadorPrimitive userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -291,7 +291,7 @@ class _$PasswordChanged
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    @required Result userInfoChanged(AvaliadorPrimitive userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
@@ -306,7 +306,7 @@ class _$PasswordChanged
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    Result userInfoChanged(AvaliadorPrimitive userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -360,7 +360,9 @@ abstract class $UserInfoChangedCopyWith<$Res> {
   factory $UserInfoChangedCopyWith(
           UserInfoChanged value, $Res Function(UserInfoChanged) then) =
       _$UserInfoChangedCopyWithImpl<$Res>;
-  $Res call({UserInfo<Avaliador> userInfo});
+  $Res call({AvaliadorPrimitive userInfo});
+
+  $AvaliadorPrimitiveCopyWith<$Res> get userInfo;
 }
 
 class _$UserInfoChangedCopyWithImpl<$Res>
@@ -378,8 +380,18 @@ class _$UserInfoChangedCopyWithImpl<$Res>
     Object userInfo = freezed,
   }) {
     return _then(UserInfoChanged(
-      userInfo == freezed ? _value.userInfo : userInfo as UserInfo<Avaliador>,
+      userInfo == freezed ? _value.userInfo : userInfo as AvaliadorPrimitive,
     ));
+  }
+
+  @override
+  $AvaliadorPrimitiveCopyWith<$Res> get userInfo {
+    if (_value.userInfo == null) {
+      return null;
+    }
+    return $AvaliadorPrimitiveCopyWith<$Res>(_value.userInfo, (value) {
+      return _then(_value.copyWith(userInfo: value));
+    });
   }
 }
 
@@ -389,7 +401,7 @@ class _$UserInfoChanged
   const _$UserInfoChanged(this.userInfo) : assert(userInfo != null);
 
   @override
-  final UserInfo<Avaliador> userInfo;
+  final AvaliadorPrimitive userInfo;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -426,7 +438,7 @@ class _$UserInfoChanged
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    @required Result userInfoChanged(AvaliadorPrimitive userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
@@ -441,7 +453,7 @@ class _$UserInfoChanged
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    Result userInfoChanged(AvaliadorPrimitive userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {
@@ -485,10 +497,10 @@ class _$UserInfoChanged
 }
 
 abstract class UserInfoChanged implements RegisterEvent {
-  const factory UserInfoChanged(UserInfo<Avaliador> userInfo) =
+  const factory UserInfoChanged(AvaliadorPrimitive userInfo) =
       _$UserInfoChanged;
 
-  UserInfo<Avaliador> get userInfo;
+  AvaliadorPrimitive get userInfo;
   $UserInfoChangedCopyWith<UserInfoChanged> get copyWith;
 }
 
@@ -535,7 +547,7 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result when<Result extends Object>({
     @required Result emailChanged(String email),
     @required Result passwordChanged(String password),
-    @required Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    @required Result userInfoChanged(AvaliadorPrimitive userInfo),
     @required Result registerUser(),
   }) {
     assert(emailChanged != null);
@@ -550,7 +562,7 @@ class _$RegisterUser with DiagnosticableTreeMixin implements RegisterUser {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String email),
     Result passwordChanged(String password),
-    Result userInfoChanged(UserInfo<Avaliador> userInfo),
+    Result userInfoChanged(AvaliadorPrimitive userInfo),
     Result registerUser(),
     @required Result orElse(),
   }) {

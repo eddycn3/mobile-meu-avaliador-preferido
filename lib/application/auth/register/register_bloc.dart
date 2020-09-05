@@ -10,6 +10,7 @@ import 'package:my_personal_avaliator/domain/auth/auth_failure.dart';
 import 'package:my_personal_avaliator/domain/auth/i_auth_facade.dart';
 import 'package:my_personal_avaliator/domain/auth/user_auth.dart';
 import 'package:my_personal_avaliator/domain/auth/value_objects.dart';
+import 'package:my_personal_avaliator/presentation/core/user_presentation_classes.dart';
 
 part 'register_event.dart';
 part 'register_state.dart';
@@ -40,7 +41,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         );
       },
       userInfoChanged: (e) async* {
-        yield state.copyWith(user: state.user.copyWith());
+        yield state.copyWith(
+            user: state.user.copyWith(
+                userInfo: UserInfo<Avaliador>(e.userInfo.toDomain())));
       },
       registerUser: (e) async* {
         Either<AuthFailure, Unit> _failOrSucess;
